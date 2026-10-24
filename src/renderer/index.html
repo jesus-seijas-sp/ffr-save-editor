@@ -47,6 +47,12 @@
         </div>
         <div class="win table-wrap"><table id="invTable"></table></div>
       </section>
+      <section id="tab-artifacts" class="tab">
+        <div class="win panel" id="artifactPanel"></div>
+      </section>
+      <section id="tab-maps" class="tab">
+        <div class="win panel" id="mapPanel"></div>
+      </section>
       <section id="tab-player" class="tab">
         <div class="win panel" id="playerPanel"></div>
       </section>
@@ -56,7 +62,8 @@
       <section id="tab-bestiary" class="tab">
         <div class="win bar">
           <input type="search" id="bestFilter" placeholder="Search enemies…">
-          <select id="bestMode"><option value="all">All</option><option value="defeated">Defeated</option><option value="missing">Not defeated</option></select>
+          <select id="bestMode"><option value="all">All</option><option value="defeated">Defeated</option><option value="missing">Not defeated</option><option value="unscanned">Not scanned</option></select>
+          <button class="cmd" id="bestLibra" title="Mark every enemy in the list as scanned with Libra, weaknesses included">Libra all shown</button>
           <span class="dim" id="bestCount"></span>
         </div>
         <div class="win table-wrap"><table id="bestTable"></table></div>
@@ -79,6 +86,8 @@
         <li data-tab="chars" class="active">Status</li>
         <li data-tab="visions">Visions</li>
         <li data-tab="inventory">Items</li>
+        <li data-tab="artifacts">Artifacts</li>
+        <li data-tab="maps">Maps</li>
         <li data-tab="player">Records</li>
         <li data-tab="journal">Journal</li>
         <li data-tab="bestiary">Bestiary</li>
@@ -144,6 +153,7 @@
   <script src="renderer.js"></script>
   <script src="quick.js"></script>
   <script src="journal.js"></script>
+  <script src="world.js"></script>
   <script src="safety-ui.js"></script>
   <script src="keyboard.js"></script>
 </body>

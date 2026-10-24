@@ -7,7 +7,7 @@ const SLOT_LABELS = { 0: 'Autosave', 1: 'Slot 1', 2: 'Slot 2', 3: 'Slot 3' };
 const CATEGORIES = { All: null, Weapons: 'weapon', Armor: 'armor', Accessories: 'accessory', Consumables: 'consumable', 'Key items': 'key item', Artifacts: 'artifact' };
 
 const S = { dir: '', saves: [], file: null, header: null, bytes: null, parsed: null, counts: new Map(), dirty: false, charIdx: 0, visIdx: 0 };
-const CAT = { names: {}, equip: new Map(), items: new Map(), prog: {}, journal: {} };
+const CAT = { names: {}, equip: new Map(), items: new Map(), prog: {}, journal: {}, maps: [] };
 
 // ---------- helpers ----------
 const $ = (id) => document.getElementById(id);
@@ -181,6 +181,7 @@ async function init() {
   CAT.names = cat.names;
   CAT.prog = cat.progression || {};
   CAT.journal = cat.journal || {};
+  CAT.maps = cat.maps || [];
   for (const e of cat.equipment) CAT.equip.set(e.id, e);
   for (const e of cat.items) CAT.items.set(e.id, e);
 
@@ -341,10 +342,12 @@ function showTab(name) {
   if (name === 'visions') renderVision();
   if (name === 'journal') renderJournal();
   if (name === 'bestiary') renderBestiary();
+  if (name === 'artifacts') renderArtifacts();
+  if (name === 'maps') renderMaps();
 }
 
 function renderAllTabs() {
-  renderPlayer(); renderCharList(); renderVisList(); renderInventory(); renderAll(); renderJournal(); renderBestiary(); updateGilTime();
+  renderPlayer(); renderCharList(); renderVisList(); renderInventory(); renderAll(); renderJournal(); renderBestiary(); renderArtifacts(); renderMaps(); updateGilTime();
 }
 
 // ---------- player ----------
@@ -605,6 +608,15 @@ function renderVision() {
 }
 
 // ---------- inventory ----------
+// The game caps stacks at 99 unless a mod (such as FFRS-QoL's item limit) raises it.
+function qtyInput(path) {
+  const el = numInput(path, 'num small');
+  el.addEventListener('change', () => {
+    if (get(path) > 99) status(`${get(path)} saved, but the game cuts stacks back to 99 unless a mod raises the item limit.`, 'error');
+  });
+  return el;
+}
+
 function renderInventory() {
   const q = $('invFilter').value.toLowerCase();
   const rows = [];
@@ -615,7 +627,7 @@ function renderInventory() {
     const info = itemInfo(id);
     rows.push(h('tr', {},
       h('td', { class: 'id' }, id), h('td', { class: 'name' }, itemIcon(id), name), h('td', { class: 'kind' }, info ? info.kind : ''),
-      h('td', { class: 'right' }, numInput(`inventory[${i}].Num`, 'num small')),
+      h('td', { class: 'right' }, qtyInput(`inventory[${i}].Num`)),
       h('td', { class: 'desc' }, info ? [statsText(info), info.description].filter(Boolean).join(' · ') : '')));
   }
   $('invTable').replaceChildren(

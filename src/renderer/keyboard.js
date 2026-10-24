@@ -4,9 +4,9 @@
    Uses globals from renderer.js (S, $, count, showTab, save, sfx, render*, openAddDialog, confirmAdd, addSel...). */
 
 const KB = { zone: 'menu', menu: 0, panel: 0, table: 0 };
-const ZONES = { chars: ['list', 'panel'], visions: ['list', 'panel'], inventory: ['table'], player: ['panel'], journal: ['panel'], bestiary: ['table'], quick: ['panel'], all: ['table'] };
+const ZONES = { chars: ['list', 'panel'], visions: ['list', 'panel'], inventory: ['table'], player: ['panel'], journal: ['panel'], artifacts: ['panel'], maps: ['panel'], bestiary: ['table'], quick: ['panel'], all: ['table'] };
 const LIST_EL = { chars: 'charList', visions: 'visList' };
-const PANEL_EL = { chars: 'charPanel', visions: 'visPanel', player: 'playerPanel', journal: 'journalPanel', quick: 'quickPanel' };
+const PANEL_EL = { chars: 'charPanel', visions: 'visPanel', player: 'playerPanel', journal: 'journalPanel', artifacts: 'artifactPanel', maps: 'mapPanel', quick: 'quickPanel' };
 const TABLE_EL = { inventory: 'invTable', all: 'allTable', bestiary: 'bestTable' };
 const SEARCH_EL = { inventory: 'invFilter', all: 'allFilter', bestiary: 'bestFilter' };
 const KEY_HINTS = {
@@ -37,7 +37,7 @@ function kbTarget() {
   if (KB.zone === 'table') { const r = tableRows(); if (!r.length) return null; KB.table = Math.min(KB.table, r.length - 1); return r[KB.table]; }
   return null;
 }
-const targetControl = (t) => (t && t.tagName === 'TR' ? t.querySelector('input, select') : t);
+const targetControl = (t) => (t && t.tagName === 'TR' ? t.querySelector('input:not([type=checkbox]), select') : t);
 
 function setZone(z) { KB.zone = z; kbRender(true); }
 
@@ -46,6 +46,7 @@ function kbRender(scroll = false) {
   const items = menuItems();
   const onTab = items.findIndex((m) => m.classList.contains('active'));
   items.forEach((m, i) => m.classList.toggle('kb-cur', KB.zone === 'menu' ? i === KB.menu : i === onTab));
+  if (KB.zone === 'menu' && items[KB.menu]) items[KB.menu].scrollIntoView({ block: 'nearest' }); // the menu scrolls in small windows
   for (const el of document.querySelectorAll('.kb-focus')) el.classList.remove('kb-focus');
   const t = kbTarget();
   if (t) {
@@ -59,6 +60,7 @@ function kbRender(scroll = false) {
   else if ($('addDialog').open) hint = KEY_HINTS.dialog;
   else if (isField(ae)) hint = ae.type === 'search' ? KEY_HINTS.search : KEY_HINTS.edit;
   else if (KB.zone === 'table' && currentTab() === 'inventory') hint += '   A Add item';
+  else if (KB.zone === 'table' && currentTab() === 'bestiary') hint += '   L Libra';
   $('keys').textContent = hint;
   placeHand(t);
 }
@@ -186,6 +188,10 @@ function onKey(e) {
     else if (cancel) back();
     else if (k === '/' && SEARCH_EL[tab]) { e.preventDefault(); $(SEARCH_EL[tab]).focus(); kbRender(); }
     else if (k.toLowerCase() === 'a' && tab === 'inventory') { e.preventDefault(); openAddDialog(); }
+    else if (k.toLowerCase() === 'l' && tab === 'bestiary') {
+      const cb = kbTarget()?.querySelector('input[type=checkbox]');
+      if (cb) { e.preventDefault(); cb.click(); kbRender(); }
+    }
     else if (/^[0-9]$/.test(k)) {
       // start typing a number directly
       const c = targetControl(kbTarget());

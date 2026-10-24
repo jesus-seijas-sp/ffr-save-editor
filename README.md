@@ -9,8 +9,10 @@ A save editor for **Final Fantasy Resonance** (Steam), with an interface in the 
 - **Status:** character level / EXP, HP and stats, and equipment chosen from dropdowns with icons.
 - **Visions:** Mastery Rank, Awakening level and points.
 - **Items:** edit quantities and add any item, including Tablet Shards (both carried and handed in).
-- **Records, Journal, Bestiary:** quest progress, areas and enemies.
-- **Quick actions** and your own saved presets (max level, max Gil, and so on).
+- **Artifacts:** get any artifact (EXP boost, guaranteed escape, chocobo anywhere…) and switch each one on or off, including unfinished ones found in the game files.
+- **Maps:** mark maps as known, visited or cleared, reveal a whole region, and reset opened treasure chests so they can be looted again.
+- **Records, Journal, Bestiary:** quest progress, areas and enemies; mark enemies as scanned with Libra (weaknesses included), one by one or all at once.
+- **Quick actions** and your own saved presets: max level, max Gil, restock shops, Libra-scan every enemy, reveal every map, and more.
 - **Safety:**
   - saving is refused while the game is running;
   - a backup is made before every write;

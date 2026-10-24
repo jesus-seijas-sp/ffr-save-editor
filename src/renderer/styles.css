@@ -48,7 +48,7 @@ input, select, button, textarea { font: inherit; color: inherit; text-shadow: in
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 250px;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   grid-template-areas: "help file" "content menu" "content gil";
   gap: 14px;
   padding: 16px;
@@ -62,7 +62,7 @@ input, select, button, textarea { font: inherit; color: inherit; text-shadow: in
 .file select { width: 100%; }
 .folder-path { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; direction: rtl; text-align: left; }
 .content { grid-area: content; min-height: 0; min-width: 0; }
-.menu { grid-area: menu; display: flex; flex-direction: column; justify-content: space-between; padding: 14px 10px; }
+.menu { grid-area: menu; display: flex; flex-direction: column; justify-content: space-between; padding: 14px 10px; min-height: 0; overflow-y: auto; }
 .gil { grid-area: gil; }
 .gt-row { display: flex; justify-content: space-between; font-size: 18px; }
 .gt-row span:last-child { font-variant-numeric: tabular-nums; }
@@ -264,3 +264,26 @@ table.journal-table td, table.journal-table th { padding: 4px 10px; }
 #bestMode { min-width: 150px; }
 .records { column-gap: 60px; }
 table.journal-table th, table.ladder th { position: static; }
+
+/* artifacts and maps */
+table.journal-table.wide { max-width: 1100px; }
+td.center, th.center { text-align: center; }
+.panel td input[type=checkbox], .table-wrap td input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--gold); }
+#bestLibra { white-space: nowrap; }
+.cmd.small { padding: 2px 10px; font-size: 14px; }
+table.artifact-table { table-layout: fixed; }
+table.artifact-table th:nth-child(1) { width: 34%; }
+table.artifact-table th:nth-child(3) { width: 110px; }
+table.artifact-table th:nth-child(4) { width: 160px; }
+table.artifact-table td.desc { white-space: normal; }
+table.map-table { table-layout: fixed; }
+table.map-table th:nth-child(n+2):nth-child(-n+4) { width: 90px; }
+table.map-table th:nth-child(5) { width: 90px; }
+table.map-table th:nth-child(6) { width: 90px; }
+
+/* shorter windows: tighter menu so the Time / Gil window stays on screen */
+@media (max-height: 900px) {
+  .menu { padding: 8px 10px; }
+  .menu li, .menu-save { padding-top: 3px; padding-bottom: 3px; font-size: 18px; }
+  .menu-save { margin-top: 6px; padding-top: 8px; }
+}

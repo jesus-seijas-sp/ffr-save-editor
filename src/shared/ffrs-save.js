@@ -47,11 +47,14 @@
   //   fields: path -> {off, kind}   editable scalars
   //   tags:   path -> size-field offset of each property tag
   //   arrays: path -> {countOff, end, inner}
+  //   maps:   path -> {countOff, end}
+  //   boolRefs: path -> {off, tagged}  where each bool lives (tag flag bit 0x10, or a plain byte)
   //   end:    end offset of the serialized data (zero padding follows)
   function parse(bytes) {
     const r = new Reader(bytes);
-    const fields = new Map(), tags = new Map(), arrays = new Map();
-    const bools = new Map();   // path -> boolean (read-only)
+    const fields = new Map(), tags = new Map(), arrays = new Map(), maps = new Map();
+    const bools = new Map();   // path -> boolean
+    const boolRefs = new Map();
     const strings = new Map(); // path -> string value of Str/Name/Enum properties (read-only)
     let flagsOff = 0;
     const magic = String.fromCharCode(...bytes.subarray(0, 4));
@@ -75,6 +78,7 @@
         const p = path ? `${path}.${name}` : name;
         tags.set(p, sizeOff);
         if (t[0] === 'ArrayProperty') arrays.set(p, { countOff: r.o, end, inner: t[1][0][0] });
+        if (t[0] === 'MapProperty') maps.set(p, { countOff: r.o + 4, end }); // after the removed-keys count
         try { val(p, t, size, flags); } catch (e) { /* unknown layout: skip by size */ }
         r.o = end;
       }
@@ -85,8 +89,8 @@
       if (SCALARS[k]) { fields.set(path, { off: r.o, kind: k }); r.skip(SCALARS[k][2]); return; }
       if (k === 'BoolProperty') {
         // tagged bools keep their value in the tag flags (0x10); untagged ones (map/array values) are one byte
-        if (size === 0) bools.set(path, !!(bytes[flagsOff] & 0x10));
-        else { bools.set(path, !!bytes[r.o]); r.skip(1); }
+        if (size === 0) { bools.set(path, !!(bytes[flagsOff] & 0x10)); boolRefs.set(path, { off: flagsOff, tagged: true }); }
+        else { bools.set(path, !!bytes[r.o]); boolRefs.set(path, { off: r.o, tagged: false }); r.skip(1); }
         return;
       }
       if (k === 'StrProperty' || k === 'NameProperty' || k === 'EnumProperty') { strings.set(path, r.string()); return; }
@@ -120,7 +124,13 @@
     }
 
     props('');
-    return { fields, tags, arrays, bools, strings, end: r.o };
+    return { fields, tags, arrays, maps, bools, boolRefs, strings, end: r.o };
+  }
+
+  // Sets a bool in place (no sizes change).
+  function setBool(bytes, ref, value) {
+    if (ref.tagged) bytes[ref.off] = value ? bytes[ref.off] | 0x10 : bytes[ref.off] & ~0x10;
+    else bytes[ref.off] = value ? 1 : 0;
   }
 
   function view(bytes) { return new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength); }
@@ -169,18 +179,27 @@
     return concat([fstring(name), fstring('IntProperty'), tail]);
   }
 
-  // Appends a serialized element to the array at `path`, fixing the element count, the size of that
-  // tag and of every enclosing tag, and the AES padding. Returns a new Uint8Array.
-  function appendToArray(bytes, path, data) {
-    const p = parse(bytes);
-    const arr = p.arrays.get(path);
-    if (!arr) throw new Error('No array at ' + path);
+  function boolTag(name, value) {
+    const tail = new Uint8Array(9);
+    tail[8] = value ? 0x10 : 0; // inner type count 0, size 0, flags (value in bit 0x10)
+    return concat([fstring(name), fstring('BoolProperty'), tail]);
+  }
+
+  // Appends a serialized element to the array (or a key + value entry to the map) at `path`, fixing the
+  // element count, the size of that tag and of every enclosing tag, and the AES padding. Returns a new Uint8Array.
+  function appendToArray(bytes, path, data) { return appendEntry(bytes, path, data, 'arrays'); }
+  function appendToMap(bytes, path, data, n = 1) { return appendEntry(bytes, path, data, 'maps', n); }
+
+  // `data` may hold `n` serialized entries back to back.
+  function appendEntry(bytes, path, data, kind, n = 1, p = parse(bytes)) {
+    const arr = p[kind].get(path);
+    if (!arr) throw new Error(`No ${kind === 'maps' ? 'map' : 'array'} at ${path}`);
     const out = new Uint8Array(p.end + data.length + 4 + 16);
     out.set(bytes.subarray(0, arr.end), 0);
     out.set(data, arr.end);
     out.set(bytes.subarray(arr.end, p.end), arr.end + data.length);
     const v = view(out);
-    v.setInt32(arr.countOff, v.getInt32(arr.countOff, true) + 1, true);
+    v.setInt32(arr.countOff, v.getInt32(arr.countOff, true) + n, true);
     for (const [tp, sizeOff] of p.tags) {
       if (tp === path || path.startsWith(tp + '.') || path.startsWith(tp + '[')) {
         v.setInt32(sizeOff, v.getInt32(sizeOff, true) + data.length, true);
@@ -208,7 +227,54 @@
     return appendToArray(bytes, `unitParameterList[${charIdx}].EquipAccessoryIdList`, int32(itemId));
   }
 
-  const api = { parse, getField, setField, appendToArray, addInventoryItem, addAccessory, intTag, fstring };
+  // Finds the index of the map entry whose int key is `key`, or -1.
+  function mapIndex(bytes, p, path, key) {
+    for (let i = 0; p.fields.has(`${path}{${i}}.key`); i++) {
+      if (getField(bytes, p.fields.get(`${path}{${i}}.key`)) === key) return i;
+    }
+    return -1;
+  }
+
+  // Adds an artifact (or switches an existing one) in artifactList: int item id -> {IsActive}.
+  function setArtifact(bytes, itemId, active) {
+    const p = parse(bytes);
+    const i = mapIndex(bytes, p, 'artifactList', itemId);
+    if (i >= 0) {
+      const out = bytes.slice();
+      setBool(out, p.boolRefs.get(`artifactList{${i}}.value.IsActive`), active);
+      return out;
+    }
+    return appendToMap(bytes, 'artifactList', concat([int32(itemId), boolTag('IsActive', active), fstring('None')]));
+  }
+
+  // Sets the known / visited / cleared flags of a map in Map.perMapSaveDataMap, adding the entry if needed.
+  function setMapFlags(bytes, mapId, flags) { return setManyMapFlags(bytes, [mapId], flags); }
+
+  // Same for several maps at once: existing entries change in place, missing ones are added in one insert.
+  function setManyMapFlags(bytes, mapIds, flags) {
+    const path = 'Map.perMapSaveDataMap';
+    const p = parse(bytes);
+    const index = new Map();
+    for (let i = 0; p.fields.has(`${path}{${i}}.key`); i++) index.set(getField(bytes, p.fields.get(`${path}{${i}}.key`)), i);
+    const out = bytes.slice();
+    const added = [];
+    for (const id of new Set(mapIds)) {
+      const i = index.get(id);
+      if (i === undefined) { added.push(id); continue; }
+      for (const [k, v] of Object.entries(flags)) {
+        const ref = p.boolRefs.get(`${path}{${i}}.value.${k}`);
+        if (ref) setBool(out, ref, v);
+      }
+    }
+    if (!added.length) return out;
+    const f = { bIsKnown: false, bIsVisited: false, bIsCleared: false, ...flags };
+    const data = concat(added.map((id) => concat([int32(id),
+      boolTag('bIsKnown', f.bIsKnown), boolTag('bIsVisited', f.bIsVisited), boolTag('bIsCleared', f.bIsCleared), fstring('None')])));
+    return appendEntry(out, path, data, 'maps', added.length, p);
+  }
+
+  const api = { parse, getField, setField, setBool, appendToArray, appendToMap, addInventoryItem, addAccessory,
+    setArtifact, setMapFlags, setManyMapFlags, intTag, boolTag, fstring };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.FFRS = api;
 })(typeof self !== 'undefined' ? self : this);

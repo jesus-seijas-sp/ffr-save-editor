@@ -116,22 +116,58 @@ function renderBestiary() {
     const id = get(`unitList[${i}].SaveId`);
     const name = names[id];
     if (!name) continue; // party members, Visions and unnamed entries
-    all.push({ i, id, name, n: get(`unitList[${i}].defeatNum`) });
+    all.push({ i, id, name, n: get(`unitList[${i}].defeatNum`), libra: !!bool(`unitList[${i}].IsAnalyzed`) });
   }
   const defeated = all.filter((e) => e.n > 0).length;
-  $('bestCount').textContent = `Defeated ${defeated} of ${all.length} named enemies`;
-  const rows = all
-    .filter((e) => (mode === 'defeated' ? e.n > 0 : mode === 'missing' ? e.n === 0 : true))
+  $('bestCount').textContent = `Defeated ${defeated} of ${all.length} named enemies · ${all.filter((e) => e.libra).length} scanned`;
+  const shown = all
+    .filter((e) => (mode === 'defeated' ? e.n > 0 : mode === 'missing' ? e.n === 0 : mode === 'unscanned' ? !e.libra : true))
     .filter((e) => !q || e.name.toLowerCase().includes(q) || String(e.id).includes(q))
-    .sort((a, b) => a.name.localeCompare(b.name) || a.id - b.id)
-    .map((e) => h('tr', {},
+    .sort((a, b) => a.name.localeCompare(b.name) || a.id - b.id);
+  BEST.shown = shown.map((e) => e.i);
+  const rows = shown.map((e) => {
+    const cb = h('input', { type: 'checkbox', checked: e.libra, title: `${e.name}: scanned with Libra` });
+    cb.addEventListener('change', () => {
+      const n = libraScan([e.i], cb.checked);
+      setDirty(true); sfx('confirm');
+      status(`${e.name}: ${cb.checked ? `scanned${n.el ? ', weaknesses revealed' : ''}` : 'scan removed'}. Unsaved — choose Save in the menu.`);
+      renderBestiary();
+    });
+    return h('tr', {},
       h('td', { class: e.n > 0 ? 'owned' : 'dim' }, e.n > 0 ? '✔' : '○'),
       h('td', { class: 'id' }, e.id), h('td', {}, e.name),
-      h('td', { class: 'right' }, numInput(`unitList[${e.i}].defeatNum`, 'num small'))));
+      h('td', { class: 'center' }, cb),
+      h('td', { class: 'right' }, numInput(`unitList[${e.i}].defeatNum`, 'num small')));
+  });
   $('bestTable').replaceChildren(
-    h('thead', {}, h('tr', {}, h('th', {}, ''), h('th', {}, 'ID'), h('th', {}, 'Enemy'), h('th', {}, 'Times defeated'))),
+    h('thead', {}, h('tr', {}, h('th', {}, ''), h('th', {}, 'ID'), h('th', {}, 'Enemy'), h('th', { class: 'center' }, 'Libra'), h('th', {}, 'Times defeated'))),
     h('tbody', {}, rows));
+}
+
+const BEST = { shown: [] }; // unitList indexes in the current view
+
+// Sets the Libra flag on unitList entries; scanning also reveals every element weakness, as Libra does.
+// Unscanning leaves the weaknesses alone: the game also learns those by hitting enemies.
+function libraScan(indexes, value = true) {
+  const n = { units: 0, el: 0 };
+  for (const i of indexes) {
+    if (!!bool(`unitList[${i}].IsAnalyzed`) !== value && setFlag(`unitList[${i}].IsAnalyzed`, value)) n.units++;
+    if (!value) continue;
+    for (let j = 0; S.parsed.boolRefs.has(`unitList[${i}].analyzedElments{${j}}.value`); j++) {
+      const p = `unitList[${i}].analyzedElments{${j}}.value`;
+      if (!bool(p) && setFlag(p, true)) n.el++;
+    }
+  }
+  return n;
 }
 
 $('bestFilter').addEventListener('input', renderBestiary);
 $('bestMode').addEventListener('change', renderBestiary);
+$('bestLibra').addEventListener('click', () => {
+  if (!S.parsed) return;
+  const n = libraScan(BEST.shown);
+  if (!n.units && !n.el) { status('Every enemy shown is already scanned.'); return; }
+  setDirty(true); sfx('confirm');
+  status(`${n.units} enem${n.units === 1 ? 'y' : 'ies'} scanned with Libra, weaknesses included. Unsaved — choose Save in the menu.`);
+  renderBestiary();
+});

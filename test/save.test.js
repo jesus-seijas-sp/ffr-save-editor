@@ -63,4 +63,51 @@ assert.strictEqual(acc(b3, q3, 0), a0 + 1);
 assert.strictEqual(F.getField(b3, q3.fields.get(`unitParameterList[0].EquipAccessoryIdList[${a0}]`)), 12001);
 decryptSave(encryptSave(header, Buffer.from(b3)));
 
+// bools: tagged (flag bit) and plain-byte bools flip in place
+const tagged = [...p.boolRefs].find(([, r]) => r.tagged), plainB = [...p.boolRefs].find(([, r]) => !r.tagged);
+for (const [k, ref] of [tagged, plainB].filter(Boolean)) {
+  const b = bytes.slice();
+  F.setBool(b, ref, !p.bools.get(k));
+  assert.strictEqual(F.parse(b).bools.get(k), !p.bools.get(k), `flipped ${k}`);
+  assert.strictEqual(b.length, bytes.length);
+}
+
+// map entries: synthesized entries match the game's own bytes, and adding one keeps everything else
+const mapPath = 'Map.perMapSaveDataMap';
+if (p.maps.has(mapPath) && p.fields.has(`${mapPath}{1}.key`)) {
+  const k0 = p.fields.get(`${mapPath}{0}.key`).off, k1 = p.fields.get(`${mapPath}{1}.key`).off;
+  const flag = (n) => p.bools.get(`${mapPath}{0}.value.${n}`);
+  const syn = Buffer.concat([Buffer.from(bytes.subarray(k0, k0 + 4)),
+    ...['bIsKnown', 'bIsVisited', 'bIsCleared'].map((n) => Buffer.from(F.boolTag(n, flag(n)))), Buffer.from(F.fstring('None'))]);
+  assert(syn.equals(Buffer.from(bytes.subarray(k0, k1))), 'synthesized map entry must match the game bytes');
+
+  const mapCount = (qq) => { let i = 0; while (qq.fields.has(`${mapPath}{${i}}.key`)) i++; return i; };
+  const m0 = mapCount(p);
+  let b4 = F.setMapFlags(bytes, 99001, { bIsKnown: true });
+  let q4 = F.parse(b4);
+  assert.strictEqual(mapCount(q4), m0 + 1);
+  assert.strictEqual(F.getField(b4, q4.fields.get(`${mapPath}{${m0}}.key`)), 99001);
+  assert.strictEqual(q4.bools.get(`${mapPath}{${m0}}.value.bIsKnown`), true);
+  assert.strictEqual(q4.bools.get(`${mapPath}{${m0}}.value.bIsVisited`), false);
+  b4 = F.setMapFlags(b4, 99001, { bIsCleared: true }); // existing entry: in place
+  q4 = F.parse(b4);
+  assert.strictEqual(mapCount(q4), m0 + 1);
+  assert.strictEqual(q4.bools.get(`${mapPath}{${m0}}.value.bIsCleared`), true);
+
+  b4 = F.setArtifact(b4, 30000, true);
+  b4 = F.setArtifact(b4, 30000, false);
+  q4 = F.parse(b4);
+  const ai = (() => { for (let i = 0; q4.fields.has(`artifactList{${i}}.key`); i++) if (F.getField(b4, q4.fields.get(`artifactList{${i}}.key`)) === 30000) return i; return -1; })();
+  assert(ai >= 0, 'artifact entry added');
+  assert.strictEqual(q4.bools.get(`artifactList{${ai}}.value.IsActive`), false);
+  assert.strictEqual(b4.length % 16, 0, 'body must stay AES block aligned');
+  const tail = b4.subarray(q4.end);
+  assert(tail.length < 32 && tail.every((x) => x === 0), 'only zero padding after the data');
+  for (const [k, f] of p.fields) {
+    if (k.startsWith(mapPath) || k.startsWith('artifactList')) continue;
+    assert.strictEqual(F.getField(b4, q4.fields.get(k)), F.getField(bytes, f), `unchanged field ${k}`);
+  }
+  decryptSave(encryptSave(header, Buffer.from(b4)));
+}
+
 console.log(`OK — ${p.fields.size} fields, ${n0} inventory entries (${path.basename(file)})`);

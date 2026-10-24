@@ -1,7 +1,8 @@
 'use strict';
 /* Quick actions: bulk edits applied to the loaded save in one go, plus named presets of them.
    Uses globals from renderer.js (S, CAT, get, has, count, setValue, reparse, setDirty, FFRS,
-   inventoryMap, levelCurve, expForLevel, masteryCurve, awakeningMax, renderAllTabs, status, sfx, h, $). */
+   inventoryMap, levelCurve, expForLevel, masteryCurve, awakeningMax, renderAllTabs, status, sfx, h, $),
+   journal.js (bool, libraScan) and world.js (artifactNote, setFlag, unknownMaps, mapCatalog, mapChests). */
 
 const QUICK_ACTIONS = [
   { key: 'gil', label: 'Set Gil to', value: 9999999,
@@ -56,15 +57,40 @@ const QUICK_ACTIONS = [
       for (let i = 0; i < count('visionList'); i++) if (has(`visionList[${i}].awakeningPoint`) && setValue(`visionList[${i}].awakeningPoint`, n)) changed++;
       return `${changed} visions awakened to ${n}`;
     } },
-  { key: 'artifacts', label: 'Add every artifact (skips the unfinished [TEMP] ones)',
+  { key: 'artifacts', label: 'Add every artifact (skips the unfinished and unlisted ones)',
     run: () => {
       const have = inventoryMap();
       let added = 0;
       for (const e of CAT.items.values()) {
-        if (e.kind !== 'artifact' || have.has(e.id) || /\[TEMP\]|[぀-ヿ]/.test(e.name)) continue;
+        if (e.kind !== 'artifact' || have.has(e.id) || artifactNote(e)) continue;
         S.bytes = FFRS.addInventoryItem(S.bytes, e.id, 1); reparse(); added++;
       }
       return `${added} artifacts added`;
+    } },
+  { key: 'restock', label: 'Restock the limited items in every shop',
+    run: () => {
+      let n = 0;
+      for (let i = 0; i < count('shop'); i++) if (get(`shop[${i}].CurrentBuyNum`) > 0 && setValue(`shop[${i}].CurrentBuyNum`, 0)) n++;
+      return `${n} shop items restocked`;
+    } },
+  { key: 'bestiary', label: 'Set every enemy as scanned with Libra, weaknesses included',
+    run: () => {
+      const names = (CAT.journal || {}).enemies || {};
+      const ids = [];
+      for (let i = 0; i < count('unitList'); i++) if (names[get(`unitList[${i}].SaveId`)]) ids.push(i); // skip party members and Visions
+      return `${libraScan(ids).units} enemies scanned with Libra`;
+    } },
+  { key: 'maps', label: 'Reveal every map (sets Known; event maps excluded)',
+    run: () => {
+      const ids = unknownMaps(mapCatalog());
+      if (ids.length) { S.bytes = FFRS.setManyMapFlags(S.bytes, ids, { bIsKnown: true }); reparse(); }
+      return `${ids.length} maps revealed`;
+    } },
+  { key: 'chests', label: 'Close every opened treasure chest so it can be looted again',
+    run: () => {
+      let n = 0;
+      for (const list of mapChests().values()) for (const c of list) if (c.open && setFlag(c.path, false)) n++;
+      return `${n} chests reset`;
     } },
 ];
 

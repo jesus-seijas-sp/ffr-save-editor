@@ -850,8 +850,8 @@
  {
   "id": 30018,
   "kind": "artifact",
-  "name": "賢者の巻物",
-  "description": "獲得する経験値が80％増加",
+  "name": "Sage's Scroll",
+  "description": "Increases experience gained by 80%.",
   "buy": null,
   "sell": null
  }
