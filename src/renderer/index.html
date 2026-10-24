@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'">
+  <title>FFR Save Editor</title>
+  <link rel="stylesheet" href="../../node_modules/@fontsource/dotgothic16/index.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- help window: messages and hints -->
+    <div class="win help" id="status"><div id="statusMsg">Pick a save.</div><div id="keys" class="keys"></div></div>
+
+    <!-- file window -->
+    <div class="win file">
+      <div class="file-row">
+        <select id="slot" aria-label="Save slot"></select>
+      </div>
+      <div class="file-row small">
+        <span class="folder-path" id="dir">No folder</span>
+      </div>
+      <div class="file-row small"><span id="gameState" class="game-state">Checking game…</span></div>
+      <div class="file-row">
+        <button id="btnDir" class="cmd">Folder</button>
+        <button id="btnBackups" class="cmd">Backups</button>
+        <button id="btnReload" class="cmd">Reload</button>
+        <button id="btnSound" class="cmd" title="Menu sounds">♪ On</button>
+      </div>
+    </div>
+
+    <!-- main content -->
+    <main class="content">
+      <section id="tab-chars" class="tab split active">
+        <ul class="win party" id="charList"></ul>
+        <div class="win panel" id="charPanel"></div>
+      </section>
+      <section id="tab-visions" class="tab split">
+        <ul class="win party" id="visList"></ul>
+        <div class="win panel" id="visPanel"></div>
+      </section>
+      <section id="tab-inventory" class="tab">
+        <div class="win bar">
+          <input type="search" id="invFilter" placeholder="Search items…">
+          <span class="dim">Change a quantity directly.</span>
+          <button id="btnAddItem" class="cmd">Add item</button>
+        </div>
+        <div class="win table-wrap"><table id="invTable"></table></div>
+      </section>
+      <section id="tab-player" class="tab">
+        <div class="win panel" id="playerPanel"></div>
+      </section>
+      <section id="tab-journal" class="tab">
+        <div class="win panel" id="journalPanel"></div>
+      </section>
+      <section id="tab-bestiary" class="tab">
+        <div class="win bar">
+          <input type="search" id="bestFilter" placeholder="Search enemies…">
+          <select id="bestMode"><option value="all">All</option><option value="defeated">Defeated</option><option value="missing">Not defeated</option></select>
+          <span class="dim" id="bestCount"></span>
+        </div>
+        <div class="win table-wrap"><table id="bestTable"></table></div>
+      </section>
+      <section id="tab-quick" class="tab">
+        <div class="win panel" id="quickPanel"></div>
+      </section>
+      <section id="tab-all" class="tab">
+        <div class="win bar">
+          <input type="search" id="allFilter" placeholder="Filter, e.g. Experience, visionList[0], currentMoney">
+          <span class="dim" id="allCount"></span>
+        </div>
+        <div class="win table-wrap"><table id="allTable"></table></div>
+      </section>
+    </main>
+
+    <!-- command menu -->
+    <nav class="win menu">
+      <ul id="tabs">
+        <li data-tab="chars" class="active">Status</li>
+        <li data-tab="visions">Visions</li>
+        <li data-tab="inventory">Items</li>
+        <li data-tab="player">Records</li>
+        <li data-tab="journal">Journal</li>
+        <li data-tab="bestiary">Bestiary</li>
+        <li data-tab="quick">Quick</li>
+        <li data-tab="all">Data</li>
+      </ul>
+      <button id="btnSave" class="menu-save" disabled>Save</button>
+    </nav>
+
+    <!-- gil / time window -->
+    <div class="win gil">
+      <div class="gt-row"><span class="lbl">Time</span><span id="time">--:--:--</span></div>
+      <div class="gt-row"><span class="lbl">Gil</span><span id="gil">0</span></div>
+    </div>
+  </div>
+
+  <div id="kbHand" hidden></div>
+
+  <dialog id="backupDialog" class="win">
+    <div class="dlg-head">
+      <h2>Backups</h2>
+      <button class="cmd" data-close>Close</button>
+    </div>
+    <div class="bar">
+      <button id="btnBackupAll" class="cmd">Back up all slots now</button>
+      <button id="btnBackupFolder" class="cmd">Open backup folder</button>
+    </div>
+    <div class="folder-msg" id="backupMsg"></div>
+    <ul class="party folder-list" id="backupList"></ul>
+    <div class="bar dlg-foot"><span class="dim">Restoring first backs up the current files, so a restore can be undone.</span></div>
+  </dialog>
+
+  <dialog id="folderDialog" class="win">
+    <div class="dlg-head">
+      <h2>Save Folder</h2>
+      <button class="cmd" data-close>Close</button>
+    </div>
+    <div class="folder-msg" id="folderMsg"></div>
+    <ul class="party folder-list" id="folderList"></ul>
+    <div class="bar dlg-foot">
+      <span class="dim" id="folderCurrent"></span>
+    </div>
+  </dialog>
+
+  <dialog id="addDialog" class="win">
+    <div class="dlg-head">
+      <h2>Add Item</h2>
+      <button class="cmd" data-close>Close</button>
+    </div>
+    <div class="bar">
+      <select id="addCat"></select>
+      <input type="search" id="addFilter" placeholder="Search name, ID or effect…">
+    </div>
+    <div class="table-wrap dlg-table"><table id="addTable"></table></div>
+    <div class="bar dlg-foot">
+      <label class="lbl">Quantity</label><input type="number" id="addQty" value="1" min="0" class="num">
+      <button id="btnAddConfirm" class="cmd">Add</button>
+      <span class="dim">If you already have it, the quantity is replaced.</span>
+    </div>
+  </dialog>
+
+  <script src="../shared/ffrs-save.js"></script>
+  <script src="renderer.js"></script>
+  <script src="quick.js"></script>
+  <script src="journal.js"></script>
+  <script src="safety-ui.js"></script>
+  <script src="keyboard.js"></script>
+</body>
+</html>

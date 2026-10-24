@@ -1,0 +1,858 @@
+[
+ {
+  "id": 1,
+  "kind": "consumable",
+  "name": "Potion",
+  "description": "Restores 200 HP.",
+  "buy": 100,
+  "sell": 25
+ },
+ {
+  "id": 2,
+  "kind": "consumable",
+  "name": "Hi-Potion",
+  "description": "Restores 800 HP.",
+  "buy": 800,
+  "sell": 200
+ },
+ {
+  "id": 3,
+  "kind": "consumable",
+  "name": "Ether",
+  "description": "Restores 50 MP.",
+  "buy": 500,
+  "sell": 120
+ },
+ {
+  "id": 4,
+  "kind": "consumable",
+  "name": "Phoenix Down",
+  "description": "Revives a KO’d ally with 25% HP.",
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 7,
+  "kind": "consumable",
+  "name": "Antidote Herb",
+  "description": "Cures Poison.",
+  "buy": 100,
+  "sell": 20
+ },
+ {
+  "id": 8,
+  "kind": "consumable",
+  "name": "Remedy",
+  "description": "Cures all status ailments other than KO.",
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 9,
+  "kind": "consumable",
+  "name": "Knife of Poison",
+  "description": "Deals physical damage to a single enemy and inflicts Poison.",
+  "buy": 500,
+  "sell": 120
+ },
+ {
+  "id": 10,
+  "kind": "consumable",
+  "name": "Eye Drops",
+  "description": "Cures Blind.",
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 11,
+  "kind": "consumable",
+  "name": "Smelling Salts",
+  "description": "Cures Confuse.",
+  "buy": 300,
+  "sell": 70
+ },
+ {
+  "id": 12,
+  "kind": "consumable",
+  "name": "Echo Herb",
+  "description": "Cures Silence.",
+  "buy": 300,
+  "sell": 70
+ },
+ {
+  "id": 13,
+  "kind": "consumable",
+  "name": "Unicorn Horn",
+  "description": "Cures Paralysis.",
+  "buy": 500,
+  "sell": 120
+ },
+ {
+  "id": 14,
+  "kind": "consumable",
+  "name": "X-Potion",
+  "description": "Restores 2000 HP.",
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 16,
+  "kind": "consumable",
+  "name": "Gold Needle",
+  "description": "Cures Petrify.",
+  "buy": 800,
+  "sell": 200
+ },
+ {
+  "id": 17,
+  "kind": "consumable",
+  "name": "Herb of Awakening",
+  "description": "Cures Sleep.",
+  "buy": 300,
+  "sell": 70
+ },
+ {
+  "id": 18,
+  "kind": "consumable",
+  "name": "X-Ether",
+  "description": "Restores 300 MP.",
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 19,
+  "kind": "consumable",
+  "name": "Healing Spring",
+  "description": "Gradually restores HP.",
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 20,
+  "kind": "consumable",
+  "name": "Turbo Ether",
+  "description": "Restores 150 MP.",
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 22,
+  "kind": "consumable",
+  "name": "Elixir",
+  "description": "Fully restores HP and MP.",
+  "buy": 500000,
+  "sell": 10
+ },
+ {
+  "id": 23,
+  "kind": "consumable",
+  "name": "Megalixir",
+  "description": "Fully restores HP and MP of all allies.",
+  "buy": 500000,
+  "sell": 10
+ },
+ {
+  "id": 24,
+  "kind": "consumable",
+  "name": "Smoke Bomb",
+  "description": "Allows the party to flee from escapable battles.",
+  "buy": 300,
+  "sell": 70
+ },
+ {
+  "id": 26,
+  "kind": "consumable",
+  "name": "Knife of Blind",
+  "description": "Deals physical damage to a single enemy and inflicts Blind.",
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 27,
+  "kind": "consumable",
+  "name": "Knife of Silence",
+  "description": "Deals physical damage to a single enemy and inflicts Silence.",
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 28,
+  "kind": "consumable",
+  "name": "Knife of Confuse",
+  "description": "Deals physical damage to a single enemy and inflicts Confuse.",
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 29,
+  "kind": "consumable",
+  "name": "Knife of Paralysis",
+  "description": "Deals physical damage to a single enemy and inflicts Paralysis.",
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 30,
+  "kind": "consumable",
+  "name": "Knife of Sleep",
+  "description": "Deals physical damage to a single enemy and inflicts Sleep.",
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 31,
+  "kind": "consumable",
+  "name": "Mist Potion",
+  "description": "Restores 200 HP for all allies.",
+  "buy": 500,
+  "sell": 120
+ },
+ {
+  "id": 32,
+  "kind": "consumable",
+  "name": "Mist Hi-Potion",
+  "description": "Restores 800 HP for all allies.",
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 33,
+  "kind": "consumable",
+  "name": "Mist X-Potion",
+  "description": "Restores 2000 HP for all allies.",
+  "buy": 10000,
+  "sell": 2500
+ },
+ {
+  "id": 34,
+  "kind": "consumable",
+  "name": "Mist Ether",
+  "description": "Restores 50 MP for all allies.",
+  "buy": 2500,
+  "sell": 620
+ },
+ {
+  "id": 35,
+  "kind": "consumable",
+  "name": "Mist Turbo Ether",
+  "description": "Restores 150 MP for all allies.",
+  "buy": 10000,
+  "sell": 2500
+ },
+ {
+  "id": 36,
+  "kind": "consumable",
+  "name": "Mist X-Ether",
+  "description": "Restores 300 MP for all allies.",
+  "buy": 30000,
+  "sell": 7500
+ },
+ {
+  "id": 37,
+  "kind": "consumable",
+  "name": "Phoenix Pinion",
+  "description": "Revives a KO’d ally with 50% HP.",
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 200,
+  "kind": "consumable",
+  "name": "Flame Scroll II",
+  "description": "Deals Fire magic damage to a single enemy.",
+  "buy": 2500,
+  "sell": 620
+ },
+ {
+  "id": 201,
+  "kind": "consumable",
+  "name": "Ice Scroll II",
+  "description": "Deals Ice magic damage to a single enemy.",
+  "buy": 2500,
+  "sell": 620
+ },
+ {
+  "id": 202,
+  "kind": "consumable",
+  "name": "Wind Scroll II",
+  "description": "Deals Wind magic damage to a single enemy.",
+  "buy": 2500,
+  "sell": 620
+ },
+ {
+  "id": 203,
+  "kind": "consumable",
+  "name": "Earth Scroll II",
+  "description": "Deals Earth magic damage to a single enemy.",
+  "buy": 2500,
+  "sell": 620
+ },
+ {
+  "id": 204,
+  "kind": "consumable",
+  "name": "Lightning Scroll II",
+  "description": "Deals Lightning magic damage to a single enemy.",
+  "buy": 2500,
+  "sell": 620
+ },
+ {
+  "id": 205,
+  "kind": "consumable",
+  "name": "Water Scroll II",
+  "description": "Deals Water magic damage to a single enemy.",
+  "buy": 2500,
+  "sell": 620
+ },
+ {
+  "id": 206,
+  "kind": "consumable",
+  "name": "Shuriken",
+  "description": "Deals physical damage to a single enemy when thrown.",
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 207,
+  "kind": "consumable",
+  "name": "Fuma Shuriken",
+  "description": "Deals physical damage to a single enemy when thrown.",
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 208,
+  "kind": "consumable",
+  "name": "Chef’s Knife",
+  "description": "Deals physical damage to a single enemy when thrown.",
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 209,
+  "kind": "consumable",
+  "name": "Flame Scroll I",
+  "description": "Deals Fire magic damage to a single enemy.",
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 210,
+  "kind": "consumable",
+  "name": "Ice Scroll I",
+  "description": "Deals Ice magic damage to a single enemy.",
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 211,
+  "kind": "consumable",
+  "name": "Wind Scroll I",
+  "description": "Deals Wind magic damage to a single enemy.",
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 212,
+  "kind": "consumable",
+  "name": "Earth Scroll I",
+  "description": "Deals Earth magic damage to a single enemy.",
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 213,
+  "kind": "consumable",
+  "name": "Lightning Scroll I",
+  "description": "Deals Lightning magic damage to a single enemy.",
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 214,
+  "kind": "consumable",
+  "name": "Water Scroll I",
+  "description": "Deals Water magic damage to a single enemy.",
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 500,
+  "kind": "consumable",
+  "name": "Tent",
+  "description": "Completely restores HP and MP when used at a save point or on the field map.",
+  "buy": 300,
+  "sell": 70
+ },
+ {
+  "id": 600,
+  "kind": "consumable",
+  "name": "Small Golden Shell",
+  "description": "Can be sold for a decent price.",
+  "buy": 99999,
+  "sell": 2500
+ },
+ {
+  "id": 601,
+  "kind": "consumable",
+  "name": "Golden Shell",
+  "description": "Can be sold for a high price.",
+  "buy": 99999,
+  "sell": 5000
+ },
+ {
+  "id": 602,
+  "kind": "consumable",
+  "name": "Large Golden Shell",
+  "description": "Can be sold for an exorbitant price.",
+  "buy": 99999,
+  "sell": 10000
+ },
+ {
+  "id": 20005,
+  "kind": "key item",
+  "name": "White Jade Stone",
+  "description": "A high-purity crystal brimming with divine magic.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20006,
+  "kind": "key item",
+  "name": "Black Jade Stone",
+  "description": "A high-purity crystal brimming with ancient magic.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20007,
+  "kind": "key item",
+  "name": "Magic Tome",
+  "description": "Enhances the magic used to enter the mind of others.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20008,
+  "kind": "key item",
+  "name": "Tunnel Key",
+  "description": "Opens a locked door in the Underground Tunnel.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20009,
+  "kind": "key item",
+  "name": "Level 1 Lab Key Card",
+  "description": "A keycard that grants access to the level 1 security area.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20010,
+  "kind": "key item",
+  "name": "Level 2 Lab Key Card",
+  "description": "A keycard that grants access to the level 2 security area.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20011,
+  "kind": "key item",
+  "name": "Level 3 Lab Key Card",
+  "description": "A keycard that grants access to the level 3 security area.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20016,
+  "kind": "key item",
+  "name": "Adamantite",
+  "description": "An extremely hard and rare metal.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20018,
+  "kind": "key item",
+  "name": "牢屋の鍵",
+  "description": "The key to the cells in the Zoldaad castle dungeons. Every prisoner would rather get their hands on this than food.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20019,
+  "kind": "key item",
+  "name": "Dungeon Key",
+  "description": "A key that opens the way out from the Zoldaad castle dungeons. A jailer somewhere must be beside themselves right now...",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20020,
+  "kind": "key item",
+  "name": "Dew of Reprieve",
+  "description": "A rare liquid that can be obtained from a monster. Said to halt the progress of various illnesses.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20021,
+  "kind": "key item",
+  "name": "Throne Room Key",
+  "description": "A key that opens the door to the throne room in Zoldaad Castle.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20023,
+  "kind": "key item",
+  "name": "Viscus Vitae",
+  "description": "A monster’s innards rich in nutrients.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20024,
+  "kind": "key item",
+  "name": "Rushroom",
+  "description": "A mushroom packed full of energy.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20025,
+  "kind": "key item",
+  "name": "Pure Water",
+  "description": "Water of the highest purity, even for Olderion.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20026,
+  "kind": "key item",
+  "name": "Convalescence Draught",
+  "description": "Medicine that is particularly effective against illnesses that require purification of the body.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20027,
+  "kind": "key item",
+  "name": "Super Salubrious Salad Stem",
+  "description": "A type of vegetable said to allay all manner of adverse symptoms. Known to be quite expensive.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20028,
+  "kind": "key item",
+  "name": "Portrait of Dario",
+  "description": "A likeness of the rebel soldier Dario.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20029,
+  "kind": "key item",
+  "name": "Dario’s Letter",
+  "description": "A letter handed to you by a robed man.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20030,
+  "kind": "key item",
+  "name": "Ruby Fragment",
+  "description": "A gleaming red stone.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20031,
+  "kind": "key item",
+  "name": "Broken Sword Hilt",
+  "description": "Half of a broken blade, together with an attached hilt.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20032,
+  "kind": "key item",
+  "name": "Broken Sword Blade",
+  "description": "The front half of a broken blade.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 20033,
+  "kind": "key item",
+  "name": "Cabin Key",
+  "description": "A key to an abandoned cabin located in the north of the continent of Pharm.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 25000,
+  "kind": "key item",
+  "name": "Magicite Shard",
+  "description": "A shard imbued with the power of the Farplane.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 25001,
+  "kind": "key item",
+  "name": "Magicite",
+  "description": "A stone imbued with the power of the Farplane.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 25002,
+  "kind": "key item",
+  "name": "Magicite Cryst",
+  "description": "A magicite cryst imbued with the power of the Farplane.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 25004,
+  "kind": "key item",
+  "name": "Tablet Shard",
+  "description": "A stone fragment with curious engravings.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 27006,
+  "kind": "key item",
+  "name": "Magi-tenna",
+  "description": "An antenna attuned to a particular kind of magic.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 27007,
+  "kind": "key item",
+  "name": "Resonance Stone",
+  "description": "A type of rock that increases magic sensitivity.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 27008,
+  "kind": "key item",
+  "name": "High-Power Generator",
+  "description": "A device that increases radar output.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 29000,
+  "kind": "key item",
+  "name": "Fledgling’s Proof of Victory",
+  "description": "Proof of conquering the Fledgling League in the Colosseum.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 29001,
+  "kind": "key item",
+  "name": "Brawler’s Proof of Victory",
+  "description": "Proof of conquering the Brawler League in the Colosseum.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 29002,
+  "kind": "key item",
+  "name": "Gladiator’s Proof of Victory",
+  "description": "Proof of conquering the Gladiator League in the Colosseum.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 29003,
+  "kind": "key item",
+  "name": "Champion’s Proof of Victory",
+  "description": "Bestowed upon one who has overcome all trials. Proof of conquering the Champion League.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 29500,
+  "kind": "key item",
+  "name": "Magitek Armor Key",
+  "description": "After acquiring a chocobo, grants the ability to change its appearance into that of magitek armor.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 29510,
+  "kind": "key item",
+  "name": "Archwitch’s Grimoire",
+  "description": "Grants an ally known as the Archwitch the ability to learn the Fel Meteor limit burst.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 29520,
+  "kind": "key item",
+  "name": "Magitek Airship Passkey",
+  "description": "After acquiring the Enterprise, grants the ability to change its appearance into that of a magitek airship.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30000,
+  "kind": "artifact",
+  "name": "Tome of Sages",
+  "description": "Increases experience gained by 20%.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30001,
+  "kind": "artifact",
+  "name": "Exodus",
+  "description": "Guarantees that Escape always succeeds.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30002,
+  "kind": "artifact",
+  "name": "Choboco Saddle",
+  "description": "Grants the ability to ride chocobos anywhere.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30003,
+  "kind": "artifact",
+  "name": "Trick Coin",
+  "description": "Weakens coin tosses but always come up heads.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30004,
+  "kind": "artifact",
+  "name": "Sorcerer's Cape",
+  "description": "Decreases damage received in battle by 20%",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30005,
+  "kind": "artifact",
+  "name": "Lordly Robes",
+  "description": "Restores 50% of HP after battle.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30006,
+  "kind": "artifact",
+  "name": "Premium Card",
+  "description": "Reduces the price of goods in the shop by 20%.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30007,
+  "kind": "artifact",
+  "name": "Transporter",
+  "description": "Fills the LB gauge by 1 point at the start of battle.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30008,
+  "kind": "artifact",
+  "name": "Soul Jade",
+  "description": "Adds critical hit rate boost to the Chain Bonus.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30009,
+  "kind": "artifact",
+  "name": "Runic Bracer",
+  "description": "Adds MP orb drop amount boost to the Chain Bonus.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30010,
+  "kind": "artifact",
+  "name": "Bandit Cuff Links",
+  "description": "Displays the location of Treasure Chests on the mini-map.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30011,
+  "kind": "artifact",
+  "name": "Chocobo Saddle-Bike",
+  "description": "Changes mounted chocobo into a motorcycle.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30013,
+  "kind": "artifact",
+  "name": "[TEMP] Airship skin",
+  "description": "Toggles between a pixelated or 3D airship skin.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30014,
+  "kind": "artifact",
+  "name": "[TEMP] EXP Suppressor",
+  "description": "Decreases experience gained.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30012,
+  "kind": "artifact",
+  "name": "[TEMP] Increase movement speed",
+  "description": "Increases movement speed by 50%.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30015,
+  "kind": "artifact",
+  "name": "Fury Ring",
+  "description": "Increases damage received in battle by 30%.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30016,
+  "kind": "artifact",
+  "name": "[TEMP] Enemy lure",
+  "description": "Halves the chance of encounters.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30017,
+  "kind": "artifact",
+  "name": "Cursed Ring",
+  "description": "Prevents MP orbs from dropping when using Attack.",
+  "buy": null,
+  "sell": null
+ },
+ {
+  "id": 30018,
+  "kind": "artifact",
+  "name": "賢者の巻物",
+  "description": "獲得する経験値が80％増加",
+  "buy": null,
+  "sell": null
+ }
+]

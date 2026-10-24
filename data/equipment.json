@@ -1,0 +1,6879 @@
+[
+ {
+  "id": 10100,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Crimson Saber",
+  "description": "",
+  "stats": {
+   "ATK": 21,
+   "MAG": 9
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10101,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Bronze Sword",
+  "description": "",
+  "stats": {
+   "ATK": 28,
+   "MAG": 13
+  },
+  "abilityIds": [],
+  "buy": 350,
+  "sell": 80
+ },
+ {
+  "id": 10102,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Longsword",
+  "description": "",
+  "stats": {
+   "ATK": 32,
+   "MAG": 15
+  },
+  "abilityIds": [],
+  "buy": 650,
+  "sell": 160
+ },
+ {
+  "id": 10103,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Bladed Shield",
+  "description": "",
+  "stats": {
+   "ATK": 99,
+   "MAG": 52,
+   "PDEF": 40
+  },
+  "abilityIds": [],
+  "buy": 10000,
+  "sell": 2500
+ },
+ {
+  "id": 10104,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Knight’s Blade",
+  "description": "",
+  "stats": {
+   "ATK": 43,
+   "MAG": 21
+  },
+  "abilityIds": [],
+  "buy": 1800,
+  "sell": 450
+ },
+ {
+  "id": 10105,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Flametongue",
+  "description": "Increases damage dealt by Fire attacks by 20%.",
+  "stats": {
+   "ATK": 52,
+   "MAG": 24
+  },
+  "abilityIds": [
+   1532
+  ],
+  "buy": 3800,
+  "sell": 950
+ },
+ {
+  "id": 10106,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Icebrand",
+  "description": "Imbues non-elemental physical attacks with Ice.",
+  "stats": {
+   "ATK": 75,
+   "MAG": 36
+  },
+  "abilityIds": [
+   1522
+  ],
+  "buy": 7700,
+  "sell": 1920
+ },
+ {
+  "id": 10107,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Claymore",
+  "description": "",
+  "stats": {
+   "ATK": 39,
+   "MAG": 18
+  },
+  "abilityIds": [],
+  "buy": 1400,
+  "sell": 350
+ },
+ {
+  "id": 10108,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Kaiser Sword",
+  "description": "Increases damage dealt by 20% when using attacks of the target’s elemental weakness.",
+  "stats": {
+   "ATK": 144,
+   "MAG": 49,
+   "AGI": -20
+  },
+  "abilityIds": [
+   1099
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10109,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Bastard Sword",
+  "description": "",
+  "stats": {
+   "ATK": 135,
+   "MAG": 73
+  },
+  "abilityIds": [],
+  "buy": 30000,
+  "sell": 7500
+ },
+ {
+  "id": 10110,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Blood Sword",
+  "description": "Increases HP by 550.",
+  "stats": {
+   "ATK": 135,
+   "MAG": 73,
+   "HP": 550
+  },
+  "abilityIds": [
+   1318
+  ],
+  "buy": 31000,
+  "sell": 7750
+ },
+ {
+  "id": 10111,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Greatsword",
+  "description": "",
+  "stats": {
+   "ATK": 66,
+   "MAG": 31
+  },
+  "abilityIds": [],
+  "buy": 5500,
+  "sell": 1370
+ },
+ {
+  "id": 10112,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Rune Blade",
+  "description": "Restores 5 MP every turn.",
+  "stats": {
+   "ATK": 114,
+   "MAG": 61
+  },
+  "abilityIds": [
+   1254
+  ],
+  "buy": 22000,
+  "sell": 5500
+ },
+ {
+  "id": 10113,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Lunar Sword",
+  "description": "",
+  "stats": {
+   "ATK": 114,
+   "MAG": 61
+  },
+  "abilityIds": [],
+  "buy": 15000,
+  "sell": 3750
+ },
+ {
+  "id": 10114,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Stagger Blade",
+  "description": "Increases stagger power by 10%.",
+  "stats": {
+   "ATK": 123,
+   "MAG": 44
+  },
+  "abilityIds": [
+   1278
+  ],
+  "buy": 27500,
+  "sell": 6870
+ },
+ {
+  "id": 10115,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Soul Sabre",
+  "description": "",
+  "stats": {
+   "ATK": 167,
+   "MAG": 87
+  },
+  "abilityIds": [],
+  "buy": 50000,
+  "sell": 12500
+ },
+ {
+  "id": 10116,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Sword of Trials",
+  "description": "Restores 5% of max MP upon staggering an enemy.",
+  "stats": {
+   "ATK": 144,
+   "MAG": 77
+  },
+  "abilityIds": [
+   1281
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 10117,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Falchion",
+  "description": "",
+  "stats": {
+   "ATK": 153,
+   "MAG": 81
+  },
+  "abilityIds": [],
+  "buy": 40000,
+  "sell": 10000
+ },
+ {
+  "id": 10118,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Moon Saber",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 27,
+   "MAG": 58
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 10119,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Nocturne",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 42,
+   "MAG": 95
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 10120,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Arcana Blade",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 48,
+   "MAG": 112
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10121,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Knight’s Sword",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 60,
+   "MAG": 147
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10122,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Ether’s Light",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 73,
+   "MAG": 176
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10123,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Guardian Sword",
+  "description": "",
+  "stats": {
+   "ATK": 71,
+   "MAG": 35,
+   "PDEF": 36
+  },
+  "abilityIds": [],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 10124,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Variable Steel",
+  "description": "Grants Protect for 3 turns at the start of battle.",
+  "stats": {
+   "ATK": 105,
+   "MAG": 57,
+   "PDEF": 75
+  },
+  "abilityIds": [
+   1290
+  ],
+  "buy": 27500,
+  "sell": 6870
+ },
+ {
+  "id": 10125,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Briar Edge",
+  "description": "Increases the duration of debuffs and status ailments inflicted by the wielder by 1 turn.",
+  "stats": {
+   "ATK": 103,
+   "MAG": 54
+  },
+  "abilityIds": [
+   1326
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10126,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Hero’s Blade",
+  "description": "Grants Bravery for 3 turns at the start of battle.",
+  "stats": {
+   "ATK": 153,
+   "MAG": 87,
+   "AGI": 30
+  },
+  "abilityIds": [
+   1294
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10127,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Indomitable",
+  "description": "Grants the ability to survive with 1 HP upon receiving damage exceeding HP once per battle.",
+  "stats": {
+   "ATK": 167,
+   "MAG": 87
+  },
+  "abilityIds": [
+   1042
+  ],
+  "buy": 45000,
+  "sell": 11250
+ },
+ {
+  "id": 10128,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Flamberge",
+  "description": "Increases HP by 140.",
+  "stats": {
+   "ATK": 41,
+   "MAG": 19,
+   "HP": 140
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 10129,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Malice Breaker",
+  "description": "Reduces damage taken from magic attacks by 30%.",
+  "stats": {
+   "ATK": 162,
+   "MAG": 85
+  },
+  "abilityIds": [
+   1276
+  ],
+  "buy": 41000,
+  "sell": 10250
+ },
+ {
+  "id": 10130,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Knight’s Greatsword",
+  "description": "",
+  "stats": {
+   "ATK": 30,
+   "MAG": 14,
+   "AGI": 5
+  },
+  "abilityIds": [],
+  "buy": 500,
+  "sell": 120
+ },
+ {
+  "id": 10190,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Save the Vermillion",
+  "description": "Reduces damage taken from physical and magic attacks by 20%.",
+  "stats": {
+   "ATK": 179,
+   "MAG": 93
+  },
+  "abilityIds": [
+   1513
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 10194,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Apocalypse",
+  "description": "Grants Protect for 3 turns upon staggering an enemy.",
+  "stats": {
+   "ATK": 174,
+   "MAG": 90
+  },
+  "abilityIds": [
+   1390
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10195,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Excalibur",
+  "description": "Increases damage dealt by Light attacks by 50%.",
+  "stats": {
+   "ATK": 174,
+   "MAG": 90
+  },
+  "abilityIds": [
+   1533
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10196,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Lightbringer",
+  "description": "Imbues non-elemental physical attacks with Light.",
+  "stats": {
+   "ATK": 179,
+   "MAG": 93
+  },
+  "abilityIds": [
+   1527
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10197,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Ragnarok+",
+  "description": "Increases stagger power and damage dealt by non-elemental attacks by 25%.",
+  "stats": {
+   "ATK": 202,
+   "MAG": 104
+  },
+  "abilityIds": [
+   1538,
+   1047
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 10198,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Ancient Greatsword",
+  "description": "",
+  "stats": {
+   "ATK": 1,
+   "MAG": 1
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10199,
+  "kind": "weapon",
+  "subtype": 1,
+  "name": "Ragnarok",
+  "description": "Increases stagger power and damage dealt by non-elemental attacks by 25%.",
+  "stats": {
+   "ATK": 191,
+   "MAG": 99
+  },
+  "abilityIds": [
+   1538
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10200,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Shiden",
+  "description": "",
+  "stats": {
+   "ATK": 16,
+   "MAG": 12
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10201,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Nodachi",
+  "description": "",
+  "stats": {
+   "ATK": 21,
+   "MAG": 20
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 10202,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Sakura-Fubuki",
+  "description": "",
+  "stats": {
+   "ATK": 43,
+   "MAG": 22
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 10203,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Ashura",
+  "description": "",
+  "stats": {
+   "ATK": 49,
+   "MAG": 34,
+   "AGI": 10
+  },
+  "abilityIds": [],
+  "buy": 4200,
+  "sell": 1050
+ },
+ {
+  "id": 10204,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Tsukiyo no Tachi",
+  "description": "Halves damage taken from Wind attacks.",
+  "stats": {
+   "ATK": 52,
+   "MAG": 36
+  },
+  "abilityIds": [
+   1248
+  ],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 10205,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Kuki",
+  "description": "",
+  "stats": {
+   "ATK": 105,
+   "MAG": 73
+  },
+  "abilityIds": [],
+  "buy": 9500,
+  "sell": 2370
+ },
+ {
+  "id": 10206,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Hyosetsumaru",
+  "description": "Increases damage dealt by Ice attacks by 40%.",
+  "stats": {
+   "ATK": 132,
+   "MAG": 99
+  },
+  "abilityIds": [
+   1534
+  ],
+  "buy": 26500,
+  "sell": 6620
+ },
+ {
+  "id": 10207,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Dodanuki",
+  "description": "",
+  "stats": {
+   "ATK": 28,
+   "MAG": 21
+  },
+  "abilityIds": [],
+  "buy": 700,
+  "sell": 170
+ },
+ {
+  "id": 10208,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Uchigatana",
+  "description": "",
+  "stats": {
+   "ATK": 24,
+   "MAG": 17
+  },
+  "abilityIds": [],
+  "buy": 350,
+  "sell": 80
+ },
+ {
+  "id": 10209,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Samurai’s Katana",
+  "description": "Increases HP by 30.",
+  "stats": {
+   "ATK": 39,
+   "MAG": 28,
+   "HP": 30
+  },
+  "abilityIds": [],
+  "buy": 2200,
+  "sell": 550
+ },
+ {
+  "id": 10210,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Rasetsu",
+  "description": "Increases damage dealt by 20% when using attacks of the target’s elemental weakness.",
+  "stats": {
+   "ATK": 147,
+   "MAG": 110
+  },
+  "abilityIds": [
+   1099
+  ],
+  "buy": 34000,
+  "sell": 8500
+ },
+ {
+  "id": 10211,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Hototogisu",
+  "description": "",
+  "stats": {
+   "ATK": 65,
+   "MAG": 43
+  },
+  "abilityIds": [],
+  "buy": 5250,
+  "sell": 1310
+ },
+ {
+  "id": 10212,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Shiranui",
+  "description": "",
+  "stats": {
+   "ATK": 76,
+   "MAG": 50
+  },
+  "abilityIds": [],
+  "buy": 7350,
+  "sell": 1830
+ },
+ {
+  "id": 10213,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Kogarasumaru",
+  "description": "",
+  "stats": {
+   "ATK": 34,
+   "MAG": 25
+  },
+  "abilityIds": [],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 10214,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Kiku-Ichimonji",
+  "description": "Increases critical hit rate by 5%.",
+  "stats": {
+   "ATK": 121,
+   "MAG": 90
+  },
+  "abilityIds": [
+   1321
+  ],
+  "buy": 21000,
+  "sell": 5250
+ },
+ {
+  "id": 10215,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Kotetsu",
+  "description": "Increases stagger power by 20%.",
+  "stats": {
+   "ATK": 179,
+   "MAG": 132
+  },
+  "abilityIds": [
+   1279
+  ],
+  "buy": 42000,
+  "sell": 10500
+ },
+ {
+  "id": 10216,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Osafune",
+  "description": "",
+  "stats": {
+   "ATK": 185,
+   "MAG": 136
+  },
+  "abilityIds": [],
+  "buy": 50000,
+  "sell": 12500
+ },
+ {
+  "id": 10217,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Laserblade",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 30,
+   "MAG": 78
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 10218,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Astral Blade",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 36,
+   "MAG": 92
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 10219,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Reito",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 50,
+   "MAG": 133
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10220,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Genmato",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 71,
+   "MAG": 207
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10221,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Rikudo",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 66,
+   "MAG": 189,
+   "AGI": 20
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 28000,
+  "sell": 7000
+ },
+ {
+  "id": 10222,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Hasaito",
+  "description": "Increases stagger power by 10%.",
+  "stats": {
+   "ATK": 88,
+   "MAG": 58
+  },
+  "abilityIds": [
+   1278
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 10223,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Sundering Odachi",
+  "description": "Increases stagger power by 10%.",
+  "stats": {
+   "ATK": 132,
+   "MAG": 99
+  },
+  "abilityIds": [
+   1278
+  ],
+  "buy": 26500,
+  "sell": 6620
+ },
+ {
+  "id": 10224,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Kikokusenga",
+  "description": "Increases critical hit rate by 50% when attacking a staggered enemy.",
+  "stats": {
+   "ATK": 113,
+   "MAG": 81
+  },
+  "abilityIds": [
+   1357
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10225,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Kumobashiri",
+  "description": "Grants Haste for 3 turns at the start of battle.",
+  "stats": {
+   "ATK": 154,
+   "MAG": 115
+  },
+  "abilityIds": [
+   1292
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10226,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Guardbreaker",
+  "description": "When at full HP, increases stagger power by 30%.",
+  "stats": {
+   "ATK": 183,
+   "MAG": 134
+  },
+  "abilityIds": [
+   1371
+  ],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 10227,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Iwakirimaru",
+  "description": "Increases MP by 20.",
+  "stats": {
+   "ATK": 37,
+   "MAG": 27,
+   "MP": 20
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 10228,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Vibroblade",
+  "description": "",
+  "stats": {
+   "ATK": 121,
+   "MAG": 90
+  },
+  "abilityIds": [],
+  "buy": 15000,
+  "sell": 3750
+ },
+ {
+  "id": 10229,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Murasame",
+  "description": "",
+  "stats": {
+   "ATK": 147,
+   "MAG": 110
+  },
+  "abilityIds": [],
+  "buy": 30000,
+  "sell": 7500
+ },
+ {
+  "id": 10230,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Gorgon Sword",
+  "description": "Adds a chance to inflict Slow when using a standard attack or a battle skill.",
+  "stats": {
+   "ATK": 157,
+   "MAG": 117
+  },
+  "abilityIds": [
+   1129
+  ],
+  "buy": 37000,
+  "sell": 9250
+ },
+ {
+  "id": 10231,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Carbide Blade",
+  "description": "",
+  "stats": {
+   "ATK": 168,
+   "MAG": 124
+  },
+  "abilityIds": [],
+  "buy": 40000,
+  "sell": 10000
+ },
+ {
+  "id": 10290,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Shisui",
+  "description": "Grants Hone Senses and Placidity for 5 turns at the start of battle.",
+  "stats": {
+   "ATK": 197,
+   "MAG": 148
+  },
+  "abilityIds": [
+   1507,
+   1514
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 10294,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Mutsunokami",
+  "description": "Increases critical hit rate by 50% when attacking a staggered enemy.",
+  "stats": {
+   "ATK": 192,
+   "MAG": 144
+  },
+  "abilityIds": [
+   1357
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10295,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Masamune",
+  "description": "Allows the wielder to act first at the start of battle.",
+  "stats": {
+   "ATK": 192,
+   "MAG": 144,
+   "AGI": 85
+  },
+  "abilityIds": [
+   1049,
+   1551
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10296,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Murakumo",
+  "description": "",
+  "stats": {
+   "ATK": 197,
+   "MAG": 148,
+   "DIV": 112
+  },
+  "abilityIds": [],
+  "buy": 53000,
+  "sell": 13250
+ },
+ {
+  "id": 10297,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Sasuke’s Blade+",
+  "description": "Increases critical hit rate and chance of evading physical attacks by 20%.",
+  "stats": {
+   "ATK": 220,
+   "MAG": 171
+  },
+  "abilityIds": [
+   1480,
+   1529,
+   1047
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 10298,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Ancient Katana",
+  "description": "",
+  "stats": {
+   "ATK": 1,
+   "MAG": 1
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10299,
+  "kind": "weapon",
+  "subtype": 2,
+  "name": "Sasuke’s Blade",
+  "description": "Increases critical hit rate and chance of evading physical attacks by 20%.",
+  "stats": {
+   "ATK": 209,
+   "MAG": 160
+  },
+  "abilityIds": [
+   1480,
+   1529
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10300,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Reincarnation",
+  "description": "",
+  "stats": {
+   "ATK": 26,
+   "MAG": 21
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10301,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Silver Bow",
+  "description": "",
+  "stats": {
+   "ATK": 43,
+   "MAG": 39,
+   "DIV": 41
+  },
+  "abilityIds": [],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10302,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Floral Arc",
+  "description": "",
+  "stats": {
+   "ATK": 22,
+   "MAG": 18,
+   "DIV": 32
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 10303,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Fujin’s Bow",
+  "description": "Allows the wielder to act first at the start of battle.",
+  "stats": {
+   "ATK": 96,
+   "MAG": 123,
+   "DIV": 94
+  },
+  "abilityIds": [
+   1049
+  ],
+  "buy": 32000,
+  "sell": 8000
+ },
+ {
+  "id": 10304,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Rune Bow",
+  "description": "Increases MP by 70.",
+  "stats": {
+   "ATK": 101,
+   "MAG": 130,
+   "MP": 70
+  },
+  "abilityIds": [],
+  "buy": 34500,
+  "sell": 8620
+ },
+ {
+  "id": 10305,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Midnight Longbow",
+  "description": "",
+  "stats": {
+   "ATK": 73,
+   "MAG": 86,
+   "DIV": 68
+  },
+  "abilityIds": [],
+  "buy": 10500,
+  "sell": 2620
+ },
+ {
+  "id": 10306,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Shortbow",
+  "description": "",
+  "stats": {
+   "ATK": 26,
+   "MAG": 21,
+   "DIV": 27
+  },
+  "abilityIds": [],
+  "buy": 600,
+  "sell": 150
+ },
+ {
+  "id": 10307,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Longbow",
+  "description": "",
+  "stats": {
+   "ATK": 83,
+   "MAG": 103,
+   "DIV": 76
+  },
+  "abilityIds": [],
+  "buy": 15000,
+  "sell": 3750
+ },
+ {
+  "id": 10308,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Elfin Bow",
+  "description": "",
+  "stats": {
+   "ATK": 52,
+   "MAG": 50,
+   "DIV": 48
+  },
+  "abilityIds": [],
+  "buy": 4500,
+  "sell": 1120
+ },
+ {
+  "id": 10309,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Greatbow",
+  "description": "Increases stagger power by 10%.",
+  "stats": {
+   "ATK": 83,
+   "MAG": 103
+  },
+  "abilityIds": [
+   1278
+  ],
+  "buy": 18000,
+  "sell": 4500
+ },
+ {
+  "id": 10310,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Crescent Bow",
+  "description": "",
+  "stats": {
+   "ATK": 33,
+   "MAG": 27,
+   "DIV": 20
+  },
+  "abilityIds": [],
+  "buy": 1600,
+  "sell": 400
+ },
+ {
+  "id": 10311,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Composite Bow",
+  "description": "",
+  "stats": {
+   "ATK": 37,
+   "MAG": 31,
+   "DIV": 36
+  },
+  "abilityIds": [],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 10312,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Loxley Bow",
+  "description": "",
+  "stats": {
+   "ATK": 88,
+   "MAG": 112,
+   "DIV": 83
+  },
+  "abilityIds": [],
+  "buy": 23500,
+  "sell": 5870
+ },
+ {
+  "id": 10313,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Oracle Bow",
+  "description": "",
+  "stats": {
+   "ATK": 96,
+   "MAG": 123,
+   "DIV": 94
+  },
+  "abilityIds": [],
+  "buy": 30000,
+  "sell": 7500
+ },
+ {
+  "id": 10314,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Gandiva",
+  "description": "",
+  "stats": {
+   "ATK": 115,
+   "MAG": 150,
+   "DIV": 125
+  },
+  "abilityIds": [],
+  "buy": 50000,
+  "sell": 12500
+ },
+ {
+  "id": 10315,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Compound Bow",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 82,
+   "MAG": 20
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 10316,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Rock Piercer",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 118,
+   "MAG": 34
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 10317,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Heavy Crossbow",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 130,
+   "MAG": 41
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10318,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Ballista",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 162,
+   "MAG": 56
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10319,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Deafening Bow",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 179,
+   "MAG": 63
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10320,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Cure Drop",
+  "description": "Increases potency of healing magic by 10%.",
+  "stats": {
+   "ATK": 54,
+   "MAG": 58,
+   "DIV": 70
+  },
+  "abilityIds": [
+   1282
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 10321,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Seraphim Bow",
+  "description": "Increases potency of healing magic by 10%.",
+  "stats": {
+   "ATK": 71,
+   "MAG": 88,
+   "DIV": 94
+  },
+  "abilityIds": [
+   1282
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10322,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Moon Rain",
+  "description": "When multicasting, doubles MP cost, but keeps full effect. (Only during battle.)",
+  "stats": {
+   "ATK": 121,
+   "MAG": 157,
+   "AGI": 55
+  },
+  "abilityIds": [
+   1351
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10323,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Ydalir",
+  "description": "Grants Faith for 3 turns at the start of battle.",
+  "stats": {
+   "ATK": 103,
+   "MAG": 133
+  },
+  "abilityIds": [
+   1295
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10324,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Rune Arch",
+  "description": "Increases damage dealt by 100% when using a multi-target attack skill against a single enemy.",
+  "stats": {
+   "ATK": 112,
+   "MAG": 145
+  },
+  "abilityIds": [
+   1332
+  ],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 10325,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Kagura Longbow",
+  "description": "",
+  "stats": {
+   "ATK": 112,
+   "MAG": 145,
+   "DIV": 119
+  },
+  "abilityIds": [],
+  "buy": 45000,
+  "sell": 11250
+ },
+ {
+  "id": 10326,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Bow of the Hawk",
+  "description": "",
+  "stats": {
+   "ATK": 106,
+   "MAG": 138,
+   "DIV": 111
+  },
+  "abilityIds": [],
+  "buy": 40000,
+  "sell": 10000
+ },
+ {
+  "id": 10327,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Spellblade’s Bow",
+  "description": "Increases MP cost of magic by 50%, but also increases stagger power by 30%.",
+  "stats": {
+   "ATK": 110,
+   "MAG": 142,
+   "DIV": 116
+  },
+  "abilityIds": [
+   1370
+  ],
+  "buy": 41000,
+  "sell": 10250
+ },
+ {
+  "id": 10390,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Elysium",
+  "description": "Increases potency of healing magic by 20%.",
+  "stats": {
+   "ATK": 114,
+   "MAG": 162,
+   "DIV": 141
+  },
+  "abilityIds": [
+   1283
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 10395,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Yoichi Bow",
+  "description": "",
+  "stats": {
+   "ATK": 124,
+   "MAG": 162,
+   "DIV": 169,
+   "AGI": 90
+  },
+  "abilityIds": [],
+  "buy": 57000,
+  "sell": 14250
+ },
+ {
+  "id": 10396,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Faerie Bow",
+  "description": "Grants Faith for 3 turns at the start of battle.",
+  "stats": {
+   "ATK": 121,
+   "MAG": 157,
+   "DIV": 162
+  },
+  "abilityIds": [
+   1295
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10397,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Artemis Bow+",
+  "description": "Restores MP by 2% of damage taken. Increases potency of healing magic by 10%.",
+  "stats": {
+   "ATK": 142,
+   "MAG": 184,
+   "DIV": 170
+  },
+  "abilityIds": [
+   1282,
+   1328,
+   1047
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 10398,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Ancient Bow",
+  "description": "",
+  "stats": {
+   "ATK": 1,
+   "MAG": 1
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 10399,
+  "kind": "weapon",
+  "subtype": 3,
+  "name": "Artemis Bow",
+  "description": "Restores MP by 2% of damage taken. Increases potency of healing magic by 10%.",
+  "stats": {
+   "ATK": 133,
+   "MAG": 174,
+   "DIV": 155
+  },
+  "abilityIds": [
+   1282,
+   1328
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 10400,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Mechabo Hammer",
+  "description": "",
+  "stats": {
+   "ATK": 33,
+   "MAG": 33
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10401,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Bronze Hammer",
+  "description": "",
+  "stats": {
+   "ATK": 45,
+   "MAG": 45
+  },
+  "abilityIds": [],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 10402,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Cross Pein Hammer",
+  "description": "",
+  "stats": {
+   "ATK": 51,
+   "MAG": 49
+  },
+  "abilityIds": [],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10403,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Sledgehammer",
+  "description": "Increases critical hit rate.",
+  "stats": {
+   "ATK": 39,
+   "MAG": 40
+  },
+  "abilityIds": [
+   1247
+  ],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 10404,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Iron Hammer",
+  "description": "",
+  "stats": {
+   "ATK": 78,
+   "MAG": 76,
+   "AGI": 24
+  },
+  "abilityIds": [],
+  "buy": 9000,
+  "sell": 2250
+ },
+ {
+  "id": 10405,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Heroic Hammer",
+  "description": "Grants Bravery for 3 turns at the start of battle.",
+  "stats": {
+   "ATK": 90,
+   "MAG": 88
+  },
+  "abilityIds": [
+   1294
+  ],
+  "buy": 20000,
+  "sell": 5000
+ },
+ {
+  "id": 10406,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Slam Hammer",
+  "description": "",
+  "stats": {
+   "ATK": 39,
+   "MAG": 40
+  },
+  "abilityIds": [],
+  "buy": 3600,
+  "sell": 900
+ },
+ {
+  "id": 10407,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Nightbreaker",
+  "description": "Restores 5 MP every turn.",
+  "stats": {
+   "ATK": 97,
+   "MAG": 96
+  },
+  "abilityIds": [
+   1254
+  ],
+  "buy": 25000,
+  "sell": 6250
+ },
+ {
+  "id": 10408,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Warpick",
+  "description": "",
+  "stats": {
+   "ATK": 61,
+   "MAG": 59,
+   "AGI": 20
+  },
+  "abilityIds": [],
+  "buy": 5500,
+  "sell": 1370
+ },
+ {
+  "id": 10409,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Star Shatterer　",
+  "description": "Increases stagger power by 10%.",
+  "stats": {
+   "ATK": 114,
+   "MAG": 110
+  },
+  "abilityIds": [
+   1278
+  ],
+  "buy": 37000,
+  "sell": 9250
+ },
+ {
+  "id": 10410,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Dreadwing Mallet",
+  "description": "Increases magic attack by 10%.",
+  "stats": {
+   "ATK": 25,
+   "MAG": 87
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 10411,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Morning Star",
+  "description": "Increases magic attack by 10%.",
+  "stats": {
+   "ATK": 35,
+   "MAG": 118
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 10412,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Arc Hammer",
+  "description": "Increases magic attack by 10%.",
+  "stats": {
+   "ATK": 40,
+   "MAG": 139
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10413,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Divine Mallet",
+  "description": "Increases magic attack by 10%.",
+  "stats": {
+   "ATK": 48,
+   "MAG": 168,
+   "DIV": 66
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 26500,
+  "sell": 6620
+ },
+ {
+  "id": 10414,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Demon’s Maul",
+  "description": "Increases magic attack by 10%.",
+  "stats": {
+   "ATK": 58,
+   "MAG": 196
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10415,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Piercing Mace",
+  "description": "Increases damage dealt by 20% when using attacks of the target’s elemental weakness.",
+  "stats": {
+   "ATK": 73,
+   "MAG": 70
+  },
+  "abilityIds": [
+   1099
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 10416,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Bullseye Mace",
+  "description": "Increases damage dealt by 20% when using attacks of the target’s elemental weakness.",
+  "stats": {
+   "ATK": 100,
+   "MAG": 98
+  },
+  "abilityIds": [
+   1099
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10417,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Clown Hammer",
+  "description": "Adds a chance to inflict Confuse when using a standard attack or a battle skill.",
+  "stats": {
+   "ATK": 78,
+   "MAG": 76
+  },
+  "abilityIds": [
+   1237
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10418,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Inquisitor’s Gavel",
+  "description": "Grants constant Regen when at less than half of max HP.",
+  "stats": {
+   "ATK": 121,
+   "MAG": 115
+  },
+  "abilityIds": [
+   1302
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10419,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Analysis Hammer",
+  "description": "Increases physical and magic damage dealt by 25% when using attacks of the target’s elemental weakness if that target has already been analyzed with Libra.",
+  "stats": {
+   "ATK": 138,
+   "MAG": 130
+  },
+  "abilityIds": [
+   1399
+  ],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 10420,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Fortune’s Maul",
+  "description": "Increases potency of healing magic by 10%.",
+  "stats": {
+   "ATK": 129,
+   "MAG": 121,
+   "DIV": 71
+  },
+  "abilityIds": [
+   1282
+  ],
+  "buy": 48500,
+  "sell": 12120
+ },
+ {
+  "id": 10421,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Scorpion Tail",
+  "description": "Adds a chance to inflict Poison when using a standard attack or a battle skill.",
+  "stats": {
+   "ATK": 107,
+   "MAG": 105
+  },
+  "abilityIds": [
+   1125
+  ],
+  "buy": 34000,
+  "sell": 8500
+ },
+ {
+  "id": 10422,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Buster Mace",
+  "description": "",
+  "stats": {
+   "ATK": 58,
+   "MAG": 57
+  },
+  "abilityIds": [],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 10423,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Great Mace",
+  "description": "",
+  "stats": {
+   "ATK": 90,
+   "MAG": 88
+  },
+  "abilityIds": [],
+  "buy": 15000,
+  "sell": 3750
+ },
+ {
+  "id": 10424,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Golem Hammer",
+  "description": "",
+  "stats": {
+   "ATK": 107,
+   "MAG": 105,
+   "DEF?": 50,
+   "AGI": -30
+  },
+  "abilityIds": [],
+  "buy": 30000,
+  "sell": 7500
+ },
+ {
+  "id": 10425,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Oni Maul",
+  "description": "",
+  "stats": {
+   "ATK": 121,
+   "MAG": 115
+  },
+  "abilityIds": [],
+  "buy": 40000,
+  "sell": 10000
+ },
+ {
+  "id": 10426,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "War Hammer",
+  "description": "",
+  "stats": {
+   "ATK": 133,
+   "MAG": 124
+  },
+  "abilityIds": [],
+  "buy": 50000,
+  "sell": 12500
+ },
+ {
+  "id": 10427,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Mjollnir",
+  "description": "Increases stagger power of Lightning attacks by 30%.",
+  "stats": {
+   "ATK": 138,
+   "MAG": 130
+  },
+  "abilityIds": [
+   1537
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10490,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Mechabo Hammer SUPER",
+  "description": "Grants Overclock and allows the wielder to act first at the start of battle.",
+  "stats": {
+   "ATK": 142,
+   "MAG": 133
+  },
+  "abilityIds": [
+   1508,
+   1049
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 10495,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Pilebunker",
+  "description": "Increases stagger power by 40% when using attacks of the target’s elemental weakness.",
+  "stats": {
+   "ATK": 138,
+   "MAG": 130
+  },
+  "abilityIds": [
+   1373
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10496,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Thor’s Hammer+",
+  "description": "Increases stagger power and damage dealt by 30% upon dealing a physical critical hit.",
+  "stats": {
+   "ATK": 159,
+   "MAG": 150,
+   "DIV": 136
+  },
+  "abilityIds": [
+   1496,
+   1497,
+   1047
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 10497,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Ancient Hammer",
+  "description": "",
+  "stats": {
+   "ATK": 1,
+   "MAG": 1
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10498,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Thor’s Hammer",
+  "description": "Increases stagger power and damage dealt by 30% upon dealing a physical critical hit.",
+  "stats": {
+   "ATK": 151,
+   "MAG": 142,
+   "DIV": 124
+  },
+  "abilityIds": [
+   1496,
+   1497
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10499,
+  "kind": "weapon",
+  "subtype": 4,
+  "name": "Gaia Hammer",
+  "description": "A hammer that can pulverize boulders.",
+  "stats": {
+   "ATK": 95,
+   "MAG": 93
+  },
+  "abilityIds": [],
+  "buy": 30000,
+  "sell": 7500
+ },
+ {
+  "id": 10500,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Codex Belli",
+  "description": "",
+  "stats": {
+   "ATK": 37,
+   "MAG": 69
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10501,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Disciple’s Grimoire",
+  "description": "",
+  "stats": {
+   "ATK": 37,
+   "MAG": 69
+  },
+  "abilityIds": [],
+  "buy": 4500,
+  "sell": 1120
+ },
+ {
+  "id": 10502,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Adept’s Grimoire",
+  "description": "",
+  "stats": {
+   "ATK": 59,
+   "MAG": 105
+  },
+  "abilityIds": [],
+  "buy": 11000,
+  "sell": 2750
+ },
+ {
+  "id": 10503,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Master’s Grimoire",
+  "description": "Increases critical hit rate by 5%.",
+  "stats": {
+   "ATK": 69,
+   "MAG": 122
+  },
+  "abilityIds": [
+   1321
+  ],
+  "buy": 18000,
+  "sell": 4500
+ },
+ {
+  "id": 10504,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Knightly Tactics",
+  "description": "",
+  "stats": {
+   "ATK": 45,
+   "MAG": 81
+  },
+  "abilityIds": [],
+  "buy": 6300,
+  "sell": 1570
+ },
+ {
+  "id": 10505,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "The Savant General",
+  "description": "",
+  "stats": {
+   "ATK": 92,
+   "MAG": 157
+  },
+  "abilityIds": [],
+  "buy": 40000,
+  "sell": 10000
+ },
+ {
+  "id": 10506,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Codex Asura",
+  "description": "",
+  "stats": {
+   "ATK": 69,
+   "MAG": 122
+  },
+  "abilityIds": [],
+  "buy": 15000,
+  "sell": 3750
+ },
+ {
+  "id": 10507,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Codex Pestis",
+  "description": "Increases magic when poisoned.",
+  "stats": {
+   "ATK": 74,
+   "MAG": 131
+  },
+  "abilityIds": [
+   1469
+  ],
+  "buy": 22500,
+  "sell": 5620
+ },
+ {
+  "id": 10508,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "R’lyeh Text",
+  "description": "Increases damage dealt by Water attacks by 30%.",
+  "stats": {
+   "ATK": 35,
+   "MAG": 93
+  },
+  "abilityIds": [
+   1535
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 10509,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Celaeno Fragments",
+  "description": "",
+  "stats": {
+   "ATK": 59,
+   "MAG": 105
+  },
+  "abilityIds": [],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 10510,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Book of Eibon",
+  "description": "Increases magic defense by 10%.",
+  "stats": {
+   "ATK": 104,
+   "MAG": 176
+  },
+  "abilityIds": [
+   1314
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10511,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Pnakotic Manuscript",
+  "description": "",
+  "stats": {
+   "ATK": 100,
+   "MAG": 169
+  },
+  "abilityIds": [],
+  "buy": 50000,
+  "sell": 12500
+ },
+ {
+  "id": 10512,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Necronomicon",
+  "description": "Increases damage dealt by 30% when using attacks of the target’s elemental weakness.",
+  "stats": {
+   "ATK": 104,
+   "MAG": 176
+  },
+  "abilityIds": [
+   1398
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10513,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Total Calisthenics",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 89,
+   "MAG": 37
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 10514,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Illegible Lexicon",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 139,
+   "MAG": 57
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10515,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Book of Strength",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 165,
+   "MAG": 67
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10516,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Battle Grimoire",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 200,
+   "MAG": 78
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10517,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Index of War",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 211,
+   "MAG": 82
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 43000,
+  "sell": 10750
+ },
+ {
+  "id": 10518,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Blessed Cults",
+  "description": "Increases the duration of buffs applied by the wielder by 1 turn.",
+  "stats": {
+   "ATK": 52,
+   "MAG": 93
+  },
+  "abilityIds": [
+   1401
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 10519,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Luminous Grimoire",
+  "description": "Increases the duration of buffs applied by the wielder by 1 turn.",
+  "stats": {
+   "ATK": 76,
+   "MAG": 134
+  },
+  "abilityIds": [
+   1401
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10520,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Annihilaticon",
+  "description": "Inflicts Deprotect for 3 turns upon staggering an enemy.",
+  "stats": {
+   "ATK": 59,
+   "MAG": 105
+  },
+  "abilityIds": [
+   1235
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10521,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Anatomy of Magic",
+  "description": "Inflicts Deshell on a random enemy at the start of battle.",
+  "stats": {
+   "ATK": 87,
+   "MAG": 150
+  },
+  "abilityIds": [
+   1297
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10522,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Arch Drain",
+  "description": "Restores 5% of max MP upon staggering an enemy.",
+  "stats": {
+   "ATK": 97,
+   "MAG": 164
+  },
+  "abilityIds": [
+   1281
+  ],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 10523,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Sage’s Journal",
+  "description": "",
+  "stats": {
+   "ATK": 81,
+   "MAG": 142
+  },
+  "abilityIds": [],
+  "buy": 30000,
+  "sell": 7500
+ },
+ {
+  "id": 10524,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Tome of Grace",
+  "description": "Increases potency of healing magic by 10%.",
+  "stats": {
+   "ATK": 81,
+   "MAG": 142,
+   "DIV": 56
+  },
+  "abilityIds": [
+   1282
+  ],
+  "buy": 35700,
+  "sell": 8920
+ },
+ {
+  "id": 10525,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Book of the Stars",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 87,
+   "MAG": 150
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 38500,
+  "sell": 9620
+ },
+ {
+  "id": 10526,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Book of the Cosmos",
+  "description": "Restores 3% of max MP upon dealing a critical hit.",
+  "stats": {
+   "ATK": 97,
+   "MAG": 164,
+   "DIV": 59
+  },
+  "abilityIds": [
+   1323
+  ],
+  "buy": 47500,
+  "sell": 11870
+ },
+ {
+  "id": 10590,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Codex Providentiae",
+  "description": "Grants Tactic: Fluid Warfare for 3 turns and allows the wielder to act first at the start of battle.",
+  "stats": {
+   "ATK": 106,
+   "MAG": 181,
+   "DIV": 169
+  },
+  "abilityIds": [
+   1509,
+   1049
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10597,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Last Resort+",
+  "description": "Fills the LB gauge by 10% when performing an action without dealing damage.",
+  "stats": {
+   "ATK": 118,
+   "MAG": 204,
+   "DIV": 136
+  },
+  "abilityIds": [
+   1498,
+   1401,
+   1047
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10598,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Ancient Tome",
+  "description": "",
+  "stats": {
+   "ATK": 1,
+   "MAG": 1
+  },
+  "abilityIds": [],
+  "buy": 45000,
+  "sell": 11250
+ },
+ {
+  "id": 10599,
+  "kind": "weapon",
+  "subtype": 5,
+  "name": "Last Resort",
+  "description": "Fills the LB gauge by 10% when performing an action without dealing damage.",
+  "stats": {
+   "ATK": 112,
+   "MAG": 193,
+   "DIV": 124
+  },
+  "abilityIds": [
+   1498,
+   1401
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10600,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Empress Birch",
+  "description": "",
+  "stats": {
+   "ATK": 61,
+   "MAG": 85
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10601,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Leather Whip",
+  "description": "",
+  "stats": {
+   "ATK": 67,
+   "MAG": 94,
+   "AGI": 10
+  },
+  "abilityIds": [],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 10602,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Shock Whip",
+  "description": "Imbues non-elemental physical attacks with Lightning.",
+  "stats": {
+   "ATK": 124,
+   "MAG": 173,
+   "AGI": 45
+  },
+  "abilityIds": [
+   1523
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10603,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Lunar Whip",
+  "description": "Restores 3% of max MP upon defeating an enemy.",
+  "stats": {
+   "ATK": 102,
+   "MAG": 150
+  },
+  "abilityIds": [
+   1319
+  ],
+  "buy": 33300,
+  "sell": 8320
+ },
+ {
+  "id": 10604,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Death Adder",
+  "description": "Adds a chance to inflict Instant Death when using a standard attack or a battle skill.",
+  "stats": {
+   "ATK": 114,
+   "MAG": 163
+  },
+  "abilityIds": [
+   1130
+  ],
+  "buy": 36000,
+  "sell": 9000
+ },
+ {
+  "id": 10605,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Shinobi’s Kusarigama",
+  "description": "Increases critical hit rate by 5%.",
+  "stats": {
+   "ATK": 129,
+   "MAG": 178
+  },
+  "abilityIds": [
+   1321
+  ],
+  "buy": 45000,
+  "sell": 11250
+ },
+ {
+  "id": 10606,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Whip Blade",
+  "description": "",
+  "stats": {
+   "ATK": 107,
+   "MAG": 156
+  },
+  "abilityIds": [],
+  "buy": 30000,
+  "sell": 7500
+ },
+ {
+  "id": 10607,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Sleipnir’s Tail",
+  "description": "",
+  "stats": {
+   "ATK": 142,
+   "MAG": 195,
+   "MDEF": 98,
+   "AGI": 60
+  },
+  "abilityIds": [],
+  "buy": 55000,
+  "sell": 13750
+ },
+ {
+  "id": 10608,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Beast Killer",
+  "description": "",
+  "stats": {
+   "ATK": 133,
+   "MAG": 183
+  },
+  "abilityIds": [],
+  "buy": 50000,
+  "sell": 12500
+ },
+ {
+  "id": 10609,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Dragon Whisker",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 138,
+   "MAG": 190
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10610,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Power Whip",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 196,
+   "MAG": 75
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10611,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Rush Whip",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 219,
+   "MAG": 81
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10612,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Thorn Whip",
+  "description": "Increases physical attack by 10%.",
+  "stats": {
+   "ATK": 251,
+   "MAG": 90
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 10613,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Whip of Affliction",
+  "description": "Increases the duration of debuffs and status ailments inflicted by the wielder by 1 turn.",
+  "stats": {
+   "ATK": 119,
+   "MAG": 168
+  },
+  "abilityIds": [
+   1326
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10614,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Cursed Whip",
+  "description": "Increases the duration of debuffs and status ailments inflicted by the wielder by 1 turn.",
+  "stats": {
+   "ATK": 131,
+   "MAG": 180
+  },
+  "abilityIds": [
+   1326
+  ],
+  "buy": 45000,
+  "sell": 11250
+ },
+ {
+  "id": 10615,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Serpent Bone Whip",
+  "description": "",
+  "stats": {
+   "ATK": 121,
+   "MAG": 171
+  },
+  "abilityIds": [],
+  "buy": 40000,
+  "sell": 10000
+ },
+ {
+  "id": 10690,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Abyss",
+  "description": "Increases the duration of debuffs and status ailments inflicted by the wielder by 2 turns.",
+  "stats": {
+   "ATK": 130,
+   "MAG": 178
+  },
+  "abilityIds": [
+   1510
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10696,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Fire Birch+",
+  "description": "Increases damage dealt, scaling with the number of debuffs and status ailments afflicting the target. Increases the duration of debuffs and status ailments inflicted by the wielder by 1 turn.",
+  "stats": {
+   "ATK": 160,
+   "MAG": 217
+  },
+  "abilityIds": [
+   1468,
+   1326,
+   1047
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10697,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Ancient Whip",
+  "description": "",
+  "stats": {
+   "ATK": 1,
+   "MAG": 1
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10698,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Fire Birch",
+  "description": "Increases damage dealt, scaling with the number of debuffs and status ailments afflicting the target. Increases the duration of debuffs and status ailments inflicted by the wielder by 1 turn.",
+  "stats": {
+   "ATK": 151,
+   "MAG": 207
+  },
+  "abilityIds": [
+   1468,
+   1326
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10699,
+  "kind": "weapon",
+  "subtype": 8,
+  "name": "Rugged Whip",
+  "description": "[TEMP]Equipment from 700 years ago.",
+  "stats": {
+   "ATK": 50,
+   "HP": 2500
+  },
+  "abilityIds": [
+   1118,
+   1259
+  ],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 10700,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Renatus Duo",
+  "description": "",
+  "stats": {
+   "ATK": 118,
+   "MAG": 48
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10701,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Peacemaker",
+  "description": "",
+  "stats": {
+   "ATK": 123,
+   "MAG": 50
+  },
+  "abilityIds": [],
+  "buy": 9000,
+  "sell": 2250
+ },
+ {
+  "id": 10702,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Firefly",
+  "description": "",
+  "stats": {
+   "ATK": 153,
+   "MAG": 63
+  },
+  "abilityIds": [],
+  "buy": 27500,
+  "sell": 6870
+ },
+ {
+  "id": 10703,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Musketoon",
+  "description": "Restores 10% of max HP upon staggering an enemy.",
+  "stats": {
+   "ATK": 142,
+   "MAG": 57
+  },
+  "abilityIds": [
+   1284
+  ],
+  "buy": 22000,
+  "sell": 5500
+ },
+ {
+  "id": 10704,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Hastur Long Barrel",
+  "description": "Inflicts Deprotect on a random enemy at the start of battle.",
+  "stats": {
+   "ATK": 216,
+   "MAG": 86
+  },
+  "abilityIds": [
+   1296
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10705,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "A-Type Sniper R",
+  "description": "",
+  "stats": {
+   "ATK": 142,
+   "MAG": 57
+  },
+  "abilityIds": [],
+  "buy": 15000,
+  "sell": 3750
+ },
+ {
+  "id": 10706,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Kokytos",
+  "description": "Imbues non-elemental physical attacks with Ice.",
+  "stats": {
+   "ATK": 168,
+   "MAG": 69
+  },
+  "abilityIds": [
+   1522
+  ],
+  "buy": 31000,
+  "sell": 7750
+ },
+ {
+  "id": 10707,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Silver-Round Rifle",
+  "description": "Increases critical hit rate by 10%.",
+  "stats": {
+   "ATK": 200,
+   "MAG": 80
+  },
+  "abilityIds": [
+   1247
+  ],
+  "buy": 48000,
+  "sell": 12000
+ },
+ {
+  "id": 10708,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Culverin",
+  "description": "",
+  "stats": {
+   "ATK": 207,
+   "MAG": 82
+  },
+  "abilityIds": [],
+  "buy": 50000,
+  "sell": 12500
+ },
+ {
+  "id": 10709,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Repeater Rifle",
+  "description": "Increases critical hit rate by 10%.",
+  "stats": {
+   "ATK": 128,
+   "MAG": 87
+  },
+  "abilityIds": [
+   1247
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10710,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Quicksilver",
+  "description": "",
+  "stats": {
+   "ATK": 178,
+   "MAG": 73
+  },
+  "abilityIds": [],
+  "buy": 34500,
+  "sell": 8620
+ },
+ {
+  "id": 10711,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Mythril Cannon",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 66,
+   "MAG": 139
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10712,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Magi-Blaster",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 76,
+   "MAG": 162
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10713,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Arcane Long Rifle",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 87,
+   "MAG": 186
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10714,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Rune Shooter",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 100,
+   "MAG": 207
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 10715,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Spellfire",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {
+   "ATK": 108,
+   "MAG": 223
+  },
+  "abilityIds": [
+   1310
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10716,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Pulse Cannon",
+  "description": "Increases stagger power by 10%.",
+  "stats": {
+   "ATK": 128,
+   "MAG": 52
+  },
+  "abilityIds": [
+   1278
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10717,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Barrel Blazer",
+  "description": "Increases stagger power by 10%.",
+  "stats": {
+   "ATK": 157,
+   "MAG": 64
+  },
+  "abilityIds": [
+   1278
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10718,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Barrier Bane",
+  "description": "Adds a chance to inflict Deprotect when using a standard attack or a battle skill.",
+  "stats": {
+   "ATK": 142,
+   "MAG": 57
+  },
+  "abilityIds": [
+   1131
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10719,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Impetus Breaker",
+  "description": "Inflicts Slow on a random enemy at the start of battle.",
+  "stats": {
+   "ATK": 153,
+   "MAG": 63
+  },
+  "abilityIds": [
+   1298
+  ],
+  "buy": 27000,
+  "sell": 6750
+ },
+ {
+  "id": 10720,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Jackpot Gun",
+  "description": "Adds a chance to inflict Poison, Silence, Blind, or Sleep when using a standard attack or a battle skill.",
+  "stats": {
+   "ATK": 216,
+   "MAG": 86,
+   "AGI": 43
+  },
+  "abilityIds": [
+   1125,
+   1126,
+   1128,
+   1127
+  ],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 10721,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Gatling Gun",
+  "description": "",
+  "stats": {
+   "ATK": 168,
+   "MAG": 69
+  },
+  "abilityIds": [],
+  "buy": 30000,
+  "sell": 7500
+ },
+ {
+  "id": 10722,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Loose Cannon",
+  "description": "",
+  "stats": {
+   "ATK": 189,
+   "MAG": 76
+  },
+  "abilityIds": [],
+  "buy": 40000,
+  "sell": 10000
+ },
+ {
+  "id": 10723,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Ultra Magnum",
+  "description": "Adds a 50% chance to inflict a debuff upon receiving physical damage.",
+  "stats": {
+   "ATK": 222,
+   "MAG": 88,
+   "AGI": 60
+  },
+  "abilityIds": [
+   1339
+  ],
+  "buy": 53000,
+  "sell": 13250
+ },
+ {
+  "id": 10790,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Caelum Renatum",
+  "description": "Raises luck level by 8 at the start of battle.",
+  "stats": {
+   "ATK": 222,
+   "MAG": 88
+  },
+  "abilityIds": [
+   1511,
+   1124
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10797,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Arcturus+",
+  "description": "Fills the LB gauge by 10% and raises luck level by 1 on the wielder’s turn.",
+  "stats": {
+   "ATK": 251,
+   "MAG": 100
+  },
+  "abilityIds": [
+   1499,
+   1552,
+   1047
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10798,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Ancient Firearm",
+  "description": "",
+  "stats": {
+   "ATK": 1,
+   "MAG": 1
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10799,
+  "kind": "weapon",
+  "subtype": 6,
+  "name": "Arcturus",
+  "description": "Fills the LB gauge by 10% and raises luck level by 1 on the wielder’s turn.",
+  "stats": {
+   "ATK": 237,
+   "MAG": 94
+  },
+  "abilityIds": [
+   1499,
+   1552
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10800,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "White Roselia",
+  "description": "",
+  "stats": {
+   "ATK": 90,
+   "MAG": 127
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10801,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Mythril Rod",
+  "description": "Fills the LB gauge by 10% upon staggering an enemy.",
+  "stats": {
+   "ATK": 96,
+   "MAG": 138
+  },
+  "abilityIds": [
+   1280
+  ],
+  "buy": 22500,
+  "sell": 5620
+ },
+ {
+  "id": 10802,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Resonate Staff",
+  "description": "Increases damage dealt by 20% when using attacks of the target’s elemental weakness.",
+  "stats": {
+   "ATK": 90,
+   "MAG": 129
+  },
+  "abilityIds": [
+   1099
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10803,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Silver Staff",
+  "description": "",
+  "stats": {
+   "ATK": 141,
+   "MAG": 188,
+   "DIV": 71
+  },
+  "abilityIds": [],
+  "buy": 43000,
+  "sell": 10750
+ },
+ {
+  "id": 10804,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Vajra Staff",
+  "description": "Restores 2% of max MP upon dealing damage with a standard attack.",
+  "stats": {
+   "ATK": 117,
+   "MAG": 166
+  },
+  "abilityIds": [
+   1124
+  ],
+  "buy": 35700,
+  "sell": 8920
+ },
+ {
+  "id": 10805,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Staff of the Magi",
+  "description": "",
+  "stats": {
+   "ATK": 117,
+   "MAG": 166
+  },
+  "abilityIds": [],
+  "buy": 30000,
+  "sell": 7500
+ },
+ {
+  "id": 10806,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Unyielding Staff",
+  "description": "Grants the ability to survive with 1 HP upon receiving damage exceeding HP once per battle.",
+  "stats": {
+   "ATK": 126,
+   "MAG": 173,
+   "DIV": 51
+  },
+  "abilityIds": [
+   1042
+  ],
+  "buy": 38800,
+  "sell": 9700
+ },
+ {
+  "id": 10807,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Mystletainn",
+  "description": "",
+  "stats": {
+   "ATK": 145,
+   "MAG": 192
+  },
+  "abilityIds": [],
+  "buy": 50000,
+  "sell": 12500
+ },
+ {
+  "id": 10808,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Laevateinn",
+  "description": "Increases MP cost of magic by 50%, but also increases dealt damage by 100%.",
+  "stats": {
+   "ATK": 150,
+   "MAG": 199
+  },
+  "abilityIds": [
+   1103
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10809,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Whale Whisker",
+  "description": "Increases HP by 400.",
+  "stats": {
+   "ATK": 154,
+   "MAG": 204,
+   "HP": 400,
+   "AGI": 60
+  },
+  "abilityIds": [],
+  "buy": 56000,
+  "sell": 14000
+ },
+ {
+  "id": 10810,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Striking Staff",
+  "description": "Increases damage dealt by physical attacks by 10%.",
+  "stats": {
+   "ATK": 230,
+   "MAG": 84
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 10811,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "War Pick",
+  "description": "Increases damage dealt by physical attacks by 10%.",
+  "stats": {
+   "ATK": 207,
+   "MAG": 77
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10812,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Iron Baton",
+  "description": "Increases damage dealt by physical attacks by 10%.",
+  "stats": {
+   "ATK": 247,
+   "MAG": 87
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10813,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Pole Mace",
+  "description": "Increases damage dealt by physical attacks by 10%.",
+  "stats": {
+   "ATK": 265,
+   "MAG": 92
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 10814,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Battle Staff",
+  "description": "Increases damage dealt by physical attacks by 10%.",
+  "stats": {
+   "ATK": 288,
+   "MAG": 99
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 10815,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Impact Wand",
+  "description": "Increases stagger power by 30% when using attacks of the target’s elemental weakness.",
+  "stats": {
+   "ATK": 108,
+   "MAG": 155
+  },
+  "abilityIds": [
+   1329
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10816,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Rod of Focus",
+  "description": "Increases stagger power by 30% when using attacks of the target’s elemental weakness.",
+  "stats": {
+   "ATK": 105,
+   "MAG": 151
+  },
+  "abilityIds": [
+   1329
+  ],
+  "buy": 27500,
+  "sell": 6870
+ },
+ {
+  "id": 10817,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Catastrophe",
+  "description": "When attacking all enemies, increases damage dealt by 10% per enemy.",
+  "stats": {
+   "ATK": 111,
+   "MAG": 159
+  },
+  "abilityIds": [
+   1337
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 10818,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Barrier Staff",
+  "description": "Grants Shell for 3 turns at the start of battle.",
+  "stats": {
+   "ATK": 123,
+   "MAG": 171
+  },
+  "abilityIds": [
+   1291
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 10819,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "High Caster",
+  "description": "Increases MP cost of magic by 50%, but also increases stagger power by 30%.",
+  "stats": {
+   "ATK": 145,
+   "MAG": 192,
+   "AGI": 30
+  },
+  "abilityIds": [
+   1370
+  ],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 10820,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Seraph’s Rod",
+  "description": "",
+  "stats": {
+   "ATK": 133,
+   "MAG": 180
+  },
+  "abilityIds": [],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 10890,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Roselia",
+  "description": "Grants Concentrate for 3 turns and Sage’s Eye for 4 turns at the start of battle.",
+  "stats": {
+   "ATK": 154,
+   "MAG": 204
+  },
+  "abilityIds": [
+   1512,
+   1515
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10897,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Wizard’s Rod+",
+  "description": "Increases damage dealt by 30% when using attacks of the target’s elemental weakness. Adds a 20% chance of evading magic attacks.",
+  "stats": {
+   "ATK": 171,
+   "MAG": 227
+  },
+  "abilityIds": [
+   1530,
+   1047,
+   1398
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10898,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Ancient Rod",
+  "description": "",
+  "stats": {
+   "ATK": 1,
+   "MAG": 1
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 10899,
+  "kind": "weapon",
+  "subtype": 7,
+  "name": "Wizard’s Rod",
+  "description": "Increases damage dealt by 30% when using attacks of the target’s elemental weakness.",
+  "stats": {
+   "ATK": 163,
+   "MAG": 216
+  },
+  "abilityIds": [
+   1530,
+   1398
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 11000,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Leather Armor",
+  "description": "",
+  "stats": {
+   "PDEF": 5,
+   "MDEF": 3
+  },
+  "abilityIds": [],
+  "buy": 100,
+  "sell": 20
+ },
+ {
+  "id": 11001,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Knight’s Jacket",
+  "description": "",
+  "stats": {
+   "PDEF": 31,
+   "MDEF": 28
+  },
+  "abilityIds": [],
+  "buy": 750,
+  "sell": 180
+ },
+ {
+  "id": 11002,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Black Garb",
+  "description": "",
+  "stats": {
+   "PDEF": 26,
+   "MDEF": 23,
+   "AGI": 8
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 11003,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Prickly Straitjacket",
+  "description": "Increases MP by 50.",
+  "stats": {
+   "PDEF": 29,
+   "MDEF": 15,
+   "MP": 50,
+   "AGI": -8
+  },
+  "abilityIds": [],
+  "buy": 700,
+  "sell": 170
+ },
+ {
+  "id": 11004,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Bronze Chestplate",
+  "description": "",
+  "stats": {
+   "PDEF": 24,
+   "MDEF": 22
+  },
+  "abilityIds": [],
+  "buy": 300,
+  "sell": 70
+ },
+ {
+  "id": 11005,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Tunic",
+  "description": "",
+  "stats": {
+   "PDEF": 16,
+   "MDEF": 18,
+   "AGI": 5
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 11006,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Surcoat",
+  "description": "Increases HP by 80.",
+  "stats": {
+   "PDEF": 42,
+   "MDEF": 36,
+   "HP": 80
+  },
+  "abilityIds": [],
+  "buy": 980,
+  "sell": 240
+ },
+ {
+  "id": 11007,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Engineer’s Jacket",
+  "description": "",
+  "stats": {
+   "PDEF": 48,
+   "MDEF": 41
+  },
+  "abilityIds": [],
+  "buy": 1200,
+  "sell": 300
+ },
+ {
+  "id": 11008,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Red Jacket",
+  "description": "",
+  "stats": {
+   "PDEF": 74,
+   "MDEF": 57
+  },
+  "abilityIds": [],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 11009,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Mythril Vest",
+  "description": "Increases magic defense by 10%.",
+  "stats": {
+   "PDEF": 127,
+   "MDEF": 86,
+   "DIV": 45
+  },
+  "abilityIds": [
+   1314
+  ],
+  "buy": 15000,
+  "sell": 3750
+ },
+ {
+  "id": 11010,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Rose Jacket",
+  "description": "",
+  "stats": {
+   "PDEF": 113,
+   "MDEF": 84
+  },
+  "abilityIds": [],
+  "buy": 7000,
+  "sell": 1750
+ },
+ {
+  "id": 11011,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Shinobi Gear",
+  "description": "",
+  "stats": {
+   "PDEF": 163,
+   "MDEF": 124,
+   "AGI": 35
+  },
+  "abilityIds": [],
+  "buy": 40000,
+  "sell": 10000
+ },
+ {
+  "id": 11012,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Power Vest",
+  "description": "",
+  "stats": {
+   "PDEF": 57,
+   "MDEF": 48
+  },
+  "abilityIds": [],
+  "buy": 2500,
+  "sell": 620
+ },
+ {
+  "id": 11013,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Kenpo Gi",
+  "description": "",
+  "stats": {
+   "PDEF": 85,
+   "MDEF": 66
+  },
+  "abilityIds": [],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 11014,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Brigandine",
+  "description": "",
+  "stats": {
+   "PDEF": 127,
+   "MDEF": 93
+  },
+  "abilityIds": [],
+  "buy": 12000,
+  "sell": 3000
+ },
+ {
+  "id": 11015,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Crown Vest",
+  "description": "",
+  "stats": {
+   "PDEF": 213,
+   "MDEF": 148,
+   "DIV": 112,
+   "AGI": 30
+  },
+  "abilityIds": [],
+  "buy": 42000,
+  "sell": 10500
+ },
+ {
+  "id": 11016,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Diamond Chestplate",
+  "description": "",
+  "stats": {
+   "PDEF": 196,
+   "MDEF": 136
+  },
+  "abilityIds": [],
+  "buy": 45000,
+  "sell": 11250
+ },
+ {
+  "id": 11017,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Bone Mail",
+  "description": "Prevents Instant Death, Blind, Poison, and Berserk.",
+  "stats": {
+   "PDEF": 205,
+   "MDEF": 144,
+   "DIV": 108
+  },
+  "abilityIds": [
+   1325,
+   1105,
+   1104,
+   1114
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 11018,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Anti-Magic Gear",
+  "description": "",
+  "stats": {
+   "PDEF": 34,
+   "MDEF": 65
+  },
+  "abilityIds": [],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 11019,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Astral Jacket",
+  "description": "",
+  "stats": {
+   "PDEF": 55,
+   "MDEF": 90
+  },
+  "abilityIds": [],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 11020,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Rune Scales",
+  "description": "",
+  "stats": {
+   "PDEF": 80,
+   "MDEF": 132,
+   "AGI": 30
+  },
+  "abilityIds": [],
+  "buy": 1200,
+  "sell": 300
+ },
+ {
+  "id": 11021,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Arcane Coat",
+  "description": "",
+  "stats": {
+   "PDEF": 85,
+   "MDEF": 129
+  },
+  "abilityIds": [],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 11022,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Spell Jacket",
+  "description": "",
+  "stats": {
+   "PDEF": 115,
+   "MDEF": 181
+  },
+  "abilityIds": [],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 11023,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Ninja Gear",
+  "description": "Adds a 15% chance of evading physical attacks.",
+  "stats": {
+   "PDEF": 78,
+   "MDEF": 61
+  },
+  "abilityIds": [
+   1531
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 11024,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Hoodwink Garb",
+  "description": "Adds a 15% chance of evading physical attacks.",
+  "stats": {
+   "PDEF": 117,
+   "MDEF": 86
+  },
+  "abilityIds": [
+   1531
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 11025,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Mirage Jacket",
+  "description": "Adds a 15% chance of evading physical attacks.",
+  "stats": {
+   "PDEF": 137,
+   "MDEF": 99
+  },
+  "abilityIds": [
+   1531
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 11026,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Shadowstep Garb",
+  "description": "Adds a 15% chance of evading physical attacks.",
+  "stats": {
+   "PDEF": 173,
+   "MDEF": 121
+  },
+  "abilityIds": [
+   1531
+  ],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 11027,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Swallow Scales",
+  "description": "Adds a 15% chance of evading physical and magic attacks.",
+  "stats": {
+   "PDEF": 169,
+   "MDEF": 118
+  },
+  "abilityIds": [
+   1531,
+   1551
+  ],
+  "buy": 36000,
+  "sell": 9000
+ },
+ {
+  "id": 11028,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Aethereal Chestplate",
+  "description": "",
+  "stats": {
+   "PDEF": 154,
+   "MDEF": 107
+  },
+  "abilityIds": [],
+  "buy": 25000,
+  "sell": 6250
+ },
+ {
+  "id": 11029,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Xibalba Coat",
+  "description": "Inflicts Slow on a random enemy at the start of battle.",
+  "stats": {
+   "PDEF": 166,
+   "MDEF": 115
+  },
+  "abilityIds": [
+   1298
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 11030,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Jacket of Restoration",
+  "description": "Increases potency of healing magic by 10%.",
+  "stats": {
+   "PDEF": 154,
+   "MDEF": 107,
+   "DIV": 56
+  },
+  "abilityIds": [
+   1282
+  ],
+  "buy": 30000,
+  "sell": 7500
+ },
+ {
+  "id": 11031,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Scarlet Vest",
+  "description": "",
+  "stats": {
+   "PDEF": 178,
+   "MDEF": 124
+  },
+  "abilityIds": [],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 11032,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Adamite Jacket",
+  "description": "Increases HP by 250.",
+  "stats": {
+   "PDEF": 145,
+   "MDEF": 103,
+   "HP": 250
+  },
+  "abilityIds": [],
+  "buy": 30000,
+  "sell": 7500
+ },
+ {
+  "id": 11033,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Lorica Sancta",
+  "description": "Increases potency of healing magic by 10%.",
+  "stats": {
+   "PDEF": 180,
+   "MDEF": 180,
+   "DIV": 255
+  },
+  "abilityIds": [
+   1282,
+   1536
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 11034,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Chestplate of Preparation",
+  "description": "Increases EXP gained in battle by 20% (max 100).",
+  "stats": {
+   "PDEF": 27,
+   "MDEF": 25,
+   "DIV": 15
+  },
+  "abilityIds": [
+   1548
+  ],
+  "buy": 500,
+  "sell": 120
+ },
+ {
+  "id": 11035,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Blessed Cuirass",
+  "description": "Increases gil obtained in battle by 20% (max 70).",
+  "stats": {
+   "PDEF": 27,
+   "MDEF": 25,
+   "DIV": 15
+  },
+  "abilityIds": [
+   1549
+  ],
+  "buy": 500,
+  "sell": 120
+ },
+ {
+  "id": 11097,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Mirage Vest+",
+  "description": "Nullifies damage and status ailments once per battle.",
+  "stats": {
+   "PDEF": 241,
+   "MDEF": 171
+  },
+  "abilityIds": [
+   1455,
+   1352
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 11098,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Ancient Garment",
+  "description": "",
+  "stats": {
+   "PDEF": 1,
+   "MDEF": 1
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 11099,
+  "kind": "armor",
+  "subtype": 10,
+  "name": "Mirage Vest",
+  "description": "Nullifies damage received once per battle.",
+  "stats": {
+   "PDEF": 229,
+   "MDEF": 153
+  },
+  "abilityIds": [
+   1455
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 11300,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Stout Armor",
+  "description": "Increases HP by 360.",
+  "stats": {
+   "PDEF": 222,
+   "MDEF": 130,
+   "HP": 360,
+   "AGI": -54
+  },
+  "abilityIds": [],
+  "buy": 45000,
+  "sell": 11250
+ },
+ {
+  "id": 11301,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Crystal Armor",
+  "description": "",
+  "stats": {
+   "PDEF": 259,
+   "MDEF": 165,
+   "DIV": 141,
+   "AGI": -60
+  },
+  "abilityIds": [],
+  "buy": 90000,
+  "sell": 22500
+ },
+ {
+  "id": 11302,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Iron Armor",
+  "description": "Increases HP by 70.",
+  "stats": {
+   "PDEF": 60,
+   "MDEF": 41,
+   "HP": 70,
+   "AGI": -11
+  },
+  "abilityIds": [],
+  "buy": 1080,
+  "sell": 270
+ },
+ {
+  "id": 11303,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Silver Chestplate",
+  "description": "Increases HP by 110.",
+  "stats": {
+   "PDEF": 91,
+   "MDEF": 57,
+   "HP": 110,
+   "AGI": -21
+  },
+  "abilityIds": [],
+  "buy": 3300,
+  "sell": 820
+ },
+ {
+  "id": 11304,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Golden Armor",
+  "description": "",
+  "stats": {
+   "PDEF": 159,
+   "MDEF": 86,
+   "DIV": 33,
+   "AGI": -38
+  },
+  "abilityIds": [],
+  "buy": 22000,
+  "sell": 5500
+ },
+ {
+  "id": 11305,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Shielded Armor",
+  "description": "Increases HP by 190.",
+  "stats": {
+   "PDEF": 133,
+   "MDEF": 78,
+   "HP": 190,
+   "AGI": -31
+  },
+  "abilityIds": [],
+  "buy": 6300,
+  "sell": 1570
+ },
+ {
+  "id": 11306,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Phalanx",
+  "description": "Increases HP by 90.",
+  "stats": {
+   "PDEF": 72,
+   "MDEF": 48,
+   "HP": 90,
+   "AGI": -16
+  },
+  "abilityIds": [],
+  "buy": 2250,
+  "sell": 560
+ },
+ {
+  "id": 11307,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Knight Armor",
+  "description": "Increases HP by 140.",
+  "stats": {
+   "PDEF": 103,
+   "MDEF": 62,
+   "HP": 140,
+   "AGI": -25
+  },
+  "abilityIds": [],
+  "buy": 5500,
+  "sell": 1370
+ },
+ {
+  "id": 11308,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Lunar Plate",
+  "description": "Increases MP by 30.",
+  "stats": {
+   "PDEF": 148,
+   "MDEF": 86,
+   "MP": 30,
+   "AGI": -35
+  },
+  "abilityIds": [],
+  "buy": 12000,
+  "sell": 3000
+ },
+ {
+  "id": 11309,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Carmine Armor",
+  "description": "Absorbs damage taken from Fire attacks and restores HP.",
+  "stats": {
+   "PDEF": 233,
+   "MDEF": 138,
+   "DIV": 108,
+   "AGI": -55
+  },
+  "abilityIds": [
+   1038
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 11310,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Glacial Armor",
+  "description": "Absorbs damage taken from Ice attacks and restores HP.",
+  "stats": {
+   "PDEF": 233,
+   "MDEF": 138,
+   "DIV": 108,
+   "AGI": -55
+  },
+  "abilityIds": [
+   1344
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 11311,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Polaris Cuirass",
+  "description": "",
+  "stats": {
+   "PDEF": 203,
+   "MDEF": 117,
+   "DIV": 44,
+   "AGI": -48
+  },
+  "abilityIds": [],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 11312,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Armor of Dusk",
+  "description": "",
+  "stats": {
+   "PDEF": 177,
+   "MDEF": 100,
+   "DIV": 37,
+   "AGI": -41
+  },
+  "abilityIds": [],
+  "buy": 25000,
+  "sell": 6250
+ },
+ {
+  "id": 11313,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Force Armor",
+  "description": "",
+  "stats": {
+   "PDEF": 241,
+   "MDEF": 142,
+   "DIV": 169
+  },
+  "abilityIds": [],
+  "buy": 46000,
+  "sell": 11500
+ },
+ {
+  "id": 11314,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Diamond Armor",
+  "description": "Grants Protect and Shell for 3 turns at the start of battle.",
+  "stats": {
+   "PDEF": 259,
+   "MDEF": 153,
+   "DIV": 124,
+   "AGI": -65
+  },
+  "abilityIds": [
+   1290,
+   1291
+  ],
+  "buy": 8000,
+  "sell": 2000
+ },
+ {
+  "id": 11315,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Armor of Gales",
+  "description": "Increases MP by 20.",
+  "stats": {
+   "PDEF": 46,
+   "MDEF": 87,
+   "MP": 20,
+   "AGI": -20
+  },
+  "abilityIds": [],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 11316,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Devout’s Armor",
+  "description": "Increases MP by 25.",
+  "stats": {
+   "PDEF": 63,
+   "MDEF": 109,
+   "MP": 25,
+   "AGI": -28
+  },
+  "abilityIds": [],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 11317,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Ether Plate",
+  "description": "Increases MP by 30.",
+  "stats": {
+   "PDEF": 78,
+   "MDEF": 133,
+   "MP": 30,
+   "AGI": -34
+  },
+  "abilityIds": [],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 11318,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Oracle’s Armor",
+  "description": "",
+  "stats": {
+   "PDEF": 95,
+   "MDEF": 151
+  },
+  "abilityIds": [],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 11319,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Fortress Gear",
+  "description": "Increases MP by 45.",
+  "stats": {
+   "PDEF": 100,
+   "MDEF": 159,
+   "MP": 45,
+   "AGI": -43
+  },
+  "abilityIds": [],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 11320,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Scale Mail",
+  "description": "Increases HP by 170.",
+  "stats": {
+   "PDEF": 121,
+   "MDEF": 70,
+   "HP": 170,
+   "AGI": -29
+  },
+  "abilityIds": [
+   1300
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 11321,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Protective Gear",
+  "description": "Increases HP by 210.",
+  "stats": {
+   "PDEF": 141,
+   "MDEF": 81,
+   "HP": 210,
+   "AGI": -33
+  },
+  "abilityIds": [
+   1300
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 11322,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Tyr’s Armor",
+  "description": "Increases HP by 250.",
+  "stats": {
+   "PDEF": 159,
+   "MDEF": 93,
+   "HP": 250,
+   "AGI": -38
+  },
+  "abilityIds": [
+   1300
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 11323,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Guardian’s Plate",
+  "description": "Grants constant Protect and Shell when at less than half of max HP.",
+  "stats": {
+   "PDEF": 159,
+   "MDEF": 93,
+   "AGI": -35
+  },
+  "abilityIds": [
+   1300,
+   1299
+  ],
+  "buy": 22000,
+  "sell": 5500
+ },
+ {
+  "id": 11324,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Plate of Providence",
+  "description": "Increases HP by 360.",
+  "stats": {
+   "PDEF": 219,
+   "MDEF": 127,
+   "HP": 360,
+   "AGI": -53
+  },
+  "abilityIds": [
+   1300,
+   1299
+  ],
+  "buy": 7500,
+  "sell": 1870
+ },
+ {
+  "id": 11325,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Beast Hunter’s Armor",
+  "description": "Increases HP by 350.",
+  "stats": {
+   "PDEF": 198,
+   "MDEF": 124,
+   "HP": 350,
+   "AGI": -51
+  },
+  "abilityIds": [],
+  "buy": 44000,
+  "sell": 11000
+ },
+ {
+  "id": 11326,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Mythril Armor",
+  "description": "Increases MP by 30.",
+  "stats": {
+   "PDEF": 148,
+   "MDEF": 86,
+   "MP": 30,
+   "AGI": -35
+  },
+  "abilityIds": [
+   1312
+  ],
+  "buy": 16500,
+  "sell": 4120
+ },
+ {
+  "id": 11327,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Gear Plate",
+  "description": "Increases HP by 280.",
+  "stats": {
+   "PDEF": 177,
+   "MDEF": 100,
+   "HP": 280,
+   "AGI": -41
+  },
+  "abilityIds": [],
+  "buy": 27000,
+  "sell": 6750
+ },
+ {
+  "id": 11328,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Gladiator’s Armor",
+  "description": "Increases HP by 200.",
+  "stats": {
+   "PDEF": 190,
+   "MDEF": 109,
+   "HP": 200,
+   "AGI": -44
+  },
+  "abilityIds": [],
+  "buy": 31500,
+  "sell": 7870
+ },
+ {
+  "id": 11329,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Lorica Apocalyptica",
+  "description": "Increases HP by 500 and damage dealt by physical attacks by 30%, but HP is reduced by 10% of max HP every turn.",
+  "stats": {
+   "PDEF": 255,
+   "MDEF": 255,
+   "HP": 500,
+   "AGI": 30
+  },
+  "abilityIds": [
+   1500,
+   1501
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 11396,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Genji Armor",
+  "description": "Increases stagger power and damage dealt by 15% upon dealing a critical hit.",
+  "stats": {
+   "PDEF": 259,
+   "MDEF": 153,
+   "AGI": -30
+  },
+  "abilityIds": [
+   1539
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 11397,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Tatenashi Armor+",
+  "description": "Prevents Instant Death.",
+  "stats": {
+   "PDEF": 272,
+   "MDEF": 165,
+   "AGI": -35
+  },
+  "abilityIds": [
+   1325,
+   1495
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 11398,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Ancient Cuirass",
+  "description": "",
+  "stats": {
+   "PDEF": 1,
+   "MDEF": 1
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 11399,
+  "kind": "armor",
+  "subtype": 9,
+  "name": "Tatenashi Armor",
+  "description": "Prevents Instant Death.",
+  "stats": {
+   "PDEF": 259,
+   "MDEF": 153,
+   "AGI": -30
+  },
+  "abilityIds": [
+   1325
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 11500,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Leather Robe",
+  "description": "",
+  "stats": {
+   "PDEF": 23,
+   "MDEF": 37,
+   "DIV": 10
+  },
+  "abilityIds": [],
+  "buy": 100,
+  "sell": 20
+ },
+ {
+  "id": 11501,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Spirit Veil",
+  "description": "",
+  "stats": {
+   "PDEF": 32,
+   "MDEF": 46,
+   "DIV": 13
+  },
+  "abilityIds": [],
+  "buy": 750,
+  "sell": 180
+ },
+ {
+  "id": 11502,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Sorcerer’s Habit",
+  "description": "Restores 5% of max MP upon staggering an enemy.",
+  "stats": {
+   "PDEF": 94,
+   "MDEF": 106,
+   "MAG": 46
+  },
+  "abilityIds": [
+   1281
+  ],
+  "buy": 13500,
+  "sell": 3370
+ },
+ {
+  "id": 11503,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Cotton Robe",
+  "description": "Increases MP by 20.",
+  "stats": {
+   "PDEF": 32,
+   "MDEF": 46,
+   "MP": 20
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 11504,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "White Dress",
+  "description": "",
+  "stats": {
+   "PDEF": 37,
+   "MDEF": 51,
+   "DIV": 14
+  },
+  "abilityIds": [],
+  "buy": 1320,
+  "sell": 330
+ },
+ {
+  "id": 11505,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Angelic Vesture",
+  "description": "",
+  "stats": {
+   "PDEF": 128,
+   "MDEF": 155,
+   "DIV": 55
+  },
+  "abilityIds": [],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 11506,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Silk Robe",
+  "description": "",
+  "stats": {
+   "PDEF": 45,
+   "MDEF": 57,
+   "DIV": 16
+  },
+  "abilityIds": [],
+  "buy": 2750,
+  "sell": 680
+ },
+ {
+  "id": 11507,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Bard’s Tunic",
+  "description": "",
+  "stats": {
+   "PDEF": 65,
+   "MDEF": 73,
+   "DIV": 21
+  },
+  "abilityIds": [],
+  "buy": 4500,
+  "sell": 1120
+ },
+ {
+  "id": 11508,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Cape of the Raiju",
+  "description": "Halves damage taken from Lightning attacks.",
+  "stats": {
+   "PDEF": 45,
+   "MDEF": 57,
+   "MP": 30
+  },
+  "abilityIds": [
+   1250
+  ],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 11509,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Lunar Eclipse Robe",
+  "description": "",
+  "stats": {
+   "PDEF": 57,
+   "MDEF": 67,
+   "DIV": 19
+  },
+  "abilityIds": [],
+  "buy": 2900,
+  "sell": 720
+ },
+ {
+  "id": 11510,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Solar Eclipse Robe",
+  "description": "",
+  "stats": {
+   "PDEF": 84,
+   "MDEF": 95,
+   "DIV": 27
+  },
+  "abilityIds": [],
+  "buy": 7700,
+  "sell": 1920
+ },
+ {
+  "id": 11511,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Cleric’s Surplice",
+  "description": "",
+  "stats": {
+   "PDEF": 101,
+   "MDEF": 116,
+   "DIV": 33
+  },
+  "abilityIds": [],
+  "buy": 18000,
+  "sell": 4500
+ },
+ {
+  "id": 11512,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Sage’s Robe",
+  "description": "",
+  "stats": {
+   "PDEF": 94,
+   "MDEF": 106,
+   "MAG": 46
+  },
+  "abilityIds": [],
+  "buy": 12000,
+  "sell": 3000
+ },
+ {
+  "id": 11513,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Elegant Robe",
+  "description": "Grants constant Regen when at less than half of max HP.",
+  "stats": {
+   "PDEF": 136,
+   "MDEF": 166,
+   "AGI": 51
+  },
+  "abilityIds": [
+   1302
+  ],
+  "buy": 36000,
+  "sell": 9000
+ },
+ {
+  "id": 11514,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Robe of Roses",
+  "description": "Restores 10% of max HP upon defeating an enemy.",
+  "stats": {
+   "PDEF": 84,
+   "MDEF": 95,
+   "DIV": 34
+  },
+  "abilityIds": [
+   1318
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 11515,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Devout’s Robe",
+  "description": "Increases MP by 60.",
+  "stats": {
+   "PDEF": 112,
+   "MDEF": 131,
+   "MP": 60
+  },
+  "abilityIds": [],
+  "buy": 28000,
+  "sell": 7000
+ },
+ {
+  "id": 11516,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "White Robe",
+  "description": "",
+  "stats": {
+   "PDEF": 112,
+   "MDEF": 131,
+   "DIV": 37
+  },
+  "abilityIds": [],
+  "buy": 33000,
+  "sell": 8250
+ },
+ {
+  "id": 11517,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Black Robe",
+  "description": "Increases MP by 150.",
+  "stats": {
+   "PDEF": 145,
+   "MDEF": 189,
+   "MP": 150
+  },
+  "abilityIds": [],
+  "buy": 2500,
+  "sell": 620
+ },
+ {
+  "id": 11518,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Gaia Gear",
+  "description": "Nullifies damage taken from Earth attacks.",
+  "stats": {
+   "PDEF": 140,
+   "MDEF": 175,
+   "DIV": 50
+  },
+  "abilityIds": [
+   1365
+  ],
+  "buy": 45000,
+  "sell": 11250
+ },
+ {
+  "id": 11519,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Minerva Bustier",
+  "description": "",
+  "stats": {
+   "PDEF": 149,
+   "MDEF": 197,
+   "DIV": 70
+  },
+  "abilityIds": [],
+  "buy": 50000,
+  "sell": 12500
+ },
+ {
+  "id": 11520,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Behemoth Suit",
+  "description": "",
+  "stats": {
+   "PDEF": 149,
+   "MDEF": 197,
+   "DIV": 141
+  },
+  "abilityIds": [],
+  "buy": 44000,
+  "sell": 11000
+ },
+ {
+  "id": 11521,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Protective Overcoat",
+  "description": "",
+  "stats": {
+   "PDEF": 86,
+   "MDEF": 30,
+   "DIV": 17
+  },
+  "abilityIds": [],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 11522,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Aegis Robe",
+  "description": "",
+  "stats": {
+   "PDEF": 127,
+   "MDEF": 40,
+   "DIV": 28
+  },
+  "abilityIds": [],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 11523,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Vita Cloak",
+  "description": "",
+  "stats": {
+   "PDEF": 152,
+   "MDEF": 47,
+   "ATK": 33
+  },
+  "abilityIds": [],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 11524,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Guarding Gown",
+  "description": "",
+  "stats": {
+   "PDEF": 188,
+   "MDEF": 60,
+   "DIV": 29
+  },
+  "abilityIds": [],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 11525,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Rock Cloak",
+  "description": "",
+  "stats": {
+   "PDEF": 231,
+   "MDEF": 77
+  },
+  "abilityIds": [],
+  "buy": 6000,
+  "sell": 1500
+ },
+ {
+  "id": 11526,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Mirage Robe",
+  "description": "Adds a 15% chance of evading magic attacks.",
+  "stats": {
+   "PDEF": 57,
+   "MDEF": 67,
+   "AGI": 21
+  },
+  "abilityIds": [
+   1551
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 11527,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Phantom Robe",
+  "description": "Adds a 15% chance of evading magic attacks.",
+  "stats": {
+   "PDEF": 87,
+   "MDEF": 97,
+   "DIV": 34
+  },
+  "abilityIds": [
+   1551
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 11528,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Mirage Coat",
+  "description": "Adds a 15% chance of evading magic attacks.",
+  "stats": {
+   "PDEF": 96,
+   "MDEF": 109,
+   "DIV": 39
+  },
+  "abilityIds": [
+   1551
+  ],
+  "buy": 5000,
+  "sell": 1250
+ },
+ {
+  "id": 11529,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Arch Robe",
+  "description": "Increases potency of healing magic by 20%.",
+  "stats": {
+   "PDEF": 101,
+   "MDEF": 116,
+   "DIV": 66
+  },
+  "abilityIds": [
+   1283
+  ],
+  "buy": 20000,
+  "sell": 5000
+ },
+ {
+  "id": 11530,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Illusory Robe",
+  "description": "Adds a 15% chance of evading magic attacks.",
+  "stats": {
+   "PDEF": 136,
+   "MDEF": 166,
+   "AGI": 51
+  },
+  "abilityIds": [
+   1551
+  ],
+  "buy": 7500,
+  "sell": 1870
+ },
+ {
+  "id": 11531,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Feather Robes",
+  "description": "Increases speed by 10%.",
+  "stats": {
+   "PDEF": 120,
+   "MDEF": 143,
+   "DIV": 61
+  },
+  "abilityIds": [
+   1277
+  ],
+  "buy": 38500,
+  "sell": 9620
+ },
+ {
+  "id": 11597,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Lordly Robes+",
+  "description": "Enables magic to hit targets under the effect of Reflect.",
+  "stats": {
+   "PDEF": 166,
+   "MDEF": 238
+  },
+  "abilityIds": [
+   1065,
+   1382
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 11598,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Ancient Cloak",
+  "description": "",
+  "stats": {
+   "PDEF": 1,
+   "MDEF": 1
+  },
+  "abilityIds": [],
+  "buy": 40000,
+  "sell": 10000
+ },
+ {
+  "id": 11599,
+  "kind": "armor",
+  "subtype": 11,
+  "name": "Lordly Robes",
+  "description": "Enables magic to hit targets under the effect of Reflect.",
+  "stats": {
+   "PDEF": 159,
+   "MDEF": 217
+  },
+  "abilityIds": [
+   1065
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12000,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Earrings of Health",
+  "description": "Increases HP by 70.",
+  "stats": {
+   "HP": 70
+  },
+  "abilityIds": [],
+  "buy": 600,
+  "sell": 150
+ },
+ {
+  "id": 12001,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Adept’s Armlet",
+  "description": "Doubles EXP gained.",
+  "stats": {},
+  "abilityIds": [
+   1009
+  ],
+  "buy": 25000,
+  "sell": 6250
+ },
+ {
+  "id": 12002,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Power Stone",
+  "description": "Fills the LB gauge by 50% at the start of battle.",
+  "stats": {},
+  "abilityIds": [
+   1004
+  ],
+  "buy": 10000,
+  "sell": 2500
+ },
+ {
+  "id": 12003,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Mage’s Glasses",
+  "description": "Increases MP by 15.",
+  "stats": {
+   "MP": 15
+  },
+  "abilityIds": [],
+  "buy": 800,
+  "sell": 200
+ },
+ {
+  "id": 12004,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Idaten’s Shoes",
+  "description": "",
+  "stats": {
+   "AGI": 5
+  },
+  "abilityIds": [],
+  "buy": 600,
+  "sell": 150
+ },
+ {
+  "id": 12005,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Lucky Bell",
+  "description": "Increases critical hit rate by 5%.",
+  "stats": {},
+  "abilityIds": [
+   1321
+  ],
+  "buy": 400,
+  "sell": 100
+ },
+ {
+  "id": 12006,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Fire Sprite Earrings",
+  "description": "Halves damage taken from Fire attacks.",
+  "stats": {},
+  "abilityIds": [
+   1011
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 12007,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Ring of Retaliation",
+  "description": "Counters physical attacks with a standard attack.",
+  "stats": {},
+  "abilityIds": [
+   1029
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 12008,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Aeolian Misanga",
+  "description": "Increases speed by 5%.",
+  "stats": {},
+  "abilityIds": [
+   1316
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 12010,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Chocobo Down Charm",
+  "description": "Grants the ability to survive with 1 HP upon receiving damage exceeding HP once per battle.",
+  "stats": {},
+  "abilityIds": [
+   1042
+  ],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 12011,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Reflect Ring",
+  "description": "Grants constant Reflect.",
+  "stats": {},
+  "abilityIds": [
+   1071
+  ],
+  "buy": 25000,
+  "sell": 6250
+ },
+ {
+  "id": 12012,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Protect Ring",
+  "description": "Grants constant Protect.",
+  "stats": {},
+  "abilityIds": [
+   1072
+  ],
+  "buy": 20000,
+  "sell": 5000
+ },
+ {
+  "id": 12013,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Barrier Ring",
+  "description": "Grants constant Shell.",
+  "stats": {},
+  "abilityIds": [
+   1073
+  ],
+  "buy": 20000,
+  "sell": 5000
+ },
+ {
+  "id": 12014,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Hermes Sandals",
+  "description": "Grants constant Haste.",
+  "stats": {},
+  "abilityIds": [
+   1074
+  ],
+  "buy": 18000,
+  "sell": 4500
+ },
+ {
+  "id": 12015,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Iron Sandals",
+  "description": "Grants constant Slow.",
+  "stats": {},
+  "abilityIds": [
+   1075
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 12016,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Berserker Ring",
+  "description": "Grants constant Berserk.",
+  "stats": {},
+  "abilityIds": [
+   1076
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 12017,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Angel Ring",
+  "description": "Grants constant Regen.",
+  "stats": {},
+  "abilityIds": [
+   1077
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 12018,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Safety Bit",
+  "description": "Prevents Instant Death.",
+  "stats": {},
+  "abilityIds": [
+   1325
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 12019,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Star Pendant",
+  "description": "Prevents Poison.",
+  "stats": {},
+  "abilityIds": [
+   1104
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12020,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Silver-Rimmed Glasses",
+  "description": "Prevents Blind.",
+  "stats": {},
+  "abilityIds": [
+   1105
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12021,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Power Wristbands",
+  "description": "",
+  "stats": {
+   "ATK": 10
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12022,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Bulletproof Vest",
+  "description": "",
+  "stats": {
+   "PDEF": 10
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12023,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Earrings",
+  "description": "",
+  "stats": {
+   "MAG": 10
+  },
+  "abilityIds": [],
+  "buy": 2500,
+  "sell": 620
+ },
+ {
+  "id": 12024,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Talisman",
+  "description": "",
+  "stats": {
+   "MDEF": 10
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12025,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Precognizant Beads",
+  "description": "Adds a 20% chance of evading physical attacks.",
+  "stats": {},
+  "abilityIds": [
+   1529
+  ],
+  "buy": 10000,
+  "sell": 2500
+ },
+ {
+  "id": 12026,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Zephyr Cloak",
+  "description": "Adds a 20% chance of evading magic attacks.",
+  "stats": {},
+  "abilityIds": [
+   1530
+  ],
+  "buy": 10000,
+  "sell": 2500
+ },
+ {
+  "id": 12027,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Gale Hairpin",
+  "description": "Allows the wielder to act first at the start of battle.",
+  "stats": {},
+  "abilityIds": [
+   1049
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 12028,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Brigand’s Gloves",
+  "description": "Increases the success rate of Steal.",
+  "stats": {},
+  "abilityIds": [
+   1055
+  ],
+  "buy": 4000,
+  "sell": 1000
+ },
+ {
+  "id": 12029,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Alarm Earrings",
+  "description": "Prevents sneak attacks.",
+  "stats": {},
+  "abilityIds": [
+   1048
+  ],
+  "buy": 3500,
+  "sell": 870
+ },
+ {
+  "id": 12030,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Swift Badge",
+  "description": "Increases speed by 10%.",
+  "stats": {},
+  "abilityIds": [
+   1277
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 12031,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Poison Charm",
+  "description": "Increases attack attributes when Poisoned.",
+  "stats": {},
+  "abilityIds": [
+   1067
+  ],
+  "buy": 700,
+  "sell": 170
+ },
+ {
+  "id": 12032,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Monk’s Prayer Beads",
+  "description": "Prevents Charm.",
+  "stats": {},
+  "abilityIds": [
+   1111
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 12033,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Hairband",
+  "description": "",
+  "stats": {
+   "PDEF": 5
+  },
+  "abilityIds": [],
+  "buy": 200,
+  "sell": 50
+ },
+ {
+  "id": 12034,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Insulated Gloves",
+  "description": "Halves damage taken from Lightning attacks.",
+  "stats": {},
+  "abilityIds": [
+   1250
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 12035,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Headband",
+  "description": "Prevents Sleep.",
+  "stats": {},
+  "abilityIds": [
+   1106
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 12036,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Mage’s Shard",
+  "description": "Increases MP by 30.",
+  "stats": {
+   "MP": 30
+  },
+  "abilityIds": [],
+  "buy": 3600,
+  "sell": 900
+ },
+ {
+  "id": 12037,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Mage’s Stone",
+  "description": "Restores 3% of max MP on the wielder’s turn.",
+  "stats": {},
+  "abilityIds": [
+   1255
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 12038,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Philosopher’s Stone",
+  "description": "Restores 5% of max MP on the wielder’s turn.",
+  "stats": {},
+  "abilityIds": [
+   1256
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 12039,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Aquatic Veil",
+  "description": "Halves damage taken from Water attacks.",
+  "stats": {},
+  "abilityIds": [
+   1251
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 12040,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Jeweled Ring",
+  "description": "Prevents Petrify and Paralysis.",
+  "stats": {},
+  "abilityIds": [
+   1110,
+   1108
+  ],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 12042,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Tiara of Frost",
+  "description": "Halves damage taken from Ice attacks.",
+  "stats": {},
+  "abilityIds": [
+   1033
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 12043,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Fujin’s Fuda",
+  "description": "Halves damage taken from Wind attacks.",
+  "stats": {},
+  "abilityIds": [
+   1248
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 12044,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Mole Doll",
+  "description": "Halves damage taken from Earth attacks.",
+  "stats": {},
+  "abilityIds": [
+   1249
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 12045,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Scintillating Ring",
+  "description": "Halves damage taken from Light attacks.",
+  "stats": {},
+  "abilityIds": [
+   1252
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 12046,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Silver Key",
+  "description": "Halves damage taken from Dark attacks.",
+  "stats": {},
+  "abilityIds": [
+   1253
+  ],
+  "buy": 3000,
+  "sell": 750
+ },
+ {
+  "id": 12047,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Trick Coin",
+  "description": "Guarantees heads on Coin Toss.",
+  "stats": {},
+  "abilityIds": [
+   1102
+  ],
+  "buy": 777,
+  "sell": 190
+ },
+ {
+  "id": 12048,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Protector’s Seal",
+  "description": "Increases HP by 50.",
+  "stats": {
+   "HP": 50,
+   "PDEF": 50
+  },
+  "abilityIds": [
+   1300
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12049,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Calm Armlet",
+  "description": "Prevents Confuse and Berserk.",
+  "stats": {},
+  "abilityIds": [
+   1114,
+   1109
+  ],
+  "buy": 2000,
+  "sell": 500
+ },
+ {
+  "id": 12050,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Knight’s Medallion",
+  "description": "Fills the LB gauge by 10% upon receiving damage.",
+  "stats": {},
+  "abilityIds": [
+   1331
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12051,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Crest of Criticality",
+  "description": "Increases critical hit rate by 50% when attacking a staggered enemy.",
+  "stats": {},
+  "abilityIds": [
+   1357
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12052,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Blessed Pendant",
+  "description": "Increases potency of healing magic by 20%.",
+  "stats": {},
+  "abilityIds": [
+   1283
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12053,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Chocobo Nitro",
+  "description": "Inflicts a random debuff on target enemy when using Mechabo skills.",
+  "stats": {},
+  "abilityIds": [
+   1239
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12054,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Enchanted Ring",
+  "description": "Increases the duration of buffs applied by the wielder by 1 turn.",
+  "stats": {},
+  "abilityIds": [
+   1401
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12055,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Amulet of Magic Absorption",
+  "description": "Restores 2% of max MP upon dealing damage with a standard attack.",
+  "stats": {},
+  "abilityIds": [
+   1124
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12056,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Moonlight Ring",
+  "description": "Increases damage dealt by magic attacks by 10%.",
+  "stats": {},
+  "abilityIds": [
+   1310
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12057,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Hairpin of Grace",
+  "description": "Restores HP after walking a certain distance.",
+  "stats": {},
+  "abilityIds": [
+   1066
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12058,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Ring of Rage",
+  "description": "Fills the LB gauge by 10% upon receiving damage.",
+  "stats": {},
+  "abilityIds": [
+   1331
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12059,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Mastery Pendant",
+  "description": "Doubles MRP gained.",
+  "stats": {},
+  "abilityIds": [
+   1051
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12060,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Stagger Ring",
+  "description": "Increases stagger power by 10%.",
+  "stats": {},
+  "abilityIds": [
+   1278
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12061,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Adept’s Monocle",
+  "description": "Fills the LB gauge by 10% upon staggering an enemy.",
+  "stats": {},
+  "abilityIds": [
+   1280
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12062,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Arcane Pendant",
+  "description": "Restores 5% of max MP upon staggering an enemy.",
+  "stats": {},
+  "abilityIds": [
+   1281
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12063,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Vitality Charm",
+  "description": "Increases HP by 120.",
+  "stats": {
+   "HP": 120
+  },
+  "abilityIds": [],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12064,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Heart Anklet",
+  "description": "Increases HP by 10%.",
+  "stats": {},
+  "abilityIds": [
+   1377
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12065,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Ribbon",
+  "description": "Nullifies all status ailments, excluding Instant Death.",
+  "stats": {},
+  "abilityIds": [
+   1355
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12066,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Warding Bell",
+  "description": "Halves the chance of encounters.",
+  "stats": {},
+  "abilityIds": [
+   1053
+  ],
+  "buy": 12000,
+  "sell": 3000
+ },
+ {
+  "id": 12067,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Foe Attractor",
+  "description": "Increases the chance of encounters.",
+  "stats": {},
+  "abilityIds": [
+   1054
+  ],
+  "buy": 12000,
+  "sell": 3000
+ },
+ {
+  "id": 12068,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Warrior’s Bandana",
+  "description": "Fills the LB gauge by 5% upon dealing damage with a standard attack.",
+  "stats": {},
+  "abilityIds": [
+   1478
+  ],
+  "buy": 15000,
+  "sell": 3750
+ },
+ {
+  "id": 12069,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Circlet of Enlightenment",
+  "description": "Fills the LB gauge by 5% every turn.",
+  "stats": {},
+  "abilityIds": [
+   1479
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 12070,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Gentleman Thief’s Monocle",
+  "description": "Increases critical hit rate by 20%.",
+  "stats": {},
+  "abilityIds": [
+   1480
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 12071,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Sniper’s Eye",
+  "description": "Increases critical hit rate by 30%.",
+  "stats": {},
+  "abilityIds": [
+   1481
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12072,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Cursed Ring",
+  "description": "Consumes 300 HP with every action, but increases stagger power by 10%.",
+  "stats": {},
+  "abilityIds": [
+   1482
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12073,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Dark Rosary",
+  "description": "Consumes 500 HP with every action, but increases stagger power by 30%.",
+  "stats": {},
+  "abilityIds": [
+   1483
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12074,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Scar Orb",
+  "description": "Consumes 300 HP with every action, but increases damage dealt by 10%.",
+  "stats": {},
+  "abilityIds": [
+   1485
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12075,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Evil Eye",
+  "description": "Consumes 500 HP with every action, but increases damage dealt by 20%.",
+  "stats": {},
+  "abilityIds": [
+   1486
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12076,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Vampire Charm",
+  "description": "Consumes 800 HP with every action, but increases damage dealt by 30%.",
+  "stats": {},
+  "abilityIds": [
+   1487
+  ],
+  "buy": 1000,
+  "sell": 250
+ },
+ {
+  "id": 12077,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Life Charm",
+  "description": "Increases HP by 20%.",
+  "stats": {},
+  "abilityIds": [
+   1378
+  ],
+  "buy": 20000,
+  "sell": 5000
+ },
+ {
+  "id": 12078,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Solar Pendant",
+  "description": "Imbues non-elemental physical attacks with Fire.",
+  "stats": {},
+  "abilityIds": [
+   1521
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 12079,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Snow Spirit’s Scarf",
+  "description": "Imbues non-elemental physical attacks with Ice.",
+  "stats": {},
+  "abilityIds": [
+   1522
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 12080,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Thunder God’s Earrings",
+  "description": "Imbues non-elemental physical attacks with Lightning.",
+  "stats": {},
+  "abilityIds": [
+   1523
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 12081,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Azure Amulet",
+  "description": "Imbues non-elemental physical attacks with Water.",
+  "stats": {},
+  "abilityIds": [
+   1524
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 12082,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Sylph’s Tiara",
+  "description": "Imbues non-elemental physical attacks with Wind.",
+  "stats": {},
+  "abilityIds": [
+   1525
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 12083,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Golem Core",
+  "description": "Imbues non-elemental physical attacks with Earth.",
+  "stats": {},
+  "abilityIds": [
+   1526
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 12084,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Halo Ring",
+  "description": "Imbues non-elemental physical attacks with Light.",
+  "stats": {},
+  "abilityIds": [
+   1527
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 12085,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Demon’s Ring",
+  "description": "Imbues non-elemental physical attacks with Dark.",
+  "stats": {},
+  "abilityIds": [
+   1528
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 12086,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Adamantine Beads",
+  "description": "Places wielder behind all allies in the turn order.",
+  "stats": {},
+  "abilityIds": [
+   1505
+  ],
+  "buy": 10000,
+  "sell": 2500
+ },
+ {
+  "id": 12087,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Anti-Magic Studs",
+  "description": "Counters magic attacks with a standard attack.",
+  "stats": {},
+  "abilityIds": [
+   1030
+  ],
+  "buy": 500,
+  "sell": 120
+ },
+ {
+  "id": 12090,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Mastery Ring",
+  "description": "Increases MRP gained in battle by 100% (max 10).",
+  "stats": {},
+  "abilityIds": [
+   1550
+  ],
+  "buy": 500,
+  "sell": 120
+ },
+ {
+  "id": 12095,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Ultima Reactor",
+  "description": "Increases stagger power and damage dealt, scaling with current HP.",
+  "stats": {},
+  "abilityIds": [
+   1516,
+   1517,
+   1518,
+   1519
+  ],
+  "buy": 50000,
+  "sell": 12500
+ },
+ {
+  "id": 12096,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Genji Gloves",
+  "description": "Increases critical hit rate by 50%.",
+  "stats": {},
+  "abilityIds": [
+   1506
+  ],
+  "buy": 35000,
+  "sell": 8750
+ },
+ {
+  "id": 12097,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Gold Hairpin+",
+  "description": "Halves MP cost.",
+  "stats": {
+   "MAG": 60
+  },
+  "abilityIds": [
+   1045,
+   1317
+  ],
+  "buy": 100,
+  "sell": 20
+ },
+ {
+  "id": 12098,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Ancient Accessory",
+  "description": "",
+  "stats": {
+   "MAG": 1
+  },
+  "abilityIds": [],
+  "buy": 100,
+  "sell": 20
+ },
+ {
+  "id": 12099,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Gold Hairpin",
+  "description": "Halves MP cost.",
+  "stats": {
+   "MAG": 30
+  },
+  "abilityIds": [
+   1045
+  ],
+  "buy": 100,
+  "sell": 20
+ },
+ {
+  "id": 12100,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Rose Circlet",
+  "description": "Increases damage dealt by physical attacks by 10%.",
+  "stats": {
+   "MP": 30
+  },
+  "abilityIds": [
+   1308
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 12101,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Super Ribbon",
+  "description": "Nullifies all status ailments.",
+  "stats": {},
+  "abilityIds": [
+   1355,
+   1325
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 12102,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Dragon Seal",
+  "description": "Prevents encounters.",
+  "stats": {},
+  "abilityIds": [
+   1052
+  ],
+  "buy": 1500,
+  "sell": 370
+ },
+ {
+  "id": 12103,
+  "kind": "accessory",
+  "subtype": 0,
+  "name": "Omega Badge",
+  "description": "Significantly reduces MP cost of magic and skills.",
+  "stats": {},
+  "abilityIds": [
+   1135
+  ],
+  "buy": 1500,
+  "sell": 370
+ }
+]

@@ -1,0 +1,63 @@
+{
+  "name": "ffrs-save-editor",
+  "productName": "FFR Save Editor",
+  "version": "1.0.0",
+  "description": "Save editor for Final Fantasy Resonance",
+  "author": "jseijas",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jesus-seijas-sp/ffr-save-editor.git"
+  },
+  "main": "src/main/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node test/locations.test.js && node test/safety.test.js && node test/save.test.js",
+    "dist": "electron-builder --win --linux --x64"
+  },
+  "build": {
+    "appId": "com.jseijas.ffrsaveeditor",
+    "productName": "FFR Save Editor",
+    "artifactName": "FFR-Save-Editor-${version}-${os}-${arch}.${ext}",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "data/**/*",
+      "build/icon.png",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "portable",
+        "zip"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "portable": {
+      "artifactName": "FFR-Save-Editor-${version}-windows-portable.exe"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "tar.gz"
+      ],
+      "icon": "build/icon.png",
+      "category": "Utility",
+      "synopsis": "Save editor for Final Fantasy Resonance"
+    },
+    "extraFiles": [
+      "THIRD-PARTY-NOTICES.txt"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^45.0.0",
+    "electron-builder": "^26.18.0"
+  },
+  "dependencies": {
+    "@fontsource/dotgothic16": "^5.3.1"
+  }
+}
