@@ -316,7 +316,7 @@ async function openSave(file, force = false) {
 
 async function save() {
   if (!S.file || !S.dirty) return;
-  if (S.readOnly) { status('This save has a layout the editor does not recognize — saving is disabled to protect it.', 'error'); return; }
+  if (S.readOnly) { status(`This save has a layout the editor does not recognize (${S.readOnly}) — saving is disabled to protect it.`, 'error'); return; }
   try {
     const bak = await api.writeSave(S.file, S.header, S.bytes);
     if (!bak) return;

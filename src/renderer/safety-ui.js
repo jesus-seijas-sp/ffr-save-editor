@@ -17,17 +17,24 @@ async function refreshGameState() {
 
 // ---------- save-format check ----------
 // Confirms a decrypted save has the layout the editor understands before allowing writes.
+// Only data after the end is blocking: it means the parser lost its place, so field offsets can't be trusted.
+// Missing sections (no Gil, no items yet...) just leave those screens empty.
 function checkSaveFormat() {
   const p = S.parsed;
   const missing = ['Player.currentMoney'].filter((k) => !has(k))
     .concat(['inventory', 'unitParameterList', 'visionList'].filter((k) => !p.arrays.has(k)));
   const tail = S.bytes.subarray(p.end);
   const tailOk = tail.length < 32 && tail.every((b) => b === 0);
-  S.readOnly = missing.length > 0 || !tailOk;
+  S.readOnly = tailOk ? '' : `unexpected data at the end: ${tail.length} bytes after offset ${p.end} of ${S.bytes.length}`;
   if (S.readOnly) {
-    status(`Unrecognized save layout (${missing.length ? 'missing ' + missing.join(', ') : 'unexpected data at the end'}) — opened read-only, saving is disabled.`, 'error');
+    status(`Unrecognized save layout (${S.readOnly}) — opened read-only, saving is disabled.`, 'error');
+    return false;
   }
-  return !S.readOnly;
+  if (missing.length) {
+    status(`Loaded ${S.file.split(/[\\/]/).pop()} — this save has no ${missing.join(', ')}; those screens stay empty.`);
+    return false;
+  }
+  return true;
 }
 
 // ---------- backups window ----------
