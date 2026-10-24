@@ -29,7 +29,7 @@ A save editor for **Final Fantasy Resonance** (Steam), with an interface in the 
 
 ## Download
 
-Ready-to-run builds are on [Nexus Mods](https://www.nexusmods.com/) and in this repo's Releases.
+Ready-to-run builds are on [Nexus Mods](https://www.nexusmods.com/finalfantasyresonance/mods/77) and in this repo's Releases.
 
 ## Running from source
 
