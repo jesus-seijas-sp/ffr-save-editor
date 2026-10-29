@@ -49,7 +49,7 @@ The macOS build isn't signed, so the first time you open it Gatekeeper may ask y
 
 ## Save format
 
-The saves live at `%LOCALAPPDATA%\FFRS\Steam\<SteamID>\GameSaveData<N>.sav` on Windows (slot 0 is the autosave). On Linux and Steam Deck they're in the same place inside the Proton prefix: `steamapps/compatdata/3259780/pfx/drive_c/users/steamuser/AppData/Local/FFRS/Steam/<SteamID>`. On macOS with CrossOver they're inside the bottle: `~/Library/Application Support/CrossOver/Bottles/<bottle>/drive_c/users/<user>/AppData/Local/FFRS/Steam/<SteamID>`.
+The saves live at `%LOCALAPPDATA%\FFRS\Steam\<SteamID>\GameSaveData<N>.sav` on Windows (slot 0 is the autosave). On Linux and Steam Deck they're in the same place inside the Proton prefix: `steamapps/compatdata/3259780/pfx/drive_c/users/steamuser/AppData/Local/FFRS/Steam/<SteamID>`. On macOS with CrossOver they're inside the bottle: `~/Library/Application Support/CrossOver/Bottles/<bottle>/drive_c/users/<user>/AppData/Local/FFRS/Steam/<SteamID>`. The game doesn't need to run in CrossOver: once its Steam client syncs the save, Steam Cloud takes the edited save to wherever you play, such as GeForce Now.
 
 Each file has a 32-byte header followed by an encrypted body:
 
