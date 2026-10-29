@@ -14,7 +14,8 @@
   "scripts": {
     "start": "electron .",
     "test": "node test/locations.test.js && node test/safety.test.js && node test/save.test.js",
-    "dist": "electron-builder --win --linux --x64"
+    "dist": "electron-builder --win --linux --x64",
+    "dist:mac": "electron-builder --mac --arm64 --x64"
   },
   "build": {
     "appId": "com.jseijas.ffrsaveeditor",
@@ -48,6 +49,19 @@
       "icon": "build/icon.png",
       "category": "Utility",
       "synopsis": "Save editor for Final Fantasy Resonance"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dir"
+        },
+        {
+          "target": "zip"
+        }
+      ],
+      "icon": "build/icon.png",
+      "category": "public.app-category.utilities",
+      "identity": null
     },
     "extraFiles": [
       "THIRD-PARTY-NOTICES.txt"

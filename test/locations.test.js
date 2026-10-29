@@ -1,4 +1,4 @@
-// Save-folder detection against fake Windows and Linux (Proton) layouts in a temp directory.
+// Save-folder detection against fake Windows, Linux (Proton) and macOS (CrossOver) layouts in a temp directory.
 const assert = require('assert');
 const fs = require('fs');
 const os = require('os');
@@ -50,6 +50,20 @@ try {
   assert.strictEqual(r.length, 1);
   assert.strictEqual(r[0].path, fp);
 
+  // --- macOS: CrossOver bottle, Steam installed inside the bottle
+  const home3 = mk('mac-home');
+  const bottle = mk('mac-home', 'Library', 'Application Support', 'CrossOver', 'Bottles', 'Steam', 'drive_c');
+  const xo = mk('mac-home', 'Library', 'Application Support', 'CrossOver', 'Bottles', 'Steam', 'drive_c', 'users', 'crossover', 'AppData', 'Local', 'FFRS', 'Steam', '76561198000000005');
+  touch(xo, 'GameSaveData1.sav');
+  mk('mac-home', 'Library', 'Application Support', 'CrossOver', 'Bottles', 'Steam', 'drive_c', 'Program Files (x86)', 'Steam', 'config');
+  fs.writeFileSync(path.join(bottle, 'Program Files (x86)', 'Steam', 'config', 'loginusers.vdf'),
+    '"users"\n{\n\t"76561198000000005"\n\t{\n\t\t"PersonaName"\t"Rain"\n\t}\n}\n');
+  r = detect({ platform: 'darwin', home: home3, env: {} });
+  assert.strictEqual(r.length, 1, 'found the CrossOver bottle');
+  assert.strictEqual(r[0].path, xo);
+  assert.strictEqual(r[0].source, 'CrossOver (Steam)');
+  assert.strictEqual(r[0].account, 'Rain (76561198000000005)', 'persona name from the bottle\'s Steam');
+
   // --- nothing installed
   assert.deepStrictEqual(detect({ platform: 'linux', home: mk('empty-home'), env: {} }), []);
 
@@ -57,7 +71,7 @@ try {
   const picked = resolvePicked(path.join(local, 'FFRS'));
   assert.deepStrictEqual(picked.map((f) => f.path).sort(), [a, b].sort());
 
-  console.log('OK — save folder detection (Windows, Proton second library, Flatpak, none, manual pick)');
+  console.log('OK — save folder detection (Windows, Proton second library, Flatpak, CrossOver, none, manual pick)');
 } finally {
   fs.rmSync(tmp, { recursive: true, force: true });
 }

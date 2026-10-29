@@ -1,6 +1,6 @@
 # FFR Save Editor
 
-A save editor for **Final Fantasy Resonance** (Steam), with an interface in the style of the classic Final Fantasy menus. It runs on Windows, Linux and Steam Deck.
+A save editor for **Final Fantasy Resonance** (Steam), with an interface in the style of the classic Final Fantasy menus. It runs on Windows, Linux, Steam Deck and macOS (with the game under CrossOver).
 
 ![FFR Save Editor](docs/header.png)
 
@@ -18,7 +18,7 @@ A save editor for **Final Fantasy Resonance** (Steam), with an interface in the 
   - a backup is made before every write;
   - a backup manager lets you restore older saves;
   - a warning appears when the game build hasn't been tested with the editor.
-- **Save folder detection:** finds the folder automatically on Windows, Linux (Proton, including Flatpak and Snap Steam) and Steam Deck, or you can choose it yourself.
+- **Save folder detection:** finds the folder automatically on Windows, Linux (Proton, including Flatpak and Snap Steam), Steam Deck and macOS (CrossOver), or you can choose it yourself.
 - **Keyboard control:** arrow keys, Enter and Esc, as in the games.
 
 ## Screenshots
@@ -42,11 +42,14 @@ npm install
 npm start        # run the editor
 npm test         # run the tests (pass a save to test against: npm test -- path/to/GameSaveData1.sav)
 npm run dist     # build the Windows portable/zip and the Linux AppImage/tar.gz into dist/
+npm run dist:mac # build the macOS .app/zip (unsigned) into dist/
 ```
+
+The macOS build isn't signed, so the first time you open it Gatekeeper may ask you to right-click the app and choose **Open**.
 
 ## Save format
 
-The saves live at `%LOCALAPPDATA%\FFRS\Steam\<SteamID>\GameSaveData<N>.sav` on Windows (slot 0 is the autosave). On Linux and Steam Deck they're in the same place inside the Proton prefix: `steamapps/compatdata/3259780/pfx/drive_c/users/steamuser/AppData/Local/FFRS/Steam/<SteamID>`.
+The saves live at `%LOCALAPPDATA%\FFRS\Steam\<SteamID>\GameSaveData<N>.sav` on Windows (slot 0 is the autosave). On Linux and Steam Deck they're in the same place inside the Proton prefix: `steamapps/compatdata/3259780/pfx/drive_c/users/steamuser/AppData/Local/FFRS/Steam/<SteamID>`. On macOS with CrossOver they're inside the bottle: `~/Library/Application Support/CrossOver/Bottles/<bottle>/drive_c/users/<user>/AppData/Local/FFRS/Steam/<SteamID>`.
 
 Each file has a 32-byte header followed by an encrypted body:
 
