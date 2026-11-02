@@ -7,7 +7,7 @@ const SLOT_LABELS = { 0: 'Autosave', 1: 'Slot 1', 2: 'Slot 2', 3: 'Slot 3' };
 const CATEGORIES = { All: null, Weapons: 'weapon', Armor: 'armor', Accessories: 'accessory', Consumables: 'consumable', 'Key items': 'key item', Artifacts: 'artifact' };
 
 const S = { dir: '', saves: [], file: null, header: null, bytes: null, parsed: null, counts: new Map(), dirty: false, charIdx: 0, visIdx: 0 };
-const CAT = { names: {}, equip: new Map(), items: new Map(), prog: {}, journal: {}, maps: [] };
+const CAT = { names: {}, equip: new Map(), items: new Map(), prog: {}, journal: {}, maps: [], savePoints: {} };
 
 // ---------- helpers ----------
 const $ = (id) => document.getElementById(id);
@@ -151,7 +151,7 @@ function numInput(path, cls = 'num', range = null) {
 // ---------- progression (tables extracted from the game: levels and vision mastery) ----------
 const levelCurve = (uid) => (CAT.prog.levelExp || {})[uid] || null;     // cumulative EXP for levels 1..99
 const masteryCurve = (vid) => (CAT.prog.masteryMrp || {})[vid] || null; // cumulative MRP for ranks 0..9
-const awakeningMax = () => CAT.prog.awakeningMax || 4;
+const awakeningMax = () => CAT.prog.awakeningMax || 3;   // points 0-3 = awakening tiers 1-4
 function levelOf(uid, exp) {
   const c = levelCurve(uid);
   if (!c) return null;
@@ -182,6 +182,7 @@ async function init() {
   CAT.prog = cat.progression || {};
   CAT.journal = cat.journal || {};
   CAT.maps = cat.maps || [];
+  CAT.savePoints = (cat.savePoints || {}).deep || {};
   for (const e of cat.equipment) CAT.equip.set(e.id, e);
   for (const e of cat.items) CAT.items.set(e.id, e);
 
@@ -425,6 +426,11 @@ function renderCharList() {
   renderChar();
 }
 
+// baseParameterList index -> name (the game's eUnitParameterType; 0 is None)
+const BONUS_LABELS = ['(none)', 'Max HP', 'Max MP', 'Break gauge', 'Limit Burst gauge', 'Attack', 'Defense', 'Intelligence',
+  'Mind', 'Agility', 'Level', 'Ability AP', 'Physical attack', 'Physical defense', 'Magical attack', 'Magical defense',
+  'Divine', 'Role', 'Skill damage type', 'AP (other)'];
+
 function equipLabel(id, owned) {
   if (id < 0) return '(none)';
   const e = CAT.equip.get(id);
@@ -456,6 +462,42 @@ function equipSelect(uid, slot, current, onPick) {
   const box = h('div', { class: 'with-icon' }, pic(current), sel);
   sel.addEventListener('change', () => { box.firstChild.replaceWith(pic(Number(sel.value))); onPick(Number(sel.value)); sel.classList.add('changed'); });
   return box;
+}
+
+// The game's eUnitJoinStatus: whether the story has a character with the party.
+const JOIN_STATUS = [['Join', 'Joined'], ['NotJoin', 'Not joined yet'], ['Leave', 'Left the party'],
+  ['TemporalLeave', 'Away for now'], ['Lost', 'Lost']];
+function joinSelect(base) {
+  const path = `${base}.JoinStatus`;
+  const cur = S.parsed.strings.get(path);
+  if (!cur) return null;
+  const now = cur.replace('eUnitJoinStatus::', '');
+  const opts = JOIN_STATUS.some(([v]) => v === now) ? JOIN_STATUS : [[now, now], ...JOIN_STATUS];
+  const sel = h('select', {}, opts.map(([v, label]) => h('option', { value: v, selected: v === now }, label)));
+  sel.addEventListener('change', () => {
+    S.bytes = FFRS.setString(S.bytes, path, `eUnitJoinStatus::${sel.value}`, S.parsed);
+    reparse(); setDirty(true); sfx('confirm');
+    status(`${nameOf('unit', get(`${base}.UnitId`))}: ${sel.selectedOptions[0].textContent}. Unsaved — choose Save in the menu.`);
+    renderCharList();
+  });
+  return sel;
+}
+
+// Party.partyList: the four characters in the party, by unit id. Putting someone in a slot swaps with whoever is there.
+function partySlotSelect(uid) {
+  const slots = Array.from({ length: count('Party.partyList') }, (_, i) => `Party.partyList[${i}]`);
+  const at = slots.findIndex((p) => get(p) === uid);
+  const sel = h('select', {}, h('option', { value: '-1', selected: at < 0 }, 'Not in the party'),
+    slots.map((p, i) => h('option', { value: String(i), selected: i === at }, `Slot ${i + 1}${i === at ? '' : ` (now ${nameOf('unit', get(p))})`}`)));
+  sel.addEventListener('change', () => {
+    const to = Number(sel.value);
+    if (to < 0) { status('To take someone out of the party, put another character in their slot.', 'error'); renderChar(); return; }
+    const other = get(slots[to]);
+    if (at >= 0) setValue(slots[at], other);
+    setValue(slots[to], uid);
+    renderCharList();
+  });
+  return sel;
 }
 
 function renderChar() {
@@ -495,6 +537,9 @@ function renderChar() {
   for (const [f, label] of [['HitPoint', 'HP'], ['MagicPoint', 'MP'], ['defeatUnitNum', 'Enemies defeated']]) {
     if (has(`${base}.${f}`)) row(label, numInput(`${base}.${f}`));
   }
+  const story = joinSelect(base);
+  if (story) row('Story status', story);
+  row('Party slot', partySlotSelect(uid));
 
   const eq = h('div', { class: 'form' });
   const erow = (label, el) => eq.append(h('label', {}, label), h('div', {}, el));
@@ -520,7 +565,8 @@ function renderChar() {
   const nb = count(`${base}.baseParameterList`);
   const grid = h('div', { class: 'grid5' });
   for (let j = 0; j < nb; j++) {
-    grid.append(h('div', {}, h('label', {}, `[${j}] `), numInput(`${base}.baseParameterList[${j}]`, 'num small')));
+    const label = BONUS_LABELS[j] ? `${BONUS_LABELS[j]} ` : `[${j}] `;
+    grid.append(h('div', { title: `index ${j}` }, h('label', {}, label), numInput(`${base}.baseParameterList[${j}]`, 'num small')));
   }
 
   // name + stats beside the portrait, equipment and bonus stats full width below
@@ -530,11 +576,13 @@ function renderChar() {
         h('h2', {}, nameOf('unit', uid)),
         h('div', { class: 'subtitle' }, `UnitId ${uid}`),
         h('h3', {}, 'Stats'), form,
-        h('div', { class: 'hint' }, 'The game may recalculate level and stats from Experience.')),
+        h('div', { class: 'hint' }, 'The game may recalculate level and stats from Experience.'),
+        h('div', { class: 'hint' }, 'Story status "Joined" lets you use a character before the story adds them (for solo or early-member runs). The story can still change it at its own events, and scenes may not expect them yet.')),
       h('div', { class: 'portrait-col' }, img(`${IMG}/portraits/${uid}.png`, 'portrait'))),
     h('h3', {}, 'Equipment'), eq,
     h('div', { class: 'hint' }, '✔ = in your inventory. Only weapons and armor this character can use are listed. Empty accessory slots can be filled.'),
-    nb ? h('h3', {}, 'Bonus stats (baseParameterList — meaning per index unknown)') : '', nb ? grid : '',
+    nb ? h('h3', {}, 'Bonus stats (permanent, on top of level and equipment)') : '', nb ? grid : '',
+    nb ? h('div', { class: 'hint' }, 'Names from the game\'s eUnitParameterType. The "AP" the menus show for equipping abilities is Ability AP; the game\'s own "AP" entry is something else. Only some of these were tested in game.') : '',
   );
 }
 

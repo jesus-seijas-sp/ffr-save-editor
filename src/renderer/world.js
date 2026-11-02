@@ -4,7 +4,7 @@
    have been switched (item id -> IsActive). Maps: Map.perMapSaveDataMap (map id -> known / visited /
    cleared) plus the treasure chests in Map.mapGimmick, both keyed by the same map ids (data/maps.json).
    Uses globals from renderer.js (S, CAT, FFRS, $, h, get, has, count, reparse, setDirty, status, sfx,
-   inventoryMap, itemIcon, nameOf) and journal.js (bool). */
+   inventoryMap, itemIcon, nameOf, setValue, SLOT_LABELS, api) and journal.js (bool). */
 
 // ---------- shared ----------
 function applyBytes(bytes, msg) {
@@ -125,6 +125,32 @@ function mapChests() {
   return m;
 }
 
+// Teleport: a dungeon's save points can teleport to its deepest one (data/savepoints.json) once it's reached, which the
+// save keeps as Map.mapGimmick{map}.gimmickState{id} = 1. null: no teleport in this dungeon.
+function teleportState(id) {
+  const uid = CAT.savePoints[id];
+  if (uid === undefined) return null;
+  const mi = mapEntryIndex('Map.mapGimmick', id);
+  if (mi < 0) return 'unvisited';
+  const i = mapEntryIndex(`Map.mapGimmick{${mi}}.value.gimmickState`, uid);
+  return i >= 0 && get(`Map.mapGimmick{${mi}}.value.gimmickState{${i}}.value.Value`) >= 1 ? 'reached' : 'locked';
+}
+
+function unlockTeleport(m) {
+  try {
+    applyBytes(FFRS.unlockSavePoint(S.bytes, m.id, CAT.savePoints[m.id]), `${m.name}: Teleport to its deepest save point unlocked.`);
+  } catch (e) { status(`${m.name}: ${e.message}`, 'error'); }
+  renderMaps();
+}
+
+function teleportCell(m) {
+  const st = teleportState(m.id);
+  if (!st) return h('td', { class: 'dim' }, '—');
+  if (st === 'reached') return h('td', { class: 'owned', title: 'Its save points can teleport to the deepest one' }, '✔');
+  if (st === 'unvisited') return h('td', { class: 'dim', title: 'Go into this dungeon once, then it can be unlocked' }, 'not visited');
+  return h('td', {}, h('button', { class: 'cmd small', title: `Let ${m.name}'s save points teleport to its deepest one`, onclick: () => unlockTeleport(m) }, 'Unlock'));
+}
+
 function setMapFlag(id, flag, value) {
   const name = (mapCatalog().find((m) => m.id === id) || {}).name || `Map #${id}`;
   applyBytes(FFRS.setMapFlags(S.bytes, id, { [flag]: value }), `${name}: ${flag.slice(3).toLowerCase()} ${value ? 'on' : 'off'}.`);
@@ -151,6 +177,55 @@ function revealMaps(list) {
   if (!ids.length) { status('Every map shown is already known.'); return; }
   applyBytes(FFRS.setManyMapFlags(S.bytes, ids, { bIsKnown: true }), `${ids.length} map${ids.length === 1 ? '' : 's'} marked as known.`);
   renderMaps();
+}
+
+// Where the party is: Map.mapId and Map.unitLocation (X, Y, Z). The game loads that map and puts the party at that
+// spot, so the safe way out of a stuck spot is a place you've stood before: copy it from another save slot.
+function positionSection() {
+  const locOff = S.parsed.vectors.get('Map.unitLocation');
+  if (!has('Map.mapId') || locOff === undefined) return [];
+  const mapId = get('Map.mapId');
+  const xyz = FFRS.getVector(S.bytes, locOff);
+  const all = mapCatalog();
+  const mapName = (id) => (all.find((m) => m.id === id) || {}).name || `Map #${id}`;
+  const mapSel = h('select', { title: 'Map' }, ...(all.some((m) => m.id === mapId) ? [] : [h('option', { value: String(mapId) }, mapName(mapId))]),
+    ...all.map((m) => h('option', { value: String(m.id), selected: m.id === mapId }, `${m.name}  #${m.id}`)));
+  mapSel.addEventListener('change', () => { if (setValue('Map.mapId', mapSel.value)) mapSel.classList.add('changed'); });
+  const coord = (k, label) => {
+    const el = h('input', { class: 'num small', value: xyz[k].toFixed(1), title: label });
+    el.addEventListener('change', () => {
+      const n = Number(el.value);
+      if (!Number.isFinite(n)) { status(`${label} must be a number`, 'error'); el.value = xyz[k].toFixed(1); return; }
+      const now = FFRS.getVector(S.bytes, locOff);
+      now[k] = n;
+      FFRS.setVector(S.bytes, locOff, now);
+      setDirty(true); sfx('confirm'); el.classList.add('changed');
+      status('Position changed. Unsaved — choose Save in the menu.');
+    });
+    return h('label', { class: 'quick-sub' }, `${label} `, el);
+  };
+  const others = (S.saves || []).filter((s) => s.path !== S.file);
+  const copyFrom = async (s) => {
+    try {
+      const { plain } = await api.openSave(s.path);
+      const p = FFRS.parse(plain);
+      const off = p.vectors.get('Map.unitLocation');
+      if (!p.fields.has('Map.mapId') || off === undefined) { status(`${SLOT_LABELS[s.slot] || s.file} has no position.`, 'error'); return; }
+      const id = FFRS.getField(plain, p.fields.get('Map.mapId'));
+      FFRS.setField(S.bytes, S.parsed.fields.get('Map.mapId'), id);
+      FFRS.setVector(S.bytes, locOff, FFRS.getVector(plain, off));
+      setDirty(true); sfx('confirm');
+      status(`Position copied from ${SLOT_LABELS[s.slot] || s.file}: ${mapName(id)}. Unsaved — choose Save in the menu.`);
+      renderMaps();
+    } catch (e) { status(`Couldn't read ${s.file}: ${e.message}`, 'error'); }
+  };
+  return [
+    h('h3', {}, 'Where the party is'),
+    h('div', { class: 'bar' }, mapSel, coord(0, 'X'), coord(1, 'Y'), coord(2, 'Z')),
+    others.length ? h('div', { class: 'bar mt' }, h('span', { class: 'dim' }, 'Copy the position of '),
+      ...others.map((s) => h('button', { class: 'cmd small', onclick: () => copyFrom(s) }, SLOT_LABELS[s.slot] || s.file))) : '',
+    h('div', { class: 'hint' }, 'For a party stuck somewhere: the game loads this map and puts the party at these coordinates. A spot from another save slot (one you have stood on) is the safe choice; made-up coordinates can leave the party in a wall or falling. Keep a backup.'),
+  ];
 }
 
 function renderMaps() {
@@ -187,11 +262,12 @@ function renderMaps() {
           return h('td', { class: 'center' }, cb);
         }),
         h('td', { class: cl.length && open === cl.length ? 'owned' : '' }, cl.length ? `${open} / ${cl.length}` : '—'),
-        h('td', {}, open ? h('button', { class: 'cmd small', title: `Close the opened chests in ${m.name}`, onclick: () => resetChests([m.id]) }, 'Reset') : ''));
+        h('td', {}, open ? h('button', { class: 'cmd small', title: `Close the opened chests in ${m.name}`, onclick: () => resetChests([m.id]) }, 'Reset') : ''),
+        teleportCell(m));
     });
     return [h('h3', {}, `${r}  `, h('span', { class: 'dim' }, `${knownN} / ${maps.length} known`)),
       h('table', { class: 'journal-table wide map-table' },
-        h('thead', {}, h('tr', {}, h('th', {}, 'Map'), ...MAP_FLAGS.map(([, l]) => h('th', { class: 'center' }, l)), h('th', {}, 'Chests'), h('th', {}, ''))),
+        h('thead', {}, h('tr', {}, h('th', {}, 'Map'), ...MAP_FLAGS.map(([, l]) => h('th', { class: 'center' }, l)), h('th', {}, 'Chests'), h('th', {}, ''), h('th', { title: 'Save point teleport to the deepest save point' }, 'Teleport'))),
         h('tbody', {}, rows))];
   });
 
@@ -199,10 +275,12 @@ function renderMaps() {
   panel.replaceChildren(
     h('h2', {}, 'Maps'),
     h('div', { class: 'subtitle' }, `${totalKnown} of ${all.filter((m) => m.type !== 'event').length} maps known. Known reveals a map; travelling there may still depend on the story.`),
+    ...positionSection(),
     h('div', { class: 'bar mt' }, regionSel, h('label', { class: 'quick-sub' }, events, ' Show event maps'),
       h('button', { class: 'cmd', onclick: () => revealMaps(shown) }, 'Reveal shown maps'),
       h('button', { class: 'cmd', onclick: () => resetChests(shown.map((m) => m.id)) }, 'Reset shown chests')),
     h('div', { class: 'hint' }, 'Reveal sets Known only. Visited and Cleared may control story scenes and rewards, so change them one map at a time. Event maps are hidden: they are one-off story areas.'),
+    h('div', { class: 'hint' }, 'Teleport: in a dungeon, the save points offer "Teleport" to the deepest save point once you\'ve reached it. Unlock marks it as reached, for one you missed (it works for dungeons you have been in at least once).'),
     ...sections.flat(),
   );
 }

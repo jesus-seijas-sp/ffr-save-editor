@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 const APP_ID = '3259780';
-const SLOT_FILE = /^GameSaveData\d+\.sav$/;
+const SLOT_FILE = /^GameSaveData\d+(?:\.sav)?$/;  // Switch saves come without the .sav
 const PROTON_LOCAL = ['pfx', 'drive_c', 'users', 'steamuser', 'AppData', 'Local'];
 
 const isDir = (p) => { try { return fs.statSync(p).isDirectory(); } catch { return false; } };

@@ -6,7 +6,7 @@ const locations = require('./save-locations');
 const safety = require('./safety');
 
 const DATA_DIR = path.join(__dirname, '..', '..', 'data');
-const SLOT_FILE = /^GameSaveData(\d+)\.sav$/;
+const SLOT_FILE = /^GameSaveData(\d+)(?:\.sav)?$/;  // Switch saves come without the .sav
 
 let win;
 let dirty = false;
@@ -148,7 +148,7 @@ ipcMain.handle('save:write', async (_e, file, header, plain) => {
 
 ipcMain.handle('catalog:get', () => {
   const read = (f, def) => { try { return JSON.parse(fs.readFileSync(path.join(DATA_DIR, f), 'utf8')); } catch { return def; } };
-  return { names: read('names_en.json', {}), equipment: read('equipment.json', []), items: read('items.json', []), progression: read('progression.json', {}), journal: read('journal.json', {}), maps: read('maps.json', []) };
+  return { names: read('names_en.json', {}), equipment: read('equipment.json', []), items: read('items.json', []), progression: read('progression.json', {}), journal: read('journal.json', {}), maps: read('maps.json', []), savePoints: read('savepoints.json', {}) };
 });
 
 ipcMain.on('state:dirty', (_e, value) => { dirty = !!value; });

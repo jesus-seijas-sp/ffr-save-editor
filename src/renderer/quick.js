@@ -49,7 +49,7 @@ const QUICK_ACTIONS = [
       }
       return `${changed} vision/character pairs at max rank`;
     } },
-  { key: 'awakening', label: 'Set every vision\'s awakening to', value: 3,
+  { key: 'awakening', label: 'Set every vision\'s awakening to (before the Moogle of Light tutorial, leave one vision below 3 or the tutorial can\'t be done)', value: 3,
     run: (v) => {
       const n = Number(v);
       if (!Number.isInteger(n) || n < 0 || n > awakeningMax()) { status(`Awakening must be 0–${awakeningMax()}`, 'error'); return null; }
@@ -66,6 +66,34 @@ const QUICK_ACTIONS = [
         S.bytes = FFRS.addInventoryItem(S.bytes, e.id, 1); reparse(); added++;
       }
       return `${added} artifacts added`;
+    } },
+  // The DLC packs' items (DT_DLCItemData), added like any other items. The game's own "owns this DLC" flags
+  // (event flags 1200-1202) are left alone: the game checks them against the DLC you own when it loads a save.
+  ...[['dlc1', 'pre-order pack (Magitek Airship Passkey, Knight\'s Greatsword, Chestplate of Preparation...)',
+    [[29520, 1], [10130, 1], [11034, 1], [25000, 1], [500, 3], [31, 3]]],
+  ['dlc2', 'early-purchase pack (Blessed Cuirass, Mist Ether)', [[11035, 1], [34, 1]]],
+  ['dlc3', 'Deluxe pack (Magitek Armor Key, Archwitch\'s Grimoire, Mastery Ring...)',
+    [[29500, 1], [29510, 1], [12090, 1], [500, 5], [31, 5], [34, 5], [4, 5], [8, 3]]]].map(([key, what, list]) => ({
+    key, label: `Add the items of the ${what}`,
+    run: () => {
+      const have = inventoryMap();
+      let added = 0;
+      for (const [id, num] of list) {
+        const now = have.get(id) || 0;
+        const want = CAT.items.get(id)?.kind === 'consumable' ? Math.min(99, now + num) : Math.max(now, num);
+        if (want === now) continue;
+        S.bytes = FFRS.addInventoryItem(S.bytes, id, want); reparse(); added++;
+      }
+      return `${added} of the pack's items added`;
+    } })),
+  { key: 'ancient', label: 'Remove the Ancient weapons and armor (for a stuck Forger of Wills quest: the quest hands them out one by one)',
+    run: () => {
+      const ANCIENT = [10198, 10298, 10398, 10497, 10598, 10697, 10798, 10898, 11098, 11398, 11598, 12098];
+      let n = 0;
+      for (let i = 0; i < count('inventory'); i++) {
+        if (ANCIENT.includes(get(`inventory[${i}].ItemId`)) && get(`inventory[${i}].Num`) > 0 && setValue(`inventory[${i}].Num`, 0)) n++;
+      }
+      return `${n} Ancient items removed (unequip them first if a character wears one)`;
     } },
   { key: 'restock', label: 'Restock the limited items in every shop',
     run: () => {

@@ -110,4 +110,44 @@ if (p.maps.has(mapPath) && p.fields.has(`${mapPath}{1}.key`)) {
   decryptSave(encryptSave(header, Buffer.from(b4)));
 }
 
+// a story status (EnumProperty, the text changes length) and the party's position (Vector, in place)
+{
+  const joinPath = [...p.stringRefs.keys()].find((k) => /^unitParameterList\[\d+\]\.JoinStatus$/.test(k));
+  if (joinPath) {
+    const was = p.strings.get(joinPath);
+    const other = was === 'eUnitJoinStatus::TemporalLeave' ? 'eUnitJoinStatus::Join' : 'eUnitJoinStatus::TemporalLeave';
+    const b5 = F.setString(bytes, joinPath, other, p);
+    const q5 = F.parse(b5);
+    assert.strictEqual(q5.strings.get(joinPath), other, 'status written');
+    assert.strictEqual(b5.length % 16, 0, 'body must stay AES block aligned');
+    for (const [k, f] of p.fields) assert.strictEqual(F.getField(b5, q5.fields.get(k)), F.getField(bytes, f), `unchanged field ${k}`);
+    for (const [k, v] of p.strings) if (k !== joinPath) assert.strictEqual(q5.strings.get(k), v, `unchanged text ${k}`);
+    const back = F.setString(b5, joinPath, was, q5);
+    assert(Buffer.from(back).equals(Buffer.from(bytes)), 'setting it back gives the original bytes');
+    decryptSave(encryptSave(header, Buffer.from(b5)));
+  }
+  const loc = p.vectors.get('Map.unitLocation');
+  if (loc !== undefined) {
+    const b6 = bytes.slice();
+    const xyz = F.getVector(b6, loc);
+    F.setVector(b6, loc, [xyz[0] + 100, xyz[1], xyz[2]]);
+    assert.strictEqual(F.getVector(b6, loc)[0], xyz[0] + 100, 'position written');
+    assert.strictEqual(F.parse(b6).fields.size, p.fields.size, 'still parses');
+  }
+}
+
+// a dungeon save point marked as reached: an entry added inside Map.mapGimmick{map} (sizes of every enclosing tag)
+{
+  const gm = [...p.maps.keys()].find((k) => /^Map\.mapGimmick\{\d+\}\.value\.gimmickState$/.test(k) && p.fields.has(`${k}{0}.key`));
+  if (gm) {
+    const mapId = F.getField(bytes, p.fields.get(gm.replace('.value.gimmickState', '.key')));
+    const b7 = F.unlockSavePoint(bytes, mapId, 9999);
+    const q7 = F.parse(b7);
+    assert.strictEqual(q7.fields.size, p.fields.size + 3, 'one entry (key, Value, value2) added');
+    for (const [k, f] of p.fields) assert.strictEqual(F.getField(b7, q7.fields.get(k)), F.getField(bytes, f), `unchanged field ${k}`);
+    assert.strictEqual(b7.length % 16, 0, 'body must stay AES block aligned');
+    decryptSave(encryptSave(header, Buffer.from(b7)));
+  }
+}
+
 console.log(`OK — ${p.fields.size} fields, ${n0} inventory entries (${path.basename(file)})`);

@@ -6,8 +6,8 @@ const { execFile } = require('child_process');
 const GAME_EXE = 'FFRS-Win64-Shipping.exe';
 // Steam builds whose save format this editor was verified against.
 const KNOWN_BUILDS = { '24250053': 'Oct 2026 release (verified)' };
-const SLOT_FILE = /^GameSaveData(\d+)\.sav$/;
-const BAK_FILE = /^(GameSaveData\d+\.sav)\.(\d{8}-\d{6})(?:-[\w-]+)?\.bak$/;
+const SLOT_FILE = /^GameSaveData(\d+)(?:\.sav)?$/;  // Switch saves come without the .sav
+const BAK_FILE = /^(GameSaveData\d+(?:\.sav)?)\.(\d{8}-\d{6})(?:-[\w-]+)?\.bak$/;
 
 // Resolves true when the game process is running (Windows natively, or under Proton/Wine on Linux).
 function isGameRunning(platform = process.platform) {

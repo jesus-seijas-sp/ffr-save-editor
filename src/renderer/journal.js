@@ -1,8 +1,9 @@
 'use strict';
 /* Journal (story, quests, substories, Colosseum, areas) and Bestiary.
    Names and quest stages from zabo-dev/ffr-save-tracker (MIT), see data/journal.json.
-   Story and quest counters are shown read-only: they drive the game's events.
-   Uses globals from renderer.js (S, CAT, $, h, get, has, count, numInput, status). */
+   The story counter is shown read-only: it drives the game's events. Side quests can only be set back to a stage
+   already reached (for stuck quests).
+   Uses globals from renderer.js (S, CAT, $, h, get, has, count, numInput, setValue, status). */
 
 const J = () => CAT.journal || {};
 const bool = (p) => S.parsed.bools.get(p);
@@ -23,6 +24,22 @@ function questState(q) {
   if (v >= q.done) return { text: 'Completed', cls: 'owned', mark: '✔', stage: q.stages.length };
   if (reached > 0) return { text: `Stage ${reached}/${q.stages.length}`, cls: '', mark: '◐', stage: reached };
   return { text: 'Not started', cls: 'dim', mark: '○', stage: 0 };
+}
+
+// A stuck quest can be put back at an earlier stage (its counter in Progress.Progress): only stages already reached.
+function questStageSelect(q, st) {
+  const path = `Progress.Progress[${q.k}]`;
+  if (!has(path) || st.stage === 0) return '';
+  const choices = [[0, 'Not started'], ...q.stages.slice(0, st.stage).map((v, i) => [v, `Stage ${i + 1}`])];
+  const cur = get(path);
+  const sel = h('select', { title: `${q.name}: counter ${cur}` }, h('option', { value: '', selected: true }, '—'),
+    ...choices.filter(([v]) => v < cur).map(([v, label]) => h('option', { value: String(v) }, label)));
+  sel.addEventListener('change', () => {
+    if (sel.value === '' || !setValue(path, sel.value)) return;
+    status(`${q.name} set back to ${sel.selectedOptions[0].textContent}. Unsaved — choose Save in the menu.`);
+    renderJournal();
+  });
+  return sel;
 }
 
 function areaRows() {
@@ -72,7 +89,7 @@ function renderJournal() {
 
   panel.replaceChildren(
     h('h2', {}, 'Journal'),
-    h('div', { class: 'subtitle' }, 'Your progress at a glance. Story and quest counters are read-only — they drive the game\'s events.'),
+    h('div', { class: 'subtitle' }, 'Your progress at a glance. The story counter is read-only — it drives the game\'s events. Side quests can be set back to an earlier stage.'),
     h('div', { class: 'records' },
       h('div', { class: 'rec' }, h('label', { class: 'lbl' }, 'Story'), h('span', {}, `Chapter ${Math.max(1, Math.floor(story / 1000))}`, h('span', { class: 'dim' }, `  (counter ${story})`))),
       h('div', { class: 'rec' }, h('label', { class: 'lbl' }, 'Party members joined'), h('span', {}, `${joined} / ${count('unitParameterList')}`)),
@@ -82,8 +99,9 @@ function renderJournal() {
       has('Map.encountCount') ? h('div', { class: 'rec' }, h('label', { class: 'lbl' }, 'Encounters'), numInput('Map.encountCount')) : ''),
 
     h('h3', {}, 'Side quests'),
-    table(['', 'Quest', 'Progress'], quests.map(({ q, st }) => h('tr', {},
-      h('td', { class: st.cls }, st.mark), h('td', {}, q.name), h('td', { class: st.cls }, st.text)))),
+    table(['', 'Quest', 'Progress', 'Set back to'], quests.map(({ q, st }) => h('tr', {},
+      h('td', { class: st.cls }, st.mark), h('td', {}, q.name), h('td', { class: st.cls }, st.text), h('td', {}, questStageSelect(q, st))))),
+    h('div', { class: 'hint' }, 'Set back to: for a quest that got stuck, put it back at an earlier stage and play that part again. It only changes the quest\'s counter, not the items or scenes that went with it, so keep a backup.'),
 
     requests.length ? h('h3', {}, 'Requests in progress / done') : '',
     requests.length ? table(['', 'Request', 'State'], requests.map((r) => h('tr', {},

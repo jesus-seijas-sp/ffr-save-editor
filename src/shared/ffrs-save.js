@@ -49,13 +49,16 @@
   //   arrays: path -> {countOff, end, inner}
   //   maps:   path -> {countOff, end}
   //   boolRefs: path -> {off, tagged}  where each bool lives (tag flag bit 0x10, or a plain byte)
+  //   vectors: path -> offset of a Vector struct (three doubles: X, Y, Z)
+  //   stringRefs: path -> offset of the FString of a Str / Name / Enum value (see setString)
   //   end:    end offset of the serialized data (zero padding follows)
   function parse(bytes) {
     const r = new Reader(bytes);
     const fields = new Map(), tags = new Map(), arrays = new Map(), maps = new Map();
     const bools = new Map();   // path -> boolean
     const boolRefs = new Map();
-    const strings = new Map(); // path -> string value of Str/Name/Enum properties (read-only)
+    const strings = new Map(); // path -> string value of Str/Name/Enum properties
+    const vectors = new Map(), stringRefs = new Map();
     let flagsOff = 0;
     const magic = String.fromCharCode(...bytes.subarray(0, 4));
     if (magic !== 'GVAS') throw new Error('Not a GVAS save body');
@@ -93,7 +96,7 @@
         else { bools.set(path, !!bytes[r.o]); boolRefs.set(path, { off: r.o, tagged: false }); r.skip(1); }
         return;
       }
-      if (k === 'StrProperty' || k === 'NameProperty' || k === 'EnumProperty') { strings.set(path, r.string()); return; }
+      if (k === 'StrProperty' || k === 'NameProperty' || k === 'EnumProperty') { stringRefs.set(path, r.o); strings.set(path, r.string()); return; }
       if (k === 'ByteProperty') {
         if (size === 1) { fields.set(path, { off: r.o, kind: 'ByteValue' }); r.skip(1); } else strings.set(path, r.string());
         return;
@@ -116,7 +119,7 @@
       if (k === 'StructProperty') {
         const st = sub.length ? sub[0][0] : '';
         if (st === 'DateTime') { r.skip(8); return; }
-        if (st === 'Vector') { r.skip(24); return; }
+        if (st === 'Vector') { vectors.set(path, r.o); r.skip(24); return; }
         if (!(flags & 8)) { props(path); return; }
       }
       if (size === null) throw new Error('unsized ' + k);
@@ -124,7 +127,7 @@
     }
 
     props('');
-    return { fields, tags, arrays, maps, bools, boolRefs, strings, end: r.o };
+    return { fields, tags, arrays, maps, bools, boolRefs, strings, vectors, stringRefs, end: r.o };
   }
 
   // Sets a bool in place (no sizes change).
@@ -156,6 +159,14 @@
       if (num < min || num > max) throw new Error(`${num} is out of range (${min}..${max})`);
     }
     view(bytes)[setter](f.off, f.kind === 'Int64Property' ? BigInt(num) : num, true);
+  }
+
+  // A Vector (X, Y, Z doubles) in place.
+  function getVector(bytes, off) { const v = view(bytes); return [0, 8, 16].map((k) => v.getFloat64(off + k, true)); }
+  function setVector(bytes, off, xyz) {
+    if (xyz.length !== 3 || xyz.some((n) => typeof n !== 'number' || !Number.isFinite(n))) throw new Error('A position needs three numbers');
+    const v = view(bytes);
+    xyz.forEach((n, k) => v.setFloat64(off + k * 8, n, true));
   }
 
   function concat(parts) {
@@ -201,12 +212,36 @@
     const v = view(out);
     v.setInt32(arr.countOff, v.getInt32(arr.countOff, true) + n, true);
     for (const [tp, sizeOff] of p.tags) {
-      if (tp === path || path.startsWith(tp + '.') || path.startsWith(tp + '[')) {
+      if (tp === path || path.startsWith(tp + '.') || path.startsWith(tp + '[') || path.startsWith(tp + '{')) {
         v.setInt32(sizeOff, v.getInt32(sizeOff, true) + data.length, true);
       }
     }
     // trailing int32 0 after the final "None", then zero padding to the AES block size
     let len = p.end + data.length + 4;
+    len += (16 - (len % 16)) % 16;
+    return out.slice(0, len);
+  }
+
+  // Replaces the Str / Name / Enum value at `path` (ASCII only), fixing the size of its tag and of every enclosing
+  // tag, and the AES padding. Returns a new Uint8Array.
+  function setString(bytes, path, text, p = parse(bytes)) {
+    if (!/^[ -~]*$/.test(text)) throw new Error('Only plain ASCII text can be written');
+    const off = p.stringRefs.get(path);
+    if (off === undefined) throw new Error(`No text value at ${path}`);
+    const n = view(bytes).getInt32(off, true);
+    if (n < 0) throw new Error(`${path} is stored as UTF-16`);
+    const oldLen = 4 + n, data = fstring(text), delta = data.length - oldLen;
+    const out = new Uint8Array(p.end + delta + 4 + 16);
+    out.set(bytes.subarray(0, off), 0);
+    out.set(data, off);
+    out.set(bytes.subarray(off + oldLen, p.end), off + data.length);
+    const v = view(out);
+    for (const [tp, sizeOff] of p.tags) {
+      if (sizeOff < off && (tp === path || path.startsWith(tp + '.') || path.startsWith(tp + '[') || path.startsWith(tp + '{'))) {
+        v.setInt32(sizeOff, v.getInt32(sizeOff, true) + delta, true);
+      }
+    }
+    let len = p.end + delta + 4;
     len += (16 - (len % 16)) % 16;
     return out.slice(0, len);
   }
@@ -273,8 +308,43 @@
     return appendEntry(out, path, data, 'maps', added.length, p);
   }
 
-  const api = { parse, getField, setField, setBool, appendToArray, appendToMap, addInventoryItem, addAccessory,
-    setArtifact, setMapFlags, setManyMapFlags, intTag, boolTag, fstring };
+  // A dungeon's save point counts as reached when Map.mapGimmick{map}.gimmickState holds its unique id with Value 1:
+  // the dungeon's other save points can Teleport to it. Sets an existing entry, or adds one copied from another
+  // "reached" entry in this save (only the key changes), so the layout is the game's own. Returns a new Uint8Array.
+  // Throws if the save has no entry for the map yet (the dungeon was never visited).
+  function unlockSavePoint(bytes, mapId, uniqueId) {
+    const p = parse(bytes);
+    const mi = mapIndex(bytes, p, 'Map.mapGimmick', mapId);
+    if (mi < 0) throw new Error('This dungeon has never been visited in this save: go in once first');
+    const path = `Map.mapGimmick{${mi}}.value.gimmickState`;
+    if (!p.maps.has(path)) throw new Error('This dungeon has no object states in the save');
+    const si = mapIndex(bytes, p, path, uniqueId);
+    if (si >= 0) {
+      const out = bytes.slice();
+      setField(out, p.fields.get(`${path}{${si}}.value.Value`), 1);
+      return out;
+    }
+    // a template: any entry of any map whose Value is 1 and value2 -1 (a reached save point or a used switch)
+    let tpl = null;
+    for (const [mp, m] of p.maps) {
+      if (!/^Map\.mapGimmick\{\d+\}\.value\.gimmickState$/.test(mp)) continue;
+      for (let j = 0; p.fields.has(`${mp}{${j}}.key`); j++) {
+        const v = p.fields.get(`${mp}{${j}}.value.Value`), v2 = p.fields.get(`${mp}{${j}}.value.value2`);
+        if (!v || !v2 || getField(bytes, v) !== 1 || getField(bytes, v2) !== -1) continue;
+        const start = p.fields.get(`${mp}{${j}}.key`).off;
+        const end = p.fields.has(`${mp}{${j + 1}}.key`) ? p.fields.get(`${mp}{${j + 1}}.key`).off : m.end;
+        tpl = bytes.slice(start, end);
+        break;
+      }
+      if (tpl) break;
+    }
+    if (!tpl) throw new Error('No reached save point in this save to copy the layout from');
+    view(tpl).setInt32(0, uniqueId, true);
+    return appendEntry(bytes, path, tpl, 'maps', 1, p);
+  }
+
+  const api = { parse, getField, setField, setBool, appendToArray, appendToMap, addInventoryItem, addAccessory, unlockSavePoint,
+    setArtifact, setMapFlags, setManyMapFlags, getVector, setVector, setString, intTag, boolTag, fstring };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.FFRS = api;
 })(typeof self !== 'undefined' ? self : this);
