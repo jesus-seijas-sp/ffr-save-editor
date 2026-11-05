@@ -2,6 +2,8 @@
 //   Windows:       %LOCALAPPDATA%\FFRS\Steam\<SteamID64>\GameSaveData*.sav
 //   Linux / Deck:  the game runs through Proton, so the same tree lives inside the Proton prefix:
 //                  <library>/steamapps/compatdata/3259780/pfx/drive_c/users/steamuser/AppData/Local/FFRS/...
+//   macOS:         the game runs through CrossOver, so the same tree lives inside the bottle:
+//                  ~/Library/Application Support/CrossOver/Bottles/<bottle>/drive_c/users/<user>/AppData/Local/FFRS/...
 const fs = require('fs');
 const path = require('path');
 
@@ -11,6 +13,13 @@ const PROTON_LOCAL = ['pfx', 'drive_c', 'users', 'steamuser', 'AppData', 'Local'
 
 const isDir = (p) => { try { return fs.statSync(p).isDirectory(); } catch { return false; } };
 const readText = (p) => { try { return fs.readFileSync(p, 'utf8'); } catch { return ''; } };
+const subdirs = (p) => { try { return fs.readdirSync(p, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => path.join(p, e.name)); } catch { return []; } };
+
+// macOS: CrossOver bottles (~/Library/Application Support/CrossOver/Bottles/<bottle>/drive_c).
+function crossoverDrives(home) {
+  return subdirs(path.join(home, 'Library', 'Application Support', 'CrossOver', 'Bottles'))
+    .map((b) => path.join(b, 'drive_c')).filter(isDir);
+}
 
 function steamRoots({ platform, home, env }) {
   if (platform === 'win32') {
@@ -24,6 +33,9 @@ function steamRoots({ platform, home, env }) {
     path.join(home, '.var', 'app', 'com.valvesoftware.Steam', '.local', 'share', 'Steam'), // Flatpak
     path.join(home, 'snap', 'steam', 'common', '.local', 'share', 'Steam'),                // Snap
     path.join(home, 'Library', 'Application Support', 'Steam'),                            // macOS
+    ...(platform === 'darwin'
+      ? crossoverDrives(home).flatMap((c) => [path.join(c, 'Program Files (x86)', 'Steam'), path.join(c, 'Program Files', 'Steam')])
+      : []),                                                                               // macOS CrossOver
   ];
 }
 
@@ -60,6 +72,14 @@ function baseFolders(opts) {
   for (const lib of steamLibraries(steamRoots(opts))) {
     const prefix = path.join(lib, 'steamapps', 'compatdata', APP_ID);
     bases.push({ dir: path.join(prefix, ...PROTON_LOCAL, 'FFRS'), source: `Proton (${lib})` });
+  }
+  if (platform === 'darwin') {
+    // CrossOver: <bottle>/drive_c/users/<user>/AppData/Local/FFRS
+    for (const c of crossoverDrives(home)) {
+      for (const user of subdirs(path.join(c, 'users'))) {
+        bases.push({ dir: path.join(user, 'AppData', 'Local', 'FFRS'), source: `CrossOver (${path.basename(path.dirname(c))})` });
+      }
+    }
   }
   if (platform !== 'win32') {
     // in case a native build ever ships
