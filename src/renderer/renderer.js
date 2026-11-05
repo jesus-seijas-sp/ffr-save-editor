@@ -642,7 +642,10 @@ function renderVision() {
       if (setValue(p, val)) { el.value = String(get(p)); el.classList.add('changed'); el.dispatchEvent(new Event('change')); } else return;
     }
   };
-  const setAll = h('button', { class: 'cmd', onclick: () => applyAll(allVal.value) }, 'Set all MRP');
+  const setAll = h('button', { class: 'cmd', onclick: () => {
+    if (allVal.value.trim() === '') { status('Type an MRP value in the box first (or use "All max rank")', 'error'); allVal.focus(); return; }
+    applyAll(allVal.value);
+  } }, 'Set all MRP');
   const maxAll = curve ? h('button', { class: 'cmd', onclick: () => applyAll(curve[curve.length - 1]) }, `All max rank (${curve[curve.length - 1].toLocaleString('en-US')} MRP)`) : '';
 
   panel.replaceChildren(
